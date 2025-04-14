@@ -17,17 +17,14 @@ nav {
 div {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 16px;
     span {
         cursor: pointer;
         font-size: 16px; 
-        font-weight: 700;
         font-family: $font-family-2;
-        display: inline-block;
-        transform: scaleX(1.4);
         &:hover {
             background-image: linear-gradient(to left, #000, #000);
-            background-size: 50% 2px;
+            background-size: 80% 2px;
             background-position: 100% 100%;
             background-repeat: no-repeat;
             padding-bottom: 2px;

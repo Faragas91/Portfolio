@@ -1,8 +1,23 @@
+$primary-color: #fffcf3;
+$secondary-color: #000000;
+$highlight-color: #00bc8f;
+$highlight-option2-color: #4b47ff;
+$highlight-option3-color: #ff9900;
+
+// Weitere Farben
+$colors: (
+  'primary': $primary-color,
+  'secondary': $secondary-color,
+  'highlight-color': $highlight-color,
+  'highlight-option2-color': $highlight-option2-color,
+  'highlight-option3-color': $highlight-option3-color,
+);
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: rgb(255, 252, 243);
+    background-color: $primary-color;
 }
 
 @font-face {
@@ -13,7 +28,7 @@
 
 @font-face {
     font-family: 'Syne';
-    src: url('/assets/fonts/Syne/static/Syne-Regular.ttf') format('truetype');
+    src: url('/assets/fonts/Syne/static/Syne-ExtraBold.ttf') format('truetype');
     font-display: swap;
 }
 
@@ -27,3 +42,4 @@ body {
     margin: 0 auto;
     padding: 0 32px;
 }
+
