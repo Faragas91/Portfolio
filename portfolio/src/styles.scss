@@ -1,16 +1,10 @@
-$primary-color: #fffcf3;
-$secondary-color: #000000;
-$highlight-color: #00bc8f;
-$highlight-option2-color: #4b47ff;
-$highlight-option3-color: #ff9900;
+$primary-color: #ffffff;
+$secondary-color: #5988ff;
 
 // Weitere Farben
 $colors: (
   'primary': $primary-color,
   'secondary': $secondary-color,
-  'highlight-color': $highlight-color,
-  'highlight-option2-color': $highlight-option2-color,
-  'highlight-option3-color': $highlight-option3-color,
 );
 
 *{
@@ -21,19 +15,19 @@ $colors: (
 }
 
 @font-face {
-    font-family: 'Overpass';
-    src: url('/assets/fonts/Overpass/static/Overpass-Light.ttf') format('truetype');
+    font-family: 'Baloo';
+    src: url('/assets/fonts/Baloo_2/Baloo2-VariableFont_wght.ttf') format('truetype');
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Syne';
-    src: url('/assets/fonts/Syne/static/Syne-ExtraBold.ttf') format('truetype');
+    font-family: 'Montserrat';
+    src: url('/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
     font-display: swap;
 }
 
-$font-family-1: 'Overpass', sans-serif;
-$font-family-2: 'Syne', sans-serif;
+$font-family-1: 'Baloo', sans-serif;
+$font-family-2: 'Montserrat', sans-serif;
 
 body {
     font-family: $font-family-1;

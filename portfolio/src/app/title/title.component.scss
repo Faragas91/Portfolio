@@ -7,32 +7,5 @@
     text-align: center;
     margin-top: 128px;
 }
-
-h1 {
-    font-family: $font-family-2;
-    font-size: 128px;
-    line-height: 100%;
-}
-
-.name-line {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    gap: 24px;
-}
-
-.line {
-    flex-grow: 1;
-    height: 2px;
-    background-color: $secondary-color;
-}
-
-h2 {
-    font-family: 'Overpass', sans-serif;
-    font-size: 48px;
-    font-weight: 700;
-    color: $highlight-color;
-    white-space: nowrap;
-}
   
   
