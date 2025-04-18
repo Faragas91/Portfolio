@@ -1,3 +1,24 @@
 @import './../../../styles.scss';
 
+nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    ul {
+        display: flex;
+        gap: 32px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        color: $secondary-color;
+    }    
+    li {
+        cursor: pointer;
+        &:hover {
+            font-family: $font-family-1 bold;
+        }
+    }
+}
 
