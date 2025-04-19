@@ -1,3 +1,33 @@
 @import './../../../styles.scss';
 
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+        color: $secondary-color;
+
+        li {
+            margin: 0 20px;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    div {
+        display: flex;
+        margin-left: 50px;
+    }
+}
+
+
+
