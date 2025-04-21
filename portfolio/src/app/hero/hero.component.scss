@@ -1,6 +1,6 @@
 @import './../../styles.scss';
 
-.title {
+.hero {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -8,16 +8,29 @@
     margin-top: 20px;
 }
 
-.title_container {  
+.hero_container {  
+    position: relative;
     display: flex;
     justify-content: space-around;
-    background-image: url("/assets/header/Ellipse_0.png");
-    background-repeat: no-repeat;
     img {
         width: 450px;
+        z-index: 1;
+        background-color: transparent;
+    }
+    .blue-circle {
+        position: absolute;
+        top: -150px;
+        left: -200px;
+        width: 600px;
+        height: 600px;
+        background-color: $secondary-color;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-top-right-radius: 50%;
+        ;
     }
 }
-  
+
 .headline {
     display: flex;
     flex-direction: column;
@@ -35,5 +48,11 @@
         color: $secondary-color;
         font-weight: 300;
     }
+}
+
+.scroll {
+    display: flex;
+    font-family: $font-family-2;
+    font-size: 16px;
 }
   

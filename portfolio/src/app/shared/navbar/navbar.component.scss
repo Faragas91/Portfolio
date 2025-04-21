@@ -1,6 +1,5 @@
 @import './../../../styles.scss';
 
-
 nav {
     display: flex;
     justify-content: space-between;
@@ -13,12 +12,12 @@ nav {
         align-items: center;
         list-style: none;
         color: $secondary-color;
+        gap: 32px;
 
         li {
             position: relative;
             font-weight: 400;
           
-            // Diese Version sorgt dafür, dass der Platz für bold reserviert ist:
             &::after {
               content: attr(data-text);
               font-weight: 900;
@@ -30,6 +29,12 @@ nav {
           
             &:hover {
               font-weight: 900;
+              color: $secondary-color;
+            }
+
+            a {
+                text-decoration: none; 
+                color: $secondary-color;
             }
         }
     }
