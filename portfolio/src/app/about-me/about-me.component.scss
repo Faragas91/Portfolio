@@ -88,7 +88,16 @@
     }
 }
 
-  .about-me-text {
+.about-me-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 50%;
     margin-top: 120px;
-  }
+    margin-bottom: 25px;
+
+    p{
+      font-size: 24px;
+    }
+}
+  
