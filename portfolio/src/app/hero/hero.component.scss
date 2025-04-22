@@ -1,10 +1,12 @@
 @import './../../styles.scss';
 
 .hero {
+    position: relative;
     display: flex;
     justify-content: space-around;
     text-align: center;
-    height: 78.5vh;
+    height: 78.7vh;
+    z-index: 1;
 }
 
 .hero_container {  
