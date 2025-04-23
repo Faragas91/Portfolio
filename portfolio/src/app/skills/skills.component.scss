@@ -1,0 +1,145 @@
+@import './../../styles.scss';
+
+.background-color {
+    background-color: $secondary-color;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+span {
+    font-family: $font-family-1;
+    font-size: 96px;
+    font-weight: 900;
+    color: $primary-color;
+    padding: 32px;
+    background-color: transparent;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 96px;
+    background-color: $secondary-color;
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    background-color: $secondary-color;
+  
+    img {
+      background-color: $secondary-color;
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    p {
+      font-family: $font-family-2;
+      font-size: 16px;
+      text-align: center;
+      color: $primary-color;
+      background-color: $secondary-color;
+      transition: font-weight 0.3s ease;
+    }
+  
+    &:not(.no-hover):hover {
+      img {
+        transform: translate(0px, -10px) scale(1.1);
+      }
+  
+      p {
+        font-weight: 700;
+      }
+    }
+}
+
+.custom-tooltip-wrapper {
+position: relative;
+  
+    .tooltip {
+      position: absolute;
+      top: -100%;
+      left: 50%;
+      background-color: $speachbubble;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid black;
+      opacity: 1;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 200px;
+      text-align: center;
+
+      span {
+        color: black;
+        background-color: transparent;
+        font-size: 16px;
+        font-family: $font-family-2;
+        font-weight: 500;
+        padding: 8px;
+      }
+
+      img {
+        background-color: transparent;
+        width: 32px;
+        height: 32px;
+      }
+
+      p {
+        color: black;
+        background-color: transparent;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 15%;
+        transform: translateX(-50%);
+        border-width: 10px 10px 0 10px;
+        border-style: solid;
+        border-color: $speachbubble transparent transparent transparent;
+      }
+    }
+  
+    &:hover .tooltip {
+      opacity: 0;
+    }
+  }
+  
+.tooltip-language {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  background-color: $speachbubble;
+
+  p {
+    font-family: $font-family-2;
+    font-size: 12px;
+    font-weight: 700;
+    color: black;
+    background-color: transparent;
+  }
+}
+
+.tooltip-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: $speachbubble;
+    justify-content: space-evenly;
+}
+
+
+  
+
