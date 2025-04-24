@@ -1,0 +1,80 @@
+@import './../../styles.scss';
+
+.my-work {
+    display: flex;
+    flex-wrap: wrap; // wichtig für kleinere Bildschirme
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 32px;
+  
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  
+  .my-work-text {
+    flex: 1 1 50%;
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  
+    @media (max-width: 768px) {
+      margin-top: 64px;
+    }
+  
+    span {
+      font-family: $font-family-1;
+      font-size: 96px;
+      font-weight: 900;
+      color: $secondary-color;
+      position: relative;
+      display: inline-block;
+  
+      img {
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        background-color: transparent;
+  
+        @media (max-width: 768px) {
+          top: -30px;
+          right: -20px;
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  
+    p {
+      font-family: $font-family-2;
+      font-size: 24px;
+      color: black;
+      max-width: 90%;
+  
+      @media (max-width: 768px) {
+        font-size: 18px;
+      }
+    }
+  }
+  
+  .my-work-image {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 32vh;
+  
+    img {
+      width: 200px;
+      height: auto;
+  
+      @media (max-width: 768px) {
+        width: 120px;
+      }
+    }
+  }
+  
