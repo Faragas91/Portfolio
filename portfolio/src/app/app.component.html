@@ -4,5 +4,15 @@
   <app-about-me></app-about-me>
   <app-skills></app-skills>
   <app-my-work></app-my-work>
-  <app-projects></app-projects>
+  @for (project of projects; track project; let i = $index) {
+    <app-projects
+      [imageUrl]="project.imageUrl"
+      [title]="project.title"
+      [techStack]="project.techStack"
+      [description]="project.description"
+      [githubLink]="project.githubLink"
+      [liveLink]="project.liveLink"
+      [reverseLayout]="i % 2 === 1"
+    ></app-projects>
+  }
 </router-outlet>

@@ -8,6 +8,23 @@
     gap: 64px;
     padding: 64px;
     width: 100%;
+
+    &.reverse {
+        flex-direction: row-reverse;
+        text-align: right;
+    
+        .projects-info {
+          align-items: flex-end;
+        }
+    
+        .projects-text {
+          align-items: flex-end;
+        }
+    
+        .projects-button {
+          justify-content: flex-end;
+        }
+    }
 }
 
 .projects-image {

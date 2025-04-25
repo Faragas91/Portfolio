@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { Input } from '@angular/core';
 import { HeaderComponent } from "./shared/header/header.component";
 import { HeroComponent } from "./hero/hero.component";
 import { AboutMeComponent } from "./about-me/about-me.component";
@@ -26,4 +27,23 @@ import { ProjectsComponent } from "./projects/projects.component";
 })
 export class AppComponent {
   Hero = 'portfolio';
+  projects = [
+    {
+      imageUrl: '/assets/projects/join_photo.png',
+      title: 'Join',
+      techStack: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
+      description:
+        'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+      githubLink: 'https://github.com/Faragas91/Join.git',
+      liveLink: 'https://join-app.com',
+    },
+    {
+      imageUrl: '/assets/projects/el_pollo_loco_photo.png',
+      title: 'EL Pollo Loco',
+      techStack: ['JavaScript', 'HTML', 'CSS'],
+      description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
+      githubLink: 'https://github.com/Faragas91/EL_POLLO_LOCO.git',
+      liveLink: 'https://another-project.com',
+    },
+  ];
 }
