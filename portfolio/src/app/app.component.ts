@@ -45,5 +45,13 @@ export class AppComponent {
       githubLink: 'https://github.com/Faragas91/EL_POLLO_LOCO.git',
       liveLink: 'https://another-project.com',
     },
+    {
+      imageUrl: '/assets/projects/ring_of_fire_photo.png',
+      title: 'Ring of Fire',
+      techStack: ['Angular','TypeScript', 'HTML', 'SCSS', 'Firebase'],
+      description: 'A card game where players take turns drawing cards and following the rules associated with each card.',
+      githubLink: 'https://github.com/Faragas91/Ring-of-Fire.git',
+      liveLink: 'https://ring-of-fire.com',
+    },
   ];
 }
