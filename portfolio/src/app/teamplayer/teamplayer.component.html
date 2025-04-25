@@ -1,0 +1,16 @@
+<div class="background-color">
+    <div class="teamplayer-container">
+        <h2>Need a team player</h2>
+        <span>Here what my colleagues said about me</span>
+    </div>
+    <div class="colleagues">
+        @for (colleague of colleagues; track $index) {
+        <div class="colleague">
+            <p class="colleague-name">{{ colleague.name }}</p>
+            <p class="colleague-projects">{{ colleague.projects }}</p>
+            <p class="colleague-description">{{ colleague.description }}</p>
+        </div>
+    }
+    </div>
+</div>
+

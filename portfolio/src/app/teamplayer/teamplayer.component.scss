@@ -1,0 +1,93 @@
+@import './../../styles.scss';
+
+.background-color {
+    background-color: $secondary-color;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding: 32px;
+}
+
+.teamplayer-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background-color: transparent;
+
+    h2 {
+        font-size: 45px;
+        font-weight: bold;
+        color: $primary-color;
+        background-color: transparent;
+    }
+
+    span {
+        font-size: 32px;
+        font-family: $font-family-2;
+        color: $primary-color;
+        background-color: transparent;
+    }
+}
+
+.colleagues{
+    display: flex;
+    gap: 32px;
+    padding: 16px;
+    scroll-snap-type: x mandatory;
+    background-color: transparent;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.colleagues::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .colleagues::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  
+  .colleagues::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+.colleague {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    border-radius: 8px;
+    color: $primary-color;
+    width: 100%;
+    background-color: transparent;
+    min-height: 200px;
+    min-width: 360px;
+
+    .colleague-name {
+        font-size: 24px;
+        font-weight: bold;
+        color: $primary-color;
+        background-color: transparent;
+    }
+
+    .colleague-projects {
+        font-size: 16px;
+        color: $primary-color;
+        background-color: transparent;
+        font-family: $font-family-2;
+        margin-bottom: 32px;
+    }
+
+    .colleague-description {
+        font-size: 18px;
+        color: $primary-color;
+        background-color: transparent;
+        font-family: $font-family-2;
+    }
+}

@@ -8,20 +8,22 @@ import { AboutMeComponent } from "./about-me/about-me.component";
 import { SkillsComponent } from "./skills/skills.component";
 import { MyWorkComponent } from "./my-work/my-work.component";
 import { ProjectsComponent } from "./projects/projects.component";
+import { TeamplayerComponent } from "./teamplayer/teamplayer.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule, 
-    RouterOutlet, 
-    HeaderComponent, 
-    HeroComponent, 
-    AboutMeComponent, 
-    SkillsComponent, 
+    CommonModule,
+    RouterOutlet,
+    HeaderComponent,
+    HeroComponent,
+    AboutMeComponent,
+    SkillsComponent,
     MyWorkComponent,
-    ProjectsComponent
-  ],
+    ProjectsComponent,
+    TeamplayerComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -53,5 +55,38 @@ export class AppComponent {
       githubLink: 'https://github.com/Faragas91/Ring-of-Fire.git',
       liveLink: 'https://ring-of-fire.com',
     },
+  ];
+
+  colleagues = [
+    {
+      name: 'John Doe',
+      projects: 'Project Join',
+      description: 'John is a talented developer with a passion for creating innovative solutions. He is skilled in HTML, CSS, and JavaScript. He has a knack for problem-solving and enjoys tackling complex challenges. He is a team player and loves collaborating with others to bring ideas to life.',
+    },
+    {
+      name: 'Jane Smith',
+      projects: 'Project EL Pollo Loco',
+      description: 'Jane is a skilled designer who brings creativity and flair to every project.',
+    },
+    {
+      name: 'Alice Johnson',
+      projects: 'Project Ring of Fire',
+      description: 'Alice is a project manager with a knack for keeping teams organized and on track.',
+    },
+    {
+      name: 'Bob Brown',
+      projects: 'Project XYZ',
+      description: 'Bob is a seasoned developer who knows how to take complex problems and turn them into elegant solutions.',
+    },
+    {
+      name: 'Charlie Green',
+      projects: 'Project ABC',
+      description: 'Charlie is a talented designer with a keen eye for detail and a passion for creating beautiful user experiences.',
+    },
+    {
+      name: 'David White',
+      projects: 'Project DEF',
+      description: 'David is a project manager with a talent for keeping teams organized and on track.',
+    },  
   ];
 }
