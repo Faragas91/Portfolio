@@ -9,6 +9,7 @@ import { SkillsComponent } from "./skills/skills.component";
 import { MyWorkComponent } from "./my-work/my-work.component";
 import { ProjectsComponent } from "./projects/projects.component";
 import { TeamplayerComponent } from "./teamplayer/teamplayer.component";
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,8 @@ import { TeamplayerComponent } from "./teamplayer/teamplayer.component";
     SkillsComponent,
     MyWorkComponent,
     ProjectsComponent,
-    TeamplayerComponent
+    TeamplayerComponent,
+    ContactFormComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
