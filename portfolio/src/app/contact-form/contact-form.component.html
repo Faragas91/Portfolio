@@ -1,18 +1,42 @@
-<div class="container">
+<div class="contact-form-main-container">
+  <div class="contact-form-left-container">
+    <h2>Contact</h2>
+    <h3>Got a problem to solve</h3>
+    <h4>Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work</h4>
+    <div class="contact-me">
+      <span>Need a Frontend Developer?</span>
+      <p>Contact me!</p>
+    </div>
+    <img class="ellipse-10" src="/assets/contact/Ellipse_10.png" alt="Ellipse 10">
+    <img class="up-button" src="/assets/contact/up_button.png" alt="up_button">
+  </div>
+  <div class="contact-form-right-container">
+    <img class="ellipse-9" src="/assets/contact/Ellipse_9.png" alt="Ellipse 9">
     <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
   
       <label for="name">Name</label>
-      <input [(ngModel)]="contactData.name"  type="text" id="name" name="name" placeholder="Your name.." required>
+      <input [(ngModel)]="contactData.name"  type="text" id="name" name="name" placeholder="Your name" required>
   
       <label for="email">Email</label>
-      <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your email.." required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+      <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
   
       <label for="message">Subject</label>
-      <textarea #message="ngModel" minlength="5" [(ngModel)]="contactData.message" id="message" name="message" placeholder="Write something.." style="height:200px" required></textarea>
+      <textarea #message="ngModel" minlength="5" [(ngModel)]="contactData.message" id="message" name="message" placeholder="Your message" style="height:200px" required></textarea>
         @if (!message.valid && message.touched && !message.disabled) {
             <div class="error-message">Message is required</div>
         }
-      <input type="submit" value="Submit">
-  
+        <div class="custom-checkbox">
+          <input type="checkbox" id="myCheckbox">
+          <label for="myCheckbox">I've read the privacy policy and agree to the processing of my data as outlined</label>
+        </div>
+        <button type="submit" class="submit-button">
+          Say Hello ;)
+        </button>
     </form>
+    <img class="ellipse-11" src="/assets/contact/Ellipse_11.png" alt="Ellipse 11">
   </div>
+</div>
+
+
+
+

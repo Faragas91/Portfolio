@@ -2,7 +2,6 @@ $primary-color: #ffffff;
 $secondary-color: #5988ff;
 $speachbubble: #f2f6ff;
 
-// Weitere Farben
 $colors: (
   'primary': $primary-color,
   'secondary': $secondary-color,
@@ -31,17 +30,13 @@ $colors: (
 $font-family-1: 'Baloo', sans-serif;
 $font-family-2: 'Montserrat', sans-serif;
 
-html {
+html, body {
     scroll-behavior: smooth;
-}
-
-body {
-    font-family: $font-family-1;
-    color: rgb(0, 0, 0);
-    max-width: 1920px;
+    width: 100%;
     margin: 0 auto;
-}
-  
+    color: $primary-color;
+    font-family: $font-family-1;
+}  
 
 .style-button {
   
@@ -74,7 +69,7 @@ body {
             position: absolute;
             content: "";
             top: 0;
-            left: -20px;
+            left: -30px;
             width: 0;
             height: 100%;
             background: linear-gradient(135deg, $secondary-color 0%, $primary-color 100%);

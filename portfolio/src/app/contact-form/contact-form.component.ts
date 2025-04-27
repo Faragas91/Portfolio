@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, MatCheckboxModule],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss'
 })
