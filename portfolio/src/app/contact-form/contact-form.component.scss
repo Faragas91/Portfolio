@@ -3,7 +3,7 @@
 .contact-form-main-container {
   display: flex;
   justify-content: space-between;
-  background-color: linear-gradient(179.99deg, #FFFFFF 12.89%, #EAF0FF 91.39%);
+  background: linear-gradient(179.99deg, #FFFFFF 12.89%, #EAF0FF 91.39%);
   width: 100%;
   padding: 64px;
 }
@@ -14,6 +14,12 @@
   max-width: 600px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  background-color: transparent;
+
+  .contact-text {
+    background-color: transparent;
+  }
 
   h2 {
     font-size: 90px;
@@ -21,6 +27,7 @@
     color: $secondary-color;
     margin-bottom: 32px;
     margin-top: 75px;
+    background-color: transparent;
 ;
   }
   h3 {
@@ -29,6 +36,7 @@
     color: $secondary-color;
     font-family: $font-family-2;
     margin-bottom: 16px;
+    background-color: transparent;
   }
 
   h4 {
@@ -36,6 +44,7 @@
     font-weight: 400;
     color: black;
     margin-bottom: 16px;
+    background-color: transparent;
   }
 
   .contact-me {
@@ -45,9 +54,15 @@
     font-family: $font-family-1;
     color: $secondary-color;
     margin-bottom: 16px;
+    background-color: transparent;
+
+    span {
+      background-color: transparent;
+    }
 
     p {
       font-weight: 700;
+      background-color: transparent;
     }
   }
   .up-button {
@@ -56,15 +71,50 @@
   }
 }
 
+.scroll-top-button {
+  width: 39px;
+  height: 39px;
+  background: linear-gradient(135deg, #5988ff, #0044ff);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    background: transparent;
+    border: 2px solid $secondary-color; 
+
+    img {
+      filter: brightness(0) saturate(100%) invert(34%) sepia(80%) saturate(1942%) hue-rotate(208deg) brightness(97%) contrast(98%);
+    }
+  }
+}
+
+
 .contact-form-right-container {
   position: relative;
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  background-color: transparent;
 
   form {
     margin-top: 230px;
+    background-color: transparent;
+  }
+
+  label {
+    background-color: transparent;
+    color: transparent;
   }
 }
 
@@ -87,6 +137,7 @@
 .ellipse-11 {
   width: 73px;
   height: 73px;
+  background-color: transparent;
 }
 
 
@@ -183,6 +234,7 @@ input[type=email], select, textarea {
     align-items: center;
     gap: 8px;
     margin: 10px 0 32px 0px;
+    background-color: transparent;
   
     input[type="checkbox"] {
       width: 24px;

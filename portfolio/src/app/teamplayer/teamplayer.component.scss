@@ -1,7 +1,7 @@
 @import './../../styles.scss';
 
 .background-color {
-    background-color: $secondary-color;
+    background: linear-gradient(135deg, #5988ff, #0044ff);
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;

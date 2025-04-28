@@ -1,7 +1,7 @@
 @import './../../styles.scss';
 
 .background-color {
-    background-color: $secondary-color;
+    background: linear-gradient(135deg, #5988ff, #0044ff);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -24,7 +24,7 @@ span {
     flex-wrap: wrap;
     justify-content: center;
     gap: 96px;
-    background-color: $secondary-color;
+    background: transparent;
     padding-left: 120px;
     padding-right: 120px;
 }
@@ -34,10 +34,10 @@ span {
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    background-color: $secondary-color;
+    background: transparent;
   
     img {
-      background-color: $secondary-color;
+      background: transparent;
       transition: transform 0.3s ease-in-out;
     }
   
@@ -46,7 +46,7 @@ span {
       font-size: 16px;
       text-align: center;
       color: $primary-color;
-      background-color: $secondary-color;
+      background-color: transparent;
       transition: font-weight 0.3s ease;
     }
   

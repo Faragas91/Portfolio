@@ -4,6 +4,7 @@
     position: relative;
     display: flex;
     justify-content: space-around;
+    background: linear-gradient(179.99deg, #FFFFFF 12.89%, #EAF0FF 91.39%);
     text-align: center;
     height: 98,7vh;
     z-index: 1;
@@ -41,18 +42,21 @@
     flex-direction: column;
     align-items: center;
     margin-top: 120px;
+    background-color: transparent;
     span {
         font-size: 120px;
         font-family: $font-family-1;
         color: $secondary-color;
         font-weight: 900;
         line-height: 90px;
+        background-color: transparent;
     }
     h2 {
         font-size: 48px;
         font-family: $font-family-2;
         color: $secondary-color;
         font-weight: 300;
+        background-color: transparent;
     }
 }
 
@@ -65,12 +69,17 @@
     font-size: 16px;
     color: $secondary-color;
     margin-top: 100px;
+    background-color: transparent;
   
     .scroll-line {
         width: 2px;
         height: 41.6vh;
         background-color: $secondary-color;
         margin-top: 10px;
+    }
+
+    p {
+        background-color: transparent;
     }
 }
 
@@ -81,10 +90,13 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    background-color: transparent;
   
     a { 
+        background-color: transparent;
         img {
             transition: transform 0.3s ease;
+            background-color: transparent;
         }
 
         &:hover {
