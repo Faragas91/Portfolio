@@ -10,6 +10,7 @@ import { MyWorkComponent } from "./my-work/my-work.component";
 import { ProjectsComponent } from "./projects/projects.component";
 import { TeamplayerComponent } from "./teamplayer/teamplayer.component";
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +25,8 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     MyWorkComponent,
     ProjectsComponent,
     TeamplayerComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    FooterComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
