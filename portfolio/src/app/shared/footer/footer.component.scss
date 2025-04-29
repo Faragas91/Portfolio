@@ -1,0 +1,59 @@
+@import './../../../styles.scss';
+
+footer {
+    background: linear-gradient(135deg, #5988ff, #0044ff);
+}
+
+.footer-main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 32px;
+
+    .logo {
+        background-color: transparent;
+        width: 100px;
+        height: 100px;
+
+        &:hover {
+            cursor: pointer;
+
+        }
+    }
+}
+
+.footer-content {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    a {
+        background-color: transparent;
+        text-decoration: none;
+        color: $primary-color;
+    }
+
+    p {
+        background-color: transparent;
+        font-size: 24px;
+    }
+}
+
+.social-icons {
+    background-color: transparent;
+    display: flex;
+    gap: 32px;
+
+    a {
+        background-color: transparent;
+
+        img {
+            background-color: transparent;
+            filter: brightness(0) saturate(100%) invert(34%) sepia(80%) saturate(1942%) hue-rotate(208deg) brightness(97%) contrast(98%);
+        }
+    }
+}
+
