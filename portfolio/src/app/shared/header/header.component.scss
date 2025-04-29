@@ -4,9 +4,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0px 64px 32px 64px;
+
     img {
-        width: 50px;
-        background-color: $secondary-color;
+        width: 100px;
+        height: 100px;
+        background-color: transparent;
         z-index: 2;
 
         &:hover {

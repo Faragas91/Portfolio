@@ -9,7 +9,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     background-color: transparent;
-    padding: 32px;
+    padding: 64px;
 
     .logo {
         background-color: transparent;
@@ -34,11 +34,13 @@ footer {
         background-color: transparent;
         text-decoration: none;
         color: $primary-color;
+        font-size: 16px;
     }
 
     p {
         background-color: transparent;
         font-size: 24px;
+        font-family: $font-family-2;
     }
 }
 
@@ -51,8 +53,16 @@ footer {
         background-color: transparent;
 
         img {
+            width: 30px;
             background-color: transparent;
             filter: brightness(0) invert(1);
+
+            &:hover {
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                transform: translate(5px, 0px) scale(1.5);
+                
+            }
         }
     }
 }
