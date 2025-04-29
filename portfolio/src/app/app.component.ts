@@ -11,6 +11,7 @@ import { ProjectsComponent } from "./projects/projects.component";
 import { TeamplayerComponent } from "./teamplayer/teamplayer.component";
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { LanguageService } from './service/language.service';
 
 @Component({
   selector: 'app-root',
@@ -26,12 +27,22 @@ import { FooterComponent } from './shared/footer/footer.component';
     ProjectsComponent,
     TeamplayerComponent,
     ContactFormComponent,
-    FooterComponent
+    FooterComponent,
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  constructor(public languageService: LanguageService) {
+  }
+
+  ngOnInit() {
+
+    this.languageService.language$.subscribe(lang => {
+      console.log('Sprache gewechselt zu:', lang);
+    });
+  }
+  
   Hero = 'portfolio';
   projects = [
     {
