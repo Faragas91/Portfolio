@@ -19,6 +19,5 @@ export class ProjectsComponent {
   @Input() reverseLayout: boolean = false;
 
   constructor(private languageService: LanguageService) {}
-
   
 }

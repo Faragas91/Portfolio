@@ -25,7 +25,7 @@
       <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="{{ yourEmail }}" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
   
       <label for="message">Subject</label>
-      <textarea #message="ngModel" minlength="5" [(ngModel)]="contactData.message" id="message" name="{{ yourMessage }}" placeholder="Your message" style="height:200px" required></textarea>
+      <textarea #message="ngModel" minlength="5" [(ngModel)]="contactData.message" id="message" name="message" placeholder="{{ yourMessage }}" style="height:200px" required></textarea>
         @if (!message.valid && message.touched && !message.disabled) {
             <div class="error-message">Message is required</div>
         }

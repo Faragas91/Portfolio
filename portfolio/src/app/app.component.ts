@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { Input } from '@angular/core';
 import { HeaderComponent } from "./shared/header/header.component";
 import { HeroComponent } from "./hero/hero.component";
 import { AboutMeComponent } from "./about-me/about-me.component";
@@ -33,78 +32,68 @@ import { LanguageService } from './service/language.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  projects: any[] = [];
+  colleagues: any[] = [];
+
   constructor(public languageService: LanguageService) {
   }
 
-  joinDescription: string = '';
-  elPolloLocoDescription: string = '';
-  ringOfFireDescription: string = '';
+  ngOnInit() {
+    this.languageService.language$.subscribe((lang) => {
+      this.updateProjectDescriptions();
+      this.updateColleagueEvaluations();
+    });
 
-  ngOninit() {
-    this.languageService.language$.subscribe(lang => {
-      this.joinDescription = this.languageService.getTranslation('joinDescription');
-      this.elPolloLocoDescription = this.languageService.getTranslation('elPolloLocoDescription');
-      this.ringOfFireDescription = this.languageService.getTranslation('ringOfFireDescription');
-    })
+    this.updateProjectDescriptions();
+    this.updateColleagueEvaluations();
   }
 
-  projects = [
-    {
-      imageUrl: '/assets/projects/join_photo.png',
-      title: 'Join',
-      techStack: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
-      description: this.joinDescription,
-      githubLink: 'https://github.com/Faragas91/Join.git',
-      liveLink: 'https://join-app.com',
-    },
-    {
-      imageUrl: '/assets/projects/el_pollo_loco_photo.png',
-      title: 'EL Pollo Loco',
-      techStack: ['JavaScript', 'HTML', 'CSS'],
-      description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
-      githubLink: 'https://github.com/Faragas91/EL_POLLO_LOCO.git',
-      liveLink: 'https://another-project.com',
-    },
-    {
-      imageUrl: '/assets/projects/ring_of_fire_photo.png',
-      title: 'Ring of Fire',
-      techStack: ['Angular','TypeScript', 'HTML', 'SCSS', 'Firebase'],
-      description: 'A card game where players take turns drawing cards and following the rules associated with each card.',
-      githubLink: 'https://github.com/Faragas91/Ring-of-Fire.git',
-      liveLink: 'https://ring-of-fire.com',
-    },
-  ];
+  updateProjectDescriptions() {
+    this.projects = [
+      {
+        imageUrl: '/assets/projects/join_photo.png',
+        title: 'Join',
+        techStack: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
+        description: this.languageService.getTranslation('joinDescription'),
+        githubLink: 'https://github.com/Faragas91/Join.git',
+        liveLink: 'https://join-app.com',
+      },
+      {
+        imageUrl: '/assets/projects/el_pollo_loco_photo.png',
+        title: 'EL Pollo Loco',
+        techStack: ['JavaScript', 'HTML', 'CSS'],
+        description: this.languageService.getTranslation('elPolloLocoDescription'),
+        githubLink: 'https://github.com/Faragas91/EL_POLLO_LOCO.git',
+        liveLink: 'https://another-project.com',
+      },
+      {
+        imageUrl: '/assets/projects/ring_of_fire_photo.png',
+        title: 'Ring of Fire',
+        techStack: ['Angular','TypeScript', 'HTML', 'SCSS', 'Firebase'],
+        description: this.languageService.getTranslation('ringOfFireDescription'),
+        githubLink: 'https://github.com/Faragas91/Ring-of-Fire.git',
+        liveLink: 'https://ring-of-fire.com',
+      },
+    ];
+  }  
 
-  colleagues = [
-    {
-      name: 'John Doe',
-      projects: 'Project Join',
-      description: 'John is a talented developer with a passion for creating innovative solutions. He is skilled in HTML, CSS, and JavaScript. He has a knack for problem-solving and enjoys tackling complex challenges. He is a team player and loves collaborating with others to bring ideas to life.',
-    },
-    {
-      name: 'Jane Smith',
-      projects: 'Project EL Pollo Loco',
-      description: 'Jane is a skilled designer who brings creativity and flair to every project.',
-    },
-    {
-      name: 'Alice Johnson',
-      projects: 'Project Ring of Fire',
-      description: 'Alice is a project manager with a knack for keeping teams organized and on track.',
-    },
-    {
-      name: 'Bob Brown',
-      projects: 'Project XYZ',
-      description: 'Bob is a seasoned developer who knows how to take complex problems and turn them into elegant solutions.',
-    },
-    {
-      name: 'Charlie Green',
-      projects: 'Project ABC',
-      description: 'Charlie is a talented designer with a keen eye for detail and a passion for creating beautiful user experiences.',
-    },
-    {
-      name: 'David White',
-      projects: 'Project DEF',
-      description: 'David is a project manager with a talent for keeping teams organized and on track.',
-    },  
-  ];
+  updateColleagueEvaluations() {
+    this.colleagues = [
+      {
+        name: 'John Doe',
+        projects: 'Project Join',
+        description: this.languageService.getTranslation('firstCollegue'),
+      },
+      {
+        name: 'Jane Smith',
+        projects: 'Project EL Pollo Loco',
+        description: this.languageService.getTranslation('secondCollegue'),
+      },
+      {
+        name: 'Alice Johnson',
+        projects: 'Project Ring of Fire',
+        description: this.languageService.getTranslation('thirdCollegue'),
+      },
+    ];
+  }
 }

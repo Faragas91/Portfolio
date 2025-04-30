@@ -29,7 +29,7 @@ export class AboutMeComponent {
       this.location = this.languageService.getTranslation('location');
       this.remote = this.languageService.getTranslation('remote');
       this.relocate = this.languageService.getTranslation('relocate');
-      this.aboutMe = this.languageService.getTranslation('aboutme');
+      this.aboutMe = this.languageService.getTranslation('aboutMe');
       this.sendAMessage = this.languageService.getTranslation('sendAMessage');
     })
   }

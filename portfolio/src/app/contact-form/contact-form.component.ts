@@ -78,7 +78,6 @@ export class ContactFormComponent {
       this.yourMessage = this.languageService.getTranslation('yourMessage');
       this.privacyPolicy = this.languageService.getTranslation('privacyPolicy');
       this.sayHello = this.languageService.getTranslation('sayHello');
-
     })
   }
 }
