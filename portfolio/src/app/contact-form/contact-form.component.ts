@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { LanguageService } from '../service/language.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -11,6 +12,19 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
   styleUrl: './contact-form.component.scss'
 })
 export class ContactFormComponent {
+
+  constructor(public languageService: LanguageService){}
+
+  contact: string = '';
+  contactProblem: string = '';
+  contactDescription: string = '';
+  needADeveloper: string = '';
+  contactMe: string = '';
+  yourName: string = '';
+  yourEmail: string = '';
+  yourMessage: string = '';
+  privacyPolicy: string = '';
+  sayHello: string = '';
 
   http = inject(HttpClient);
   
@@ -50,5 +64,21 @@ export class ContactFormComponent {
 
       ngForm.resetForm();
     }
+  }
+
+  ngOnInit() {
+    this.languageService.language$.subscribe(lang => {
+      this.contact = this.languageService.getTranslation('contact');
+      this.contactProblem = this.languageService.getTranslation('contactProblem');
+      this.contactDescription = this.languageService.getTranslation('contactDescription');
+      this.needADeveloper = this.languageService.getTranslation('needADeveloper');
+      this.contactMe = this.languageService.getTranslation('contactMe');
+      this.yourName = this.languageService.getTranslation('yourName');
+      this.yourEmail = this.languageService.getTranslation('yourEmail');
+      this.yourMessage = this.languageService.getTranslation('yourMessage');
+      this.privacyPolicy = this.languageService.getTranslation('privacyPolicy');
+      this.sayHello = this.languageService.getTranslation('sayHello');
+
+    })
   }
 }

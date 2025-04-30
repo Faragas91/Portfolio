@@ -1,12 +1,12 @@
 <div class="contact-form-main-container" id="contact-form">
   <div class="contact-form-left-container">
     <div class="contact-text">
-      <h2>Contact</h2>
-      <h3>Got a problem to solve</h3>
-      <h4>Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work</h4>
+      <h2>{{ contact }}</h2>
+      <h3>{{ contactProblem }}</h3>
+      <h4>{{ contactDescription }}</h4>
       <div class="contact-me">
-        <span>Need a Frontend Developer?</span>
-        <p>Contact me!</p>
+        <span>{{ needADeveloper }}</span>
+        <p>{{ contactMe }}</p>
       </div>
       <img class="ellipse-10" src="/assets/contact/Ellipse_10.png" alt="Ellipse 10">
     </div>
@@ -19,22 +19,22 @@
     <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
   
       <label for="name">Name</label>
-      <input [(ngModel)]="contactData.name"  type="text" id="name" name="name" placeholder="Your name" required>
+      <input [(ngModel)]="contactData.name"  type="text" id="name" name="name" placeholder="{{ yourName }}" required>
   
       <label for="email">Email</label>
-      <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+      <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="{{ yourEmail }}" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
   
       <label for="message">Subject</label>
-      <textarea #message="ngModel" minlength="5" [(ngModel)]="contactData.message" id="message" name="message" placeholder="Your message" style="height:200px" required></textarea>
+      <textarea #message="ngModel" minlength="5" [(ngModel)]="contactData.message" id="message" name="{{ yourMessage }}" placeholder="Your message" style="height:200px" required></textarea>
         @if (!message.valid && message.touched && !message.disabled) {
             <div class="error-message">Message is required</div>
         }
         <div class="custom-checkbox">
           <input type="checkbox" id="myCheckbox">
-          <label for="myCheckbox">I've read the privacy policy and agree to the processing of my data as outlined</label>
+          <label for="myCheckbox">{{ privacyPolicy }}</label>
         </div>
         <button type="submit" class="submit-button">
-          Say Hello ;)
+          {{ sayHello }}
         </button>
     </form>
     <img class="ellipse-11" src="/assets/contact/Ellipse_11.png" alt="Ellipse 11">
