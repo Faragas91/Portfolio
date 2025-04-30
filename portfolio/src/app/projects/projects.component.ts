@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Input } from '@angular/core';
+import { LanguageService } from '../service/language.service';
 
 @Component({
   selector: 'app-projects',
@@ -16,4 +17,8 @@ export class ProjectsComponent {
   @Input() githubLink: string = '';
   @Input() liveLink: string = '';
   @Input() reverseLayout: boolean = false;
+
+  constructor(private languageService: LanguageService) {}
+
+  
 }

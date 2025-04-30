@@ -36,21 +36,24 @@ export class AppComponent {
   constructor(public languageService: LanguageService) {
   }
 
-  ngOnInit() {
+  joinDescription: string = '';
+  elPolloLocoDescription: string = '';
+  ringOfFireDescription: string = '';
 
+  ngOninit() {
     this.languageService.language$.subscribe(lang => {
-      console.log('Sprache gewechselt zu:', lang);
-    });
+      this.joinDescription = this.languageService.getTranslation('joinDescription');
+      this.elPolloLocoDescription = this.languageService.getTranslation('elPolloLocoDescription');
+      this.ringOfFireDescription = this.languageService.getTranslation('ringOfFireDescription');
+    })
   }
-  
-  Hero = 'portfolio';
+
   projects = [
     {
       imageUrl: '/assets/projects/join_photo.png',
       title: 'Join',
       techStack: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
-      description:
-        'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+      description: this.joinDescription,
       githubLink: 'https://github.com/Faragas91/Join.git',
       liveLink: 'https://join-app.com',
     },
