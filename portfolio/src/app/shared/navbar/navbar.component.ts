@@ -13,6 +13,10 @@ export class NavbarComponent {
     
   }
 
+  navAboutMe: string = '';
+  navSkills: string = '';
+  navMyWork: string = '';
+
   switchToGerman() {
     this.languageService.setLanguage('de');
   }
@@ -20,5 +24,12 @@ export class NavbarComponent {
   switchToEnglish() {
     this.languageService.setLanguage('en');
   }
-  
+
+  ngOnInit() {
+    this.languageService.language$.subscribe(lang => {
+      this.navAboutMe = this.languageService.getTranslation('navAboutMe');
+      this.navSkills = this.languageService.getTranslation('navSkills');
+      this.navMyWork = this.languageService.getTranslation('navMyWork');
+    })
+  }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LanguageService } from './../service/language.service';
 
 @Component({
   selector: 'app-hero',
@@ -8,5 +9,15 @@ import { Component } from '@angular/core';
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
+  constructor(private languageService: LanguageService){
 
+  }
+
+  greeting: string = '';
+
+  ngOnInit() {
+    this.languageService.language$.subscribe(lang => {
+      this.greeting = this.languageService.getTranslation('greeting');
+    });
+  }
 }

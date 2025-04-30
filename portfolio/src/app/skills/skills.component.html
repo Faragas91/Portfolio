@@ -1,5 +1,5 @@
 <div class="background-color" id="skills">
-    <span>Skill set</span>
+    <span>{{ skillSet }}</span>
     <div class="skills">
       @for (skill of skills; track skill.name) {
         <div 
@@ -11,7 +11,7 @@
   
           @if (skill.name === 'Growth Mindset') {
             <div class="tooltip">
-                <span>I have a special interest in learning</span>
+                <span>{{ growthMindset }}</span>
                 <div class="tooltip-line">
                     @for (learn of wantToLearn; track learn) {
                         <div class="tooltip-language">

@@ -16,7 +16,12 @@ export class LanguageService {
     return this.languageSubject.value;
   }
 
-  translations = {
+  getTranslation(key: string): string {
+    const lang = this.languageSubject.value;
+    return this.translations[lang][key] || `Translation not found for key: ${key}`;
+  }
+
+  translations: {[key: string]: { [key:string]: string}} = {
     en: {
       navAboutMe: 'About me',
       navSkills: 'Skill set',

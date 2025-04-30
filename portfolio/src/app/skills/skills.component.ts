@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { LanguageService } from '../service/language.service';
 
 @Component({
   selector: 'app-skills',
@@ -9,6 +10,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
+  
+  constructor(private langueservice: LanguageService) {}
+
+  skillSet: string = '';
+  growthMindset: string = '';
+
   skills = [
     {
       name: 'Angular', 
@@ -83,4 +90,13 @@ export class SkillsComponent {
     },
 
   ]
+
+  ngOnInit() {
+    this.langueservice.language$.subscribe(lang => {
+      this.skillSet = this.langueservice.getTranslation('skillSet');
+      this.growthMindset = this.langueservice.getTranslation('growthMindset');
+    })
+  }
 }
+
+

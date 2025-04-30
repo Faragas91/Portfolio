@@ -1,11 +1,11 @@
 <nav>
     <ul>
-        <li><a href="#about-me">About me</a></li>
-        <li><a href="#skills">Skill set</a></li>
-        <li><a href="#my-work">My work</a></li>
+        <li><a href="#about-me">{{ navAboutMe }}</a></li>
+        <li><a href="#skills">{{ navSkills }}</a></li>
+        <li><a href="#my-work">{{ navMyWork }}</a></li>
         <div>
-            <span id="german">DE</span> /
-            <span id="english">EN</span>
+            <span (click)="switchToGerman()" id="german">DE</span> /
+            <span (click)="switchToEnglish()" id="english">EN</span>
         </div>
     </ul>
 </nav>
