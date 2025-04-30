@@ -15,12 +15,25 @@ footer {
         background-color: transparent;
         width: 100px;
         height: 100px;
-
-        &:hover {
-            cursor: pointer;
-
-        }
     }
+
+    a {
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+                transition: all 0.3s ease-in-out;
+            }
+        }
+
+    }
+
+
 }
 
 .footer-content {
@@ -31,11 +44,35 @@ footer {
     gap: 16px;
 
     a {
-        background-color: transparent;
-        text-decoration: none;
-        color: $primary-color;
-        font-size: 16px;
+      position: relative;
+      background-color: transparent;
+      text-decoration: none;
+      color: $primary-color;
+      font-size: 16px;
+      font-family: $font-family-2;
+
+      &:hover {
+        font-weight: 600;
+      }
+    
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        width: 50%;
+        height: 2px;
+        background-color: $primary-color;
+        transform: translate(-50%) scaleX(0);
+        transform-origin: left;
+        transition: transform 125ms ease-in-out;
+      }
+    
+      &:hover::after {
+        transform: translate(-50%) scaleX(1);
+      }
     }
+    
 
     p {
         background-color: transparent;

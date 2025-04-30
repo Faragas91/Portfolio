@@ -82,6 +82,11 @@
   align-items: center;
   justify-content: center;
 
+  a {
+    text-decoration: none;
+    background-color: transparent;
+  }
+
   img {
     background-color: transparent;
     width: 20px;
