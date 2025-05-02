@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LanguageService } from '../../service/language.service';
+import { ElementRef, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -13,6 +14,9 @@ export class NavbarComponent {
     
   }
 
+  @ViewChild('german') germanRef!: ElementRef;
+  @ViewChild('english') englishRef!: ElementRef;
+
   navAboutMe: string = '';
   navSkills: string = '';
   navMyWork: string = '';
@@ -23,6 +27,18 @@ export class NavbarComponent {
   
   switchToEnglish() {
     this.languageService.setLanguage('en');
+  }
+
+  ngAfterViewInit() {
+    this.languageService.language$.subscribe(lang => {
+      if (lang === 'de') {
+        this.germanRef.nativeElement.classList.add('active');
+        this.englishRef.nativeElement.classList.remove('active');
+      } else {
+        this.englishRef.nativeElement.classList.add('active');
+        this.germanRef.nativeElement.classList.remove('active');
+      }
+    });
   }
 
   ngOnInit() {

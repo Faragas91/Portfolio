@@ -5,6 +5,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     margin: 0 20px;
+    font-family: $font-family-2;
 
     ul {
         display: flex;
@@ -20,22 +21,24 @@ nav {
           
             &::after {
               content: attr(data-text);
-              font-weight: 900;
+              font-weight: 700;
               visibility: hidden;
               height: 0;
               overflow: hidden;
               display: block;
-            }
-          
-            &:hover {
-              font-weight: 900;
-              color: $secondary-color;
             }
 
             a {
                 text-decoration: none; 
                 color: $secondary-color;
                 font-size: 24px;
+                margin-left: 6.5px;
+
+                &:hover {
+                    font-weight: 700;
+                    color: $secondary-color;
+                    margin-left: 0px;
+                  }
             }
         }
     }
@@ -49,11 +52,19 @@ nav {
         span {
             &:hover {
                 cursor: pointer;
-                font-weight: 900;
+                font-weight: 700;
                 font-size: 24px;
             }
         }
     }
+}
+
+.active {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 3px;
+    text-decoration-color: $secondary-color;
 }
 
 
