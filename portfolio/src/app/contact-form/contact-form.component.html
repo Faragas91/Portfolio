@@ -52,14 +52,20 @@
           <img class="done-icon" src="/assets/contact/done.png" alt="Done">
         }
       </div>
-        <div class="custom-checkbox">
-          <input type="checkbox" id="myCheckbox">
-          <label for="myCheckbox">{{ privacyPolicy }}</label>
-        </div>
-        <button type="submit" class="submit-button">
-          {{ sayHello }}
-        </button>
-    
+      <div class="custom-checkbox">
+        <input type="checkbox" #myCheckbox="ngModel" name="privacyPolicy" [(ngModel)]="privacyPolicyChecked" required>
+        <label for="myCheckbox" [innerHTML]="privacyPolicy"></label>>
+      </div>
+      @if (!myCheckbox.valid && myCheckbox.touched && !myCheckbox.disabled) {
+        <div class="error-message">Please accept the privacy policy</div>
+      }
+      <button 
+        type="submit" 
+        class="submit-button" 
+        [disabled]="!privacyPolicyChecked"
+        [ngClass]="{ 'disabled-button': !privacyPolicyChecked, 'active-button': privacyPolicyChecked }">
+        {{ sayHello }}
+      </button>
     </form>
     <img class="ellipse-11" src="/assets/contact/Ellipse_11.png" alt="Ellipse 11">
   </div>

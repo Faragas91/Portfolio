@@ -3,11 +3,12 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LanguageService } from '../service/language.service';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [FormsModule, MatCheckboxModule],
+  imports: [FormsModule, MatCheckboxModule, NgClass],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss'
 })
@@ -25,6 +26,8 @@ export class ContactFormComponent {
   yourMessage: string = '';
   privacyPolicy: string = '';
   sayHello: string = '';
+
+  privacyPolicyChecked: boolean = false;
 
   http = inject(HttpClient);
   

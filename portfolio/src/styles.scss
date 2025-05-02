@@ -1,11 +1,15 @@
 $primary-color: #ffffff;
 $secondary-color: #5988ff;
 $speachbubble: #f2f6ff;
+$disabled-color: #bbbbbb;
+$button-hover-color: #d4e0ff;
 
 $colors: (
   'primary': $primary-color,
   'secondary': $secondary-color,
   'speachbubble': $speachbubble,
+  'disabled': $disabled-color,
+  'button-hover': $button-hover-color,
 );
 
 *{

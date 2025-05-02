@@ -239,6 +239,33 @@
   transition: all 0.35s ease;
   overflow: hidden;
   cursor: pointer;
+  margin-top: 16px;
+
+  &.disabled-button {
+    background-color: $primary-color;
+    color: $disabled-color;
+    cursor: not-allowed;
+    border: 2px solid $disabled-color;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  &.active-button {
+    border: 2px solid $secondary-color;
+    color: $secondary-color;
+    background-color: transparent;
+
+    &:hover {
+      background-color: $secondary-color;
+      color: $primary-color;
+      transform: translate(0, 0) scale(1.05);
+  
+      &::after {
+        width: 150%;
+        opacity: 0;
+      }
+    }
+  }
 
   &::after {
     content: "";
@@ -258,17 +285,6 @@
     z-index: 2;
     background-color: transparent;
   }
-
-  &:hover {
-    background-color: $secondary-color;
-    color: $primary-color;
-    transform: translate(0, 0) scale(1.05);
-
-    &::after {
-      width: 150%;
-      opacity: 0;
-    }
-  }
 }
   
 .container {
@@ -281,7 +297,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin: 10px 0 32px 0px;
+  margin: 10px 0 10px 0px;
   background-color: transparent;
   
   input[type="checkbox"] {
@@ -295,8 +311,26 @@
     position: relative;
     transition: all 0.3s ease;
   
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: rgba($secondary-color, 0.15);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  
+    &:hover::before {
+      opacity: 1;
+    }
+  
     &:checked {
-      background-color: $secondary-color;
+      background-color: $primary-color;
       border-color: $secondary-color;
     }
   
@@ -307,7 +341,7 @@
       top: 2px;
       width: 6px;
       height: 12px;
-      border: solid $primary-color;
+      border: solid $secondary-color;
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
       transition: all 0.3s ease;
@@ -319,6 +353,31 @@
     font-size: 14px;
     color: black;
     background-color: transparent;
+
+    a {
+      color: $secondary-color;
+      text-decoration: none;
+      background-color: transparent;
+    }
+  }
+}
+
+::ng-deep .custom-checkbox label a {
+  color: $secondary-color;
+  text-decoration: underline;
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 3px;
+  margin-right: 3px;
+
+  &:hover {
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: $secondary-color;
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }
 
