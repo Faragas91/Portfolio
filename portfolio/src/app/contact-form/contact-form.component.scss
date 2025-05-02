@@ -147,6 +147,17 @@
   margin-bottom: 24px;
   background-color: transparent;
 
+  .error-icon, 
+  .done-icon {
+    position: absolute;
+    top: 25px;
+    right: 16px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 2;
+    background-color: transparent;
+  }
+
   input[type="text"],
   input[type="email"],
   textarea {
@@ -208,8 +219,6 @@
   }
 }
 
-
-  
 .submit-button {
   display: flex;
   justify-content: center;
@@ -321,5 +330,7 @@
   background-color: transparent;
   font-family: $font-family-2;
 }
+
+
   
   

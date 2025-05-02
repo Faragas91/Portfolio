@@ -23,6 +23,10 @@
         <label for="name">{{ yourName }}</label>
         @if (!name.valid && name.touched && !name.disabled) {
           <div class="error-name">Your name is required</div>
+          <img class="error-icon" src="/assets/contact/error.png" alt="Error">
+        }
+        @if (name.valid && name.touched && !name.disabled) {
+          <img class="done-icon" src="/assets/contact/done.png" alt="Done">
         }
       </div>
   
@@ -30,7 +34,11 @@
         <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder=" " required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
         <label for="email">{{ yourEmail }}</label>
         @if (!email.valid && email.touched && !email.disabled) {
-          <div class="error-email">Your email is required</div>
+          <div class="error-email">Your email is required</div>  
+          <img class="error-icon" src="/assets/contact/error.png" alt="Error">
+        }
+        @if (email.valid && email.touched && !email.disabled) {
+          <img class="done-icon" src="/assets/contact/done.png" alt="Done">
         }
       </div>
       <div class="floating-label">
@@ -38,6 +46,10 @@
         <label for="message">{{ yourMessage }}</label>
         @if (!message.valid && message.touched && !message.disabled) {
             <div class="error-message">Your message is required</div>
+            <img class="error-icon" src="/assets/contact/error.png" alt="Error">
+        } 
+        @if (message.valid && message.touched && !message.disabled) {
+          <img class="done-icon" src="/assets/contact/done.png" alt="Done">
         }
       </div>
         <div class="custom-checkbox">
