@@ -113,13 +113,10 @@
   background-color: transparent;
 
   form {
-    margin-top: 230px;
+    width: 100%;
+    margin-top: 235px;
     background-color: transparent;
-  }
-
-  label {
-    background-color: transparent;
-    color: transparent;
+    position: relative;
   }
 }
 
@@ -135,8 +132,8 @@
 .ellipse-10 {
   background-color: transparent;
   position: absolute;
-  top: 55%;
-  left: 50%;
+  top: 450px;
+  left: 150px;
 }
 
 .ellipse-11 {
@@ -145,35 +142,73 @@
   background-color: transparent;
 }
 
+.floating-label {
+  position: relative;
+  margin-bottom: 24px;
+  background-color: transparent;
 
-/* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
-    width: 100%; /* Full width */
-    padding: 16px; /* Some padding */ 
-    border: 1px solid $secondary-color; /* Gray border */
-    background-color: $primary-color; /* Light gray background */
-    border-radius: 10px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 6px; /* Bottom margin */
-    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid $secondary-color;
+    background-color: $primary-color;
+    border-radius: 10px;
+    box-sizing: border-box;
+    resize: vertical;
     font-size: 16px;
     font-family: $font-family-2;
-}
+    position: relative;
 
-input[type=email], select, textarea {
-    width: 100%; /* Full width */
-    padding: 16px; /* Some padding */ 
-    border: 1px solid $secondary-color; /* Gray border */
-    background-color: $primary-color; /* Light gray background */
-    border-radius: 10px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 6px; /* Bottom margin */
-    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+    &::placeholder {
+      color: transparent;
+      background-color: $primary-color;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: $primary-color;
+    }
+
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      top: -10px;
+      left: 16px;
+      font-size: 16px;
+      background-color: $primary-color;
+      padding: 0 4px;
+      color: black;
+      border-radius: 15px;
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 2px $secondary-color;
+      cursor: pointer;
+    }
+  }
+
+  textarea:not(:placeholder-shown) + label {
+    top: -10px;
     font-size: 16px;
     font-family: $font-family-2;
+  }
+
+  label {
+    position: absolute;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+    left: 16px;
+    top: 16px;
+    font-size: 16px;
+    font-family: $font-family-2;
+    color: black;
+    background-color: transparent;
+    z-index: 1;
+  }
 }
+
+
   
 .submit-button {
   display: flex;
@@ -227,55 +262,64 @@ input[type=email], select, textarea {
   }
 }
   
-  /* Add a background color and some padding around the form */
-  .container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-  }
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
 
-  .custom-checkbox {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin: 10px 0 32px 0px;
-    background-color: transparent;
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 32px 0px;
+  background-color: transparent;
   
-    input[type="checkbox"] {
-      width: 24px;
-      height: 24px;
-      appearance: none; /* Browser Default entfernen */
-      border: 2px solid $secondary-color; /* Deine Wunschfarbe */
-      border-radius: 6px;
-      background-color: $primary-color;
-      cursor: pointer;
-      position: relative;
+  input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    appearance: none;
+    border: 2px solid $secondary-color;
+    border-radius: 6px;
+    background-color: $primary-color;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+  
+    &:checked {
+      background-color: $secondary-color;
+      border-color: $secondary-color;
+    }
+  
+    &:checked::after {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 2px;
+      width: 6px;
+      height: 12px;
+      border: solid $primary-color;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
       transition: all 0.3s ease;
-  
-      &:checked {
-        background-color: $secondary-color;
-        border-color: $secondary-color;
-      }
-  
-      &:checked::after {
-        content: "";
-        position: absolute;
-        left: 6px;
-        top: 2px;
-        width: 6px;
-        height: 12px;
-        border: solid $primary-color;
-        border-width: 0 2px 2px 0;
-        transform: rotate(45deg);
-        transition: all 0.3s ease;
       }
     }
   
-    label {
-      font-family: $font-family-2;
-      font-size: 14px;
-      color: black;
-    }
+  label {
+    font-family: $font-family-2;
+    font-size: 14px;
+    color: black;
+    background-color: transparent;
   }
+}
+
+.error-message, 
+.error-name,
+.error-email {
+  color: red;
+  font-size: 14px;
+  background-color: transparent;
+  font-family: $font-family-2;
+}
   
   

@@ -17,18 +17,29 @@
   <div class="contact-form-right-container">
     <img class="ellipse-9" src="/assets/contact/Ellipse_9.png" alt="Ellipse 9">
     <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-  
-      <label for="name">Name</label>
-      <input [(ngModel)]="contactData.name"  type="text" id="name" name="name" placeholder="{{ yourName }}" required>
-  
-      <label for="email">Email</label>
-      <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="{{ yourEmail }}" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-  
-      <label for="message">Subject</label>
-      <textarea #message="ngModel" minlength="5" [(ngModel)]="contactData.message" id="message" name="message" placeholder="{{ yourMessage }}" style="height:200px" required></textarea>
-        @if (!message.valid && message.touched && !message.disabled) {
-            <div class="error-message">Message is required</div>
+
+      <div class="floating-label">
+        <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder=" " required />
+        <label for="name">{{ yourName }}</label>
+        @if (!name.valid && name.touched && !name.disabled) {
+          <div class="error-name">Your name is required</div>
         }
+      </div>
+  
+      <div class="floating-label">
+        <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder=" " required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+        <label for="email">{{ yourEmail }}</label>
+        @if (!email.valid && email.touched && !email.disabled) {
+          <div class="error-email">Your email is required</div>
+        }
+      </div>
+      <div class="floating-label">
+        <textarea #message="ngModel" minlength="5" [(ngModel)]="contactData.message" id="message" name="message" placeholder=" " style="height:200px" required></textarea>
+        <label for="message">{{ yourMessage }}</label>
+        @if (!message.valid && message.touched && !message.disabled) {
+            <div class="error-message">Your message is required</div>
+        }
+      </div>
         <div class="custom-checkbox">
           <input type="checkbox" id="myCheckbox">
           <label for="myCheckbox">{{ privacyPolicy }}</label>
@@ -36,6 +47,7 @@
         <button type="submit" class="submit-button">
           {{ sayHello }}
         </button>
+    
     </form>
     <img class="ellipse-11" src="/assets/contact/Ellipse_11.png" alt="Ellipse 11">
   </div>
