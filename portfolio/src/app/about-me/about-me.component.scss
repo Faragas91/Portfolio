@@ -104,4 +104,10 @@
       color: black;
     }
 }
-  
+
+
+@media screen and (max-width: 1350px) {
+  .about-me {
+    padding: 32px;
+  }
+}

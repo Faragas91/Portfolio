@@ -142,5 +142,12 @@ position: relative;
 }
 
 
+@media screen and (max-width: 1350px) {
+  .skills {
+    gap: 72px;
+    padding-left: 100px;
+    padding-right:  100px;
+}
   
+}
 

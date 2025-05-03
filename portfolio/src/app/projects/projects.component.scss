@@ -34,7 +34,7 @@
         flex: 1 1 50%;
         box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.4);
         width: 620px;
-        height: 393px;
+        height: auto;
     }
 
     &:hover {
@@ -82,4 +82,23 @@
 .projects-button {
     display: flex;
     gap: 64px;
+}
+
+@media screen and (max-width: 1350px) {
+    .projects-container {
+        padding: 32px;
+        gap: 16px;
+    }
+
+    .projects-image {    
+        img {
+            flex: 1 1 50%;
+            width: 560px;
+        }
+    
+        &:hover {
+            transform: translate(0px, -10px) scale(1.05);
+        }
+    }
+
 }

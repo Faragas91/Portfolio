@@ -91,3 +91,12 @@
         font-family: $font-family-2;
     }
 }
+
+@media (max-width: 1350px) {
+    .background-color {
+        padding: 32px;
+    }
+    .colleagues {
+        gap: 4px;
+    }
+}

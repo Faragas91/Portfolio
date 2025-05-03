@@ -67,5 +67,17 @@ nav {
     text-decoration-color: $secondary-color;
 }
 
+@media screen and (max-width: 1350px) {
+    nav {
+        ul {
+            gap: 32px;
+        }
 
+        div {
+            margin-left: 0px;
+            gap: 16px;
+        }
+    }
+    
+}
 

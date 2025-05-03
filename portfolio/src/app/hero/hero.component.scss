@@ -9,9 +9,11 @@
     height: 88vh;
     z-index: 1;
     padding: 64px;
+    width: 100%;
 }
 
 .hero_container {  
+    width: 50%;
     position: relative;
     display: flex;
     height: 94.7vh;
@@ -20,24 +22,25 @@
     img {
         position: absolute;
         top: -173px;
-        left: -300px;
-        width: auto;
+        left: 0px;
+        width: 761px;
+        height: auto;
         z-index: 1;
         background-color: transparent;
     }
     .blue-circle {
         position: absolute;
         top: -196px;
-        left: -367px;
+        left: -64px;
     }
 }
 
 .headline {
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: transparent;
-    
 }
 
 .headline-line {
@@ -106,5 +109,37 @@
         &:hover {
             transform: translateX(-10px) scale(1.1);
         }
+    }
+}
+
+
+@media (max-width: 1350px) {
+    .hero {
+        padding: 32px;
+    }
+
+    .hero_container {
+        img {
+            top: -140px;
+            width: auto;
+        }
+    }
+
+    .headline-line {
+        span {
+            font-size: 88px;
+            line-height: 60px;
+        }
+        h2 {
+            font-size: 36px;
+        }
+    }
+
+    .scroll {
+        font-size: 14px;
+        margin-top: 50px;
+    }
+        .scroll-line {
+            height: 54.6vh !important;
     }
 }
