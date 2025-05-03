@@ -95,10 +95,14 @@
             flex: 1 1 50%;
             width: 560px;
         }
-    
-        &:hover {
-            transform: translate(0px, -10px) scale(1.05);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .projects-image {    
+        img {
+            flex: 1 1 50%;
+            width: 400px;
         }
     }
-
 }

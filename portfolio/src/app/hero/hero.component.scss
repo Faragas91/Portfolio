@@ -131,8 +131,14 @@
 
     .hero_container {
         img {
-            top: -140px;
-            width: auto;
+            top: -66px;
+            left: -70px;
+            width: 700px;
+        }
+
+        .blue-circle {
+            width: 550px;
+            height: auto;
         }
     }
 
@@ -154,3 +160,4 @@
             height: 54.6vh !important;
     }
 }
+
