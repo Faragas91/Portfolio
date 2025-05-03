@@ -112,6 +112,17 @@
     }
 }
 
+@media screen and (max-width: 1600px) {
+    .headline-line {
+        span {
+            font-size: 96px;
+            line-height: 70px;
+        }
+        h2 {
+            font-size: 40px;
+        }
+    }
+}
 
 @media (max-width: 1350px) {
     .hero {
