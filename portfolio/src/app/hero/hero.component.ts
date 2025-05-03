@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { LanguageService } from './../service/language.service';
+import { HeaderComponent } from '../shared/header/header.component';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [],
+  imports: [ HeaderComponent ],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })
