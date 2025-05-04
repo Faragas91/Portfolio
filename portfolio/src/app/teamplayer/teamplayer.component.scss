@@ -1,6 +1,6 @@
 @import './../../styles.scss';
 
-.background-color {
+.teamplayer-main-container {
     background: linear-gradient(135deg, #5988ff, #0044ff);
     flex: 1 1 auto;
     display: flex;
@@ -93,10 +93,51 @@
 }
 
 @media (max-width: 1350px) {
-    .background-color {
+    .teamplayer-main-container {
         padding: 32px;
+        gap: 16px;
     }
     .colleagues {
         gap: 4px;
     }
+}
+
+@media screen and (max-width: 600px) {
+    .teamplayer-main-container {
+        padding: 16px;
+        gap: 8px;
+    }    
+
+    .teamplayer-container {
+        h2 {
+            font-size: 36px;
+        }
+        span {
+            font-size: 16px;
+        }
+    }
+
+    .colleagues { 
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .teamplayer-container {
+        h2 {
+            font-size: 28px;
+        }
+        span {
+            font-size: 14px;
+        }
+    }
+
+    .colleague { 
+        min-width: 280px;
+        max-width: 320px;
+        .colleague-description {
+            font-size: 14px;
+        }
+    }
+
 }
