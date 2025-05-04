@@ -9,6 +9,8 @@ import { TeamplayerComponent } from "./teamplayer/teamplayer.component";
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { LanguageService } from './service/language.service';
+import { PrivacyPolicyComponent } from './shared/privacy-policy/privacy-policy.component';
+import { LegalNoticeComponent } from './shared/legal-notice/legal-notice.component';
 
 @Component({
   selector: 'app-root',
