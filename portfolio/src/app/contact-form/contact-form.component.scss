@@ -50,7 +50,7 @@
   .contact-me {
     display: flex;
     align-items: center;
-    gap: 8px; 
+    gap: 16px; 
     font-family: $font-family-1;
     color: $secondary-color;
     margin-bottom: 16px;
@@ -417,7 +417,6 @@
         font-size: 16px;
       }
       .contact-me {
-        gap: 4px;
         span {
           font-size: 14px;
         }
@@ -452,3 +451,9 @@
     bottom: 32px;
   }
 } 
+
+@media screen and (max-width: 768px) {
+  .contact-form-main-container {
+    padding: 16px;
+  }
+}
