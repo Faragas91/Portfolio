@@ -29,9 +29,9 @@
 
 .projects-image {
     transition: transform 0.3s ease-in-out;
+    width: 50%;
 
     img {
-        flex: 1 1 50%;
         box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.4);
         width: 620px;
         height: auto;
@@ -43,7 +43,7 @@
 }
 
 .projects-info {
-    flex: 1 1 50%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -86,23 +86,75 @@
 
 @media screen and (max-width: 1350px) {
     .projects-container {
-        padding: 32px;
         gap: 16px;
     }
 
     .projects-image {    
         img {
-            flex: 1 1 50%;
-            width: 560px;
+            width: 100%;
+            height: auto;
         }
     }
 }
 
-@media screen and (max-width: 1200px) {
-    .projects-image {    
-        img {
-            flex: 1 1 50%;
-            width: 400px;
+@media screen and (max-width: 1024px) {
+    .projects-container {
+        padding: 32px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &.reverse {
+            flex-direction: column;
+            text-align: center;
+
+            .projects-info {
+                align-items: center;
+              }
+          
+              .projects-text {
+                align-items: center;
+                gap: 16px;
+                 
+                h2 {
+                    line-height: 1.2;
+                }
+              }
+          
+              .projects-button {
+                justify-content: center;
+              }
         }
+    }
+    
+    .projects-image {
+        width: 100%;
+        &:hover {
+            transform: translate(0px, -5px) scale(1.05);
+        }
+    }
+    .projects-info {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .projects-text {
+        gap: 16px;
+        h2 {
+            line-height: 1.2;
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .projects-button {
+        gap: 32px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .projects-button {
+        gap: 16px;
     }
 }

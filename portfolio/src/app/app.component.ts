@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./shared/header/header.component";
 import { HeroComponent } from "./hero/hero.component";
 import { AboutMeComponent } from "./about-me/about-me.component";
 import { SkillsComponent } from "./skills/skills.component";
@@ -18,7 +17,6 @@ import { LanguageService } from './service/language.service';
   imports: [
     CommonModule,
     RouterOutlet,
-    HeaderComponent,
     HeroComponent,
     AboutMeComponent,
     SkillsComponent,
