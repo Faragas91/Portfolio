@@ -8,13 +8,16 @@
     gap: 64px;
     padding: 64px 0 64px 0;
     width: 100%;
+    background-color: transparent;
 
     &.reverse {
         flex-direction: row-reverse;
         text-align: right;
+        
     
         .projects-info {
           align-items: flex-end;
+          background-color: transparent;
         }
     
         .projects-text {
@@ -30,6 +33,7 @@
 .projects-image {
     transition: transform 0.3s ease-in-out;
     width: 50%;
+    background-color: transparent;
 
     img {
         box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.4);
@@ -49,12 +53,14 @@
     flex-wrap: wrap;
     gap: 24px;
     margin: 16px;
+    background-color: transparent;
 
     h2{
         font-family: $font-family-1;
         font-size: 48px;
         font-weight: 900;
         color: $secondary-color;
+        background-color: transparent;
     }
 
     span {
@@ -62,6 +68,7 @@
         font-size: 24px;
         font-weight: 400;
         color: $secondary-color;
+        background-color: transparent;
     }
 
     p {
@@ -69,14 +76,19 @@
         font-size: 16px;
         font-weight: 400;
         color: black;
+        background-color: transparent;
     }
   }
   
+.tech-stack {
+    background-color: transparent;
+}
 
 .projects-text {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    background-color: transparent;
 }
 
 .projects-button {

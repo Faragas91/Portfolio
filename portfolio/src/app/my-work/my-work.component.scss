@@ -7,6 +7,31 @@
     align-items: flex-start;
     width: 100%;
     padding: 64px;
+    position: relative;
+  }
+
+  .ellipse-5 {
+    position: absolute;
+    top: 620px;
+    left: 0;
+  }
+
+  .ellipse-6 {
+    position: absolute;
+    top: 1350px;
+    left: 50px;
+  }
+
+  .ellipse-7 {
+    position: absolute;
+    top: 920px;
+    right: 0;
+  }
+
+  .ellipse-8 {
+    position: absolute;
+    top: 1820px;
+    left: 150px;
   }
   
   .my-work-text {
@@ -57,6 +82,18 @@
     .my-work {
       padding: 32px;
     }
+
+    .ellipse-8 {
+      top: 1500px;
+      left: 0px;
+    }
+}
+
+@media (max-width: 1200px) {
+  .ellipse-7 {
+    width: 300px;
+    height: auto;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -78,6 +115,14 @@
       font-size: 20px;
     }
   }
+  .ellipse-7 {
+    top: 1100px;
+    right: 0;
+  }
+
+  .ellipse-8 {
+    top: 2000px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -96,4 +141,41 @@
     } 
   }
 
+  .ellipse-5 {
+    top: 300px;
+    left: 0;
+  }
+
+  .ellipse-6 {
+    display: none;
+  }
+
+  .ellipse-7 {
+    top: 1000px;
+    right: 0;
+  }
+
+  .ellipse-8 {
+    top: 1800px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .ellipse-5 {
+    width: 100px;
+    height: auto;
+    top: 300px;
+    left: 0;
+  }
+
+  .ellipse-7 {
+    top: 900px;
+    right: 0;
+  }
+
+  .ellipse-8 {
+    top: 1700px;
+    left: -100px;
+  }
 }
