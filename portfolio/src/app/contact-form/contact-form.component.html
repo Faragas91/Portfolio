@@ -10,14 +10,9 @@
       </div>
       <img class="ellipse-10" src="/assets/contact/Ellipse_10.png" alt="Ellipse 10">
     </div>
-    <button class="scroll-top-button">
-      <a href="#header"><img src="/assets/contact/scroll-top.png" alt="Scroll to top"></a>
-    </button>
   </div>
   <div class="contact-form-right-container">
-    <img class="ellipse-9" src="/assets/contact/Ellipse_9.png" alt="Ellipse 9">
     <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-
       <div class="floating-label">
         <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder=" " required />
         <label for="name">{{ yourName }}</label>
@@ -69,6 +64,10 @@
     </form>
     <img class="ellipse-11" src="/assets/contact/Ellipse_11.png" alt="Ellipse 11">
   </div>
+  <img class="ellipse-9" src="/assets/contact/Ellipse_9.png" alt="Ellipse 9">
+  <button class="scroll-top-button">
+    <a href="#header"><img src="/assets/contact/scroll-top.png" alt="Scroll to top"></a>
+  </button>
 </div>
 
 

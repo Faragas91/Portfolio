@@ -6,6 +6,7 @@
   background: linear-gradient(179.99deg, #FFFFFF 12.89%, #EAF0FF 91.39%);
   width: 100%;
   padding: 64px;
+  position: relative;
 }
 
 .contact-form-left-container {
@@ -14,7 +15,6 @@
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background-color: transparent;
 
   .contact-text {
@@ -72,15 +72,14 @@
 }
 
 .scroll-top-button {
+  position: absolute;
+  bottom: 64px;
   width: 39px;
   height: 39px;
   background: linear-gradient(135deg, #5988ff, #0044ff);
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   a {
     text-decoration: none;
@@ -123,8 +122,8 @@
 .ellipse-9 {
   background-color: transparent;
   position: absolute;
-  top: 0%;
-  left: 15%;
+  top: 50px;
+  right: 25%;
   width: 131px;
   height: 131px;
 }
@@ -301,8 +300,8 @@
   background-color: transparent;
   
   input[type="checkbox"] {
-    width: 24px;
-    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
     appearance: none;
     border: 2px solid $secondary-color;
     border-radius: 6px;
@@ -396,4 +395,60 @@
     padding: 32px;
   }
 }
-  
+
+@media screen and (max-width: 1024px) {
+  .contact-form-main-container {
+    flex-direction: column;
+  }
+
+  .contact-form-left-container {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 32px;
+
+    .contact-text {
+      h2 {
+        font-size: 45px;
+      }
+      h3 {
+        font-size: 24px;
+      }
+      h4 {
+        font-size: 16px;
+      }
+      .contact-me {
+        gap: 4px;
+        span {
+          font-size: 14px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .contact-form-right-container {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+
+    form {
+      margin-top: 0px;
+      margin-bottom: 64px;
+    }
+  }
+
+  .ellipse-9 {
+    width: 69px;
+    height: 69px;
+    right: 10%;
+  }
+
+  .ellipse-10 {
+    display: none;
+  }
+  .scroll-top-button {
+    bottom: 32px;
+  }
+} 
