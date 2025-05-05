@@ -5,7 +5,6 @@ import { SkillsComponent } from "./../skills/skills.component";
 import { MyWorkComponent } from "./../my-work/my-work.component";
 import { TeamplayerComponent } from "./../teamplayer/teamplayer.component";
 import { ContactFormComponent } from './../contact-form/contact-form.component';
-import { FooterComponent } from './../shared/footer/footer.component';
 import { LanguageService } from './../service/language.service';
 
 @Component({
@@ -13,7 +12,13 @@ import { LanguageService } from './../service/language.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [HeroComponent, AboutMeComponent, SkillsComponent, MyWorkComponent, TeamplayerComponent, ContactFormComponent, FooterComponent]
+  imports: [
+    HeroComponent, 
+    AboutMeComponent, 
+    SkillsComponent, 
+    MyWorkComponent, 
+    TeamplayerComponent, 
+    ContactFormComponent]
 })
 export class HomeComponent {
   colleagues: any[] = [];
