@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-legal-notice',
-  standalone: true,
-  imports: [],
   templateUrl: './legal-notice.component.html',
-  styleUrl: './legal-notice.component.scss'
+  styleUrls: ['./legal-notice.component.scss']
 })
 export class LegalNoticeComponent {
+  constructor(private location: Location) {}
 
+  goBack() {
+    this.location.back();
+  }
 }
+
