@@ -1,40 +1,171 @@
-.privacyPolicy-container{
-    max-width: 1440px;
-    margin: auto;
-    text-align: center;
-}
+@import '../../../styles.scss';
 
-.privacyPolicy-container li {
-    list-style: none;
-}
+.privacy-policy-container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 96px 48px 64px;
+  background: linear-gradient(180deg, #ffffff 0%, #f2f6ff 100%);
+  color: $secondary-color;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 
-ul {
-    margin-bottom: 32px;
-}
+  .back-button {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    border: 2px solid $secondary-color;
+    background: transparent;
+    color: $secondary-color;
+    padding: 10px 30px;
+    font-size: 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: $font-family-1;
 
-@media  (max-width: 1000px) {
-
-    .privacyPolicy-container {
-        padding: 32px 40px 32px 40px;
-    }
-}
-
-@media (max-width: 800px) {
-
-    .privacyPolicy-container{
-        padding-bottom: 128px;
-    }
-}
-
-@media (max-width: 471px) {
-
-    .privacyPolicy-container {
-        padding: 32px 2px 0px 2px;
-        font-size: 16px;
+    span {
+      font-weight: 600;
+      background-color: transparent;
     }
 
-    .privacyPolicy-container h1 {
-        font-size: 64px;
+    &:hover {
+      background: $secondary-color;
+      color: #fff;
+    }
+  }
+
+  .privacy-policy-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-size: 18px;
+    line-height: 1.6;
+    background-color: transparent;
+
+    h1 {
+      font-size: 96px;
+      font-family: $font-family-1;
+      margin-bottom: 24px;
+      color: $secondary-color;
+      background-color: transparent;
+      text-align: center;
     }
 
+    h2 {
+      font-size: 48px;
+      font-family: $font-family-1;
+      margin-bottom: 16px;
+      color: $secondary-color;
+      background-color: transparent;
+    }
+
+    h3 {
+      font-size: 36px;
+      font-family: $font-family-1;
+      margin-bottom: 16px;
+      color: $secondary-color;
+      background-color: transparent;
+    }
+
+    p {
+      background: transparent;
+    }
+
+    a {
+      color: $secondary-color;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+      background-color: transparent;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    ul {
+      margin-bottom: 32px;
+      list-style: none;
+      background-color: transparent;
+
+      li {
+        margin-bottom: 16px;
+        background-color: transparent;
+        font-size: 18px;
+        line-height: 1.6;
+        color: $secondary-color;
+
+        &:before {
+          content: '•';
+          color: $secondary-color;
+          font-weight: bold;
+          display: inline-block;
+          width: 1em;
+          margin-left: 16px;
+          background-color: transparent;
+        }
+      }
+    }
+
+    strong {
+      font-weight: 600;
+      background-color: transparent;
+    }
+  }
+}
+
+// Responsive Breakpoints
+@media (max-width: 768px) {
+  .privacy-policy-container {
+    padding: 80px 24px;
+
+    .back-button {
+      top: 24px;
+      right: 24px;
+      font-size: 16px;
+    }
+
+    .privacy-policy-text {
+      h1 {
+        font-size: 48px;
+      }
+
+      h2 {
+        font-size: 36px;
+      }
+
+      h3 {
+        font-size: 24px;
+      }
+
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-policy-container {
+    padding: 72px 16px;
+
+    .privacy-policy-text 
+    
+    h1 {
+      font-size: 36px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+
+    .back-button {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+  }
 }

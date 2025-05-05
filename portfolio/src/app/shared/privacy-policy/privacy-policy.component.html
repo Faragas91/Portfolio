@@ -1,23 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="google" content="notranslate" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datenschutzerklärung</title>
-
-</head>
-
-<body class="font">
-    <div class="privacyPolicy-container font" id="privacy-policy">
-        <button class="backbutton" onclick="window.history.back()">
-            <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#1f1f1f">
-                <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"
-                />
-            </svg>
-        </button>
-        <h1 class="title" >Privacy Policy</h1>
-        <p>As of March 26, 2025</p>
+<div class="privacy-policy-container">
+    <button class="back-button" (click)="goBack()">
+        <span>Back</span>
+    </button>
+    <div class="privacy-policy-text">
+        <h1>Privacy Policy</h1>
+        <p>As of Mai 05, 2025</p>
 
         <h2>Content Overview</h2>
         <ul class="index">
@@ -109,25 +96,25 @@
         <p>Data that is no longer needed for the original intended purpose but is retained due to legal requirements or other reasons will be processed solely for the purposes that justify its retention.</p>
         <p><strong>Further information on processing operations, procedures, and services:</strong></p>
         <ul class="m-elements">
-        <li><strong>Retention and deletion of data:</strong> The following general retention periods apply under Austrian law for retention and archiving:
-            <ul>
-            <li>10 years - Retention period for books and records, annual financial statements, inventories, management reports, opening balances, accounting documents, and invoices as well as all necessary work instructions and other organizational documents (Federal Tax Code (BAO §132), Commercial Code (UGB §§190-212)).</li>
-            <li>6 years - Other business documents: Received commercial or business letters, copies of sent commercial or business letters, and other documents relevant for tax purposes. These include, for example, hourly wage records, business calculation sheets, calculation documents, price lists, and payroll documents, unless they are already accounting documents and cash register receipts (Federal Tax Code (BAO §132), Commercial Code (UGB §§190-212)).</li>
-            <li>3 years - Data required to consider potential warranty and compensation claims or similar contractual claims and rights and associated inquiries, based on past business experience and customary industry practices, are stored for the duration of the regular statutory limitation period of three years (§§ 1478, 1480 ABGB).</li>
-            </ul>
-        </li>
+            <li><strong>Retention and deletion of data:</strong> The following general retention periods apply under Austrian law for retention and archiving:
+                <ul>
+                <li>10 years - Retention period for books and records, annual financial statements, inventories, management reports, opening balances, accounting documents, and invoices as well as all necessary work instructions and other organizational documents (Federal Tax Code (BAO §132), Commercial Code (UGB §§190-212)).</li>
+                <li>6 years - Other business documents: Received commercial or business letters, copies of sent commercial or business letters, and other documents relevant for tax purposes. These include, for example, hourly wage records, business calculation sheets, calculation documents, price lists, and payroll documents, unless they are already accounting documents and cash register receipts (Federal Tax Code (BAO §132), Commercial Code (UGB §§190-212)).</li>
+                <li>3 years - Data required to consider potential warranty and compensation claims or similar contractual claims and rights and associated inquiries, based on past business experience and customary industry practices, are stored for the duration of the regular statutory limitation period of three years (§§ 1478, 1480 ABGB).</li>
+                </ul>
+            </li>
         </ul>
 
         <h2 id="m10">Rights of the Data Subjects</h2>
         <p>Rights of data subjects under the GDPR: As a data subject, you are entitled to various rights under the GDPR, particularly those outlined in Articles 15 to 21 GDPR:</p>
         <ul>
-        <li><strong>Right to object:</strong> You have the right, for reasons arising from your particular situation, to object at any time to the processing of personal data concerning you, which is carried out pursuant to Art. 6 Para. 1 lit. e or f GDPR; this also applies to profiling based on these provisions. If your personal data is processed for direct marketing purposes, you have the right to object at any time to the processing of your personal data for such marketing purposes; this also applies to profiling, insofar as it is related to such direct marketing.</li>
-        <li><strong>Right to withdraw consent:</strong> You have the right to withdraw any consent you have given at any time.</li>
-        <li><strong>Right of access:</strong> You have the right to request confirmation as to whether data concerning you is being processed and to receive information about this data as well as additional details and a copy of the data in accordance with legal provisions.</li>
-        <li><strong>Right to rectification:</strong> You have the right, in accordance with legal provisions, to request the completion of data concerning you or the rectification of incorrect data concerning you.</li>
-        <li><strong>Right to erasure and restriction of processing:</strong> You have the right, in accordance with legal provisions, to demand that data concerning you be deleted immediately or, alternatively, to request restriction of the processing of the data in accordance with legal provisions.</li>
-        <li><strong>Right to data portability:</strong> You have the right to receive data concerning you that you have provided to us in a structured, commonly used, and machine-readable format, or to request its transfer to another controller, in accordance with legal provisions.</li>
-        <li><strong>Right to lodge a complaint with a supervisory authority:</strong> You have the right, without prejudice to any other administrative or judicial remedy, to lodge a complaint with a supervisory authority, particularly in the Member State of your habitual residence, place of work, or place of the alleged infringement, if you consider that the processing of personal data concerning you infringes the GDPR.</li>
+            <li><strong>Right to object:</strong> You have the right, for reasons arising from your particular situation, to object at any time to the processing of personal data concerning you, which is carried out pursuant to Art. 6 Para. 1 lit. e or f GDPR; this also applies to profiling based on these provisions. If your personal data is processed for direct marketing purposes, you have the right to object at any time to the processing of your personal data for such marketing purposes; this also applies to profiling, insofar as it is related to such direct marketing.</li>
+            <li><strong>Right to withdraw consent:</strong> You have the right to withdraw any consent you have given at any time.</li>
+            <li><strong>Right of access:</strong> You have the right to request confirmation as to whether data concerning you is being processed and to receive information about this data as well as additional details and a copy of the data in accordance with legal provisions.</li>
+            <li><strong>Right to rectification:</strong> You have the right, in accordance with legal provisions, to request the completion of data concerning you or the rectification of incorrect data concerning you.</li>
+            <li><strong>Right to erasure and restriction of processing:</strong> You have the right, in accordance with legal provisions, to demand that data concerning you be deleted immediately or, alternatively, to request restriction of the processing of the data in accordance with legal provisions.</li>
+            <li><strong>Right to data portability:</strong> You have the right to receive data concerning you that you have provided to us in a structured, commonly used, and machine-readable format, or to request its transfer to another controller, in accordance with legal provisions.</li>
+            <li><strong>Right to lodge a complaint with a supervisory authority:</strong> You have the right, without prejudice to any other administrative or judicial remedy, to lodge a complaint with a supervisory authority, particularly in the Member State of your habitual residence, place of work, or place of the alleged infringement, if you consider that the processing of personal data concerning you infringes the GDPR.</li>
         </ul>
 
         <h2 id="m317">Business Services</h2>
@@ -174,6 +161,5 @@
             <li><strong>Legal Bases:</strong> Legitimate interests (Art. 6(1)(1)(f) GDPR). Consent (Art. 6(1)(1)(a) GDPR).</li>
         </ul>
         <p><strong>Further Notes on Processing Activities, Procedures</strong></p>
-    </div> 
-</body>
-</html>
+    </div>
+</div> 

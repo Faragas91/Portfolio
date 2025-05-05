@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./legal-notice.component.scss']
 })
 export class LegalNoticeComponent {
-  constructor(private location: Location, private router: Router) {}
+  constructor(private router: Router) {}
 
   goBack() {
       this.router.navigate(['/']);

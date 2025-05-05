@@ -4,11 +4,17 @@ import { HttpClient } from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LanguageService } from '../service/language.service';
 import { NgClass } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [FormsModule, MatCheckboxModule, NgClass],
+  imports: [
+    FormsModule, 
+    MatCheckboxModule, 
+    NgClass, 
+    RouterLink,
+  ],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss'
 })
@@ -24,7 +30,9 @@ export class ContactFormComponent {
   yourName: string = '';
   yourEmail: string = '';
   yourMessage: string = '';
-  privacyPolicy: string = '';
+  privacyPolicyText1: string = '';
+  privacyPolicyLink: string = '';
+  privacyPolicyText2: string = '';
   sayHello: string = '';
 
   privacyPolicyChecked: boolean = false;
@@ -79,7 +87,9 @@ export class ContactFormComponent {
       this.yourName = this.languageService.getTranslation('yourName');
       this.yourEmail = this.languageService.getTranslation('yourEmail');
       this.yourMessage = this.languageService.getTranslation('yourMessage');
-      this.privacyPolicy = this.languageService.getTranslation('privacyPolicy');
+      this.privacyPolicyText1 = this.languageService.getTranslation('privacyPolicyText1');
+      this.privacyPolicyLink = this.languageService.getTranslation('privacyPolicyLink');
+      this.privacyPolicyText2 = this.languageService.getTranslation('privacyPolicyText2');
       this.sayHello = this.languageService.getTranslation('sayHello');
     })
   }

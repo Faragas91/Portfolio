@@ -49,7 +49,13 @@
       </div>
       <div class="custom-checkbox">
         <input type="checkbox" #myCheckbox="ngModel" name="privacyPolicy" [(ngModel)]="privacyPolicyChecked" required>
-        <label for="myCheckbox" [innerHTML]="privacyPolicy"></label>>
+        <label for="myCheckbox">
+          {{ privacyPolicyText1 }}
+          <a [routerLink]="'/privacy-policy'" target="_blank" rel="noopener noreferrer">
+            {{ privacyPolicyLink }}
+          </a>
+          {{ privacyPolicyText2 }}
+        </label>
       </div>
       @if (!myCheckbox.valid && myCheckbox.touched && !myCheckbox.disabled) {
         <div class="error-message">Please accept the privacy policy</div>
