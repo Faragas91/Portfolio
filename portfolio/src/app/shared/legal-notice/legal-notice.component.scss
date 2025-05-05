@@ -1,4 +1,4 @@
-.impressum__container {
+.impressum-container {
     max-width: 1440px;
     margin: auto;
     text-align: center;
@@ -6,26 +6,26 @@
 
 @media  (max-width: 1000px) {
 
-    .impressum__container {
+    .impressum-container {
         padding: 136px 40px 32px 40px;
     }
 }
 
 @media (max-width: 800px) {
 
-    .impressum__container {
+    .impressum-container {
         padding-bottom: 128px;
     }
 }
 
 @media (max-width: 471px) {
 
-    .impressum__container {
+    .impressum-container {
         padding: 136px 2px 136px 2px;
         font-size: 16px;
     }
 
-    .impressum__container h1 {
+    .impressum-container h1 {
         font-size: 64px;
     }
 }
