@@ -5,6 +5,8 @@
     background: linear-gradient(179.99deg, #FFFFFF 12.89%, #EAF0FF 91.39%);
     height: 100vh;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .hero-container {  
@@ -14,7 +16,7 @@
     background-color: transparent;
     justify-content: space-around;
     padding: 0px 64px 0px 64px;
-    height: 85.6vh;
+    height: 100%;
 }
 
 .hero-left-container {
@@ -43,6 +45,7 @@
     align-items: center;
     background-color: transparent;
     position: relative;
+    height: 100%;
 }
 
 .headline-line {
@@ -82,7 +85,7 @@
   
     .scroll-line {
         width: 2px;
-        height: 388px;
+        height: 542px;
         background-color: $secondary-color;
         margin-top: 10px;
     }
@@ -129,7 +132,7 @@
         }
     }
     .scroll-line {
-        height: 467px !important;
+        height: 641px !important;
     }
 
     .blue-circle {
@@ -150,7 +153,7 @@
     }
 
     .scroll-line {
-        height: 492px !important;
+        height: 671px !important;
     }
 }
 
