@@ -98,7 +98,7 @@
 .social-icons {
     position: absolute;
     right: 0px;
-    bottom: 32px;
+    bottom: 188px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -138,6 +138,10 @@
     .blue-circle {
         width: 600px;
         height: auto;
+    }
+    
+    .social-icons {
+        bottom: 136px;
     }
 }
 
