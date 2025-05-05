@@ -48,4 +48,8 @@ export class NavbarComponent {
       this.navMyWork = this.languageService.getTranslation('navMyWork');
     })
   }
+
+  toggleHamburgerMenu(){
+    
+  }
 }
