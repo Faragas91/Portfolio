@@ -117,6 +117,23 @@
     }
 }
 
+.scroll-down {
+    display: none;
+    .scroll-down-text {
+        font-family: $font-family-2;
+        font-size: 24px;
+        color: $secondary-color;
+        background-color: transparent;
+        padding: 5px;
+    }
+
+    .scroll-down-arrow{
+        width: 24px;
+        height: 24px;
+        background-color: transparent;
+    }
+}
+
 @media (max-width: 1350px) {
     .hero-container {
         padding: 0px 32px 0px 32px;
@@ -206,6 +223,18 @@
     .blue-circle {
         width: 750px;
         height: auto;
+    }
+
+    .scroll-down {
+        display: flex;
+        background-color: transparent;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 186px;
+        right: -132px;
+        transform: rotate(90deg);
+        transform-origin: left center;
     }
 }
 
