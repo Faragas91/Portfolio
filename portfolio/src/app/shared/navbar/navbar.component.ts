@@ -20,6 +20,7 @@ export class NavbarComponent {
   navAboutMe: string = '';
   navSkills: string = '';
   navMyWork: string = '';
+  isMenuOpen: boolean = false;
 
   switchToGerman() {
     this.languageService.setLanguage('de');
@@ -50,6 +51,6 @@ export class NavbarComponent {
   }
 
   toggleHamburgerMenu(){
-    
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }
