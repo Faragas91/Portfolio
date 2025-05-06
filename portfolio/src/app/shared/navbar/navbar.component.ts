@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LanguageService } from '../../service/language.service';
-import { ElementRef, ViewChild} from '@angular/core';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -14,13 +14,14 @@ export class NavbarComponent {
     
   }
 
-  @ViewChild('german') germanRef!: ElementRef;
-  @ViewChild('english') englishRef!: ElementRef;
-
   navAboutMe: string = '';
   navSkills: string = '';
   navMyWork: string = '';
+  navContact: string = '';
+  currentLanguage: string = 'en';
   isMenuOpen: boolean = false;
+  hamburgerFrame: number = 0;
+  animationInterval: any = null;
 
   switchToGerman() {
     this.languageService.setLanguage('de');
@@ -30,27 +31,39 @@ export class NavbarComponent {
     this.languageService.setLanguage('en');
   }
 
-  ngAfterViewInit() {
-    this.languageService.language$.subscribe(lang => {
-      if (lang === 'de') {
-        this.germanRef.nativeElement.classList.add('active');
-        this.englishRef.nativeElement.classList.remove('active');
-      } else {
-        this.englishRef.nativeElement.classList.add('active');
-        this.germanRef.nativeElement.classList.remove('active');
-      }
-    });
-  }
 
   ngOnInit() {
     this.languageService.language$.subscribe(lang => {
+      this.currentLanguage = lang;
       this.navAboutMe = this.languageService.getTranslation('navAboutMe');
       this.navSkills = this.languageService.getTranslation('navSkills');
       this.navMyWork = this.languageService.getTranslation('navMyWork');
+      this.navContact = this.languageService.getTranslation('navContact');
     })
   }
 
-  toggleHamburgerMenu(){
-    this.isMenuOpen = !this.isMenuOpen;
+  toggleHamburgerMenu() {
+    if (this.isMenuOpen) {
+      let frame = 3;
+      this.animationInterval = setInterval(() => {
+        this.hamburgerFrame = frame;
+        frame--;
+        if (frame < 0) {
+          clearInterval(this.animationInterval);
+          this.isMenuOpen = false;
+        }
+      }, 100);
+    } else {
+      let frame = 0;
+      this.isMenuOpen = true;
+      this.animationInterval = setInterval(() => {
+        this.hamburgerFrame = frame;
+        frame++;
+        if (frame > 3) {
+          clearInterval(this.animationInterval);
+        }
+      }, 100);
+    }
   }
+  
 }

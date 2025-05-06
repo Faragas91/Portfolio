@@ -64,48 +64,126 @@ nav {
 }
 
 .hamburger-menu {
+    display: none;
+    color: $secondary-color;
+    background-color: transparent;
+    border: none;
     cursor: pointer;
-    width: 40px;
-    height: 40px;
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 2001;
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
 }
 
 .side-menu {
-    position: fixed;
-    top: 0;
-    right: -260px;
-    width: 260px;
-    height: 100vh;
-    background-color: #fff;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.3);
-    transition: right 0.3s ease-in-out;
-    z-index: 2000;
-    padding: 20px;
-    display: flex;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        179.99deg, 
+        rgba(255, 255, 255, 0.7) 12.89%, 
+        rgba(234, 240, 255, 0.7) 91.39%, 
+        );
+    z-index: 9999;
+    padding-top: 60px;
+    text-align: center;
+
+    ul {
+        position: absolute;
+        left: 50%;
+        top: 35%;
+        list-style-type: none;
+        padding: 0;
+        background-color: transparent;
+
+        li {
+            font-size: 24px;
+            margin-bottom: 20px;
+            background-color: transparent;
+
+            a {
+                font-size: 24px;
+                color: $secondary-color;
+                text-decoration: none;
+                background-color: transparent;
+
+                &:hover {
+                    font-weight: 700;
+                    color: $secondary-color;
+                }
+            }
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            font-size: 24px;
+            gap: 8px;
+            background-color: transparent;
+            color: $secondary-color;
+    
+            span {
+                background-color: transparent;
+                &:hover {
+                    cursor: pointer;
+                    font-weight: 700;
+                    font-size: 24px;
+                }
+            }
+        }
+    }
 }
-  
-.side-menu.open {
-    right: 0;
+
+.side-menu-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: transparent;
+    color: #5988ff;
+    font-size: 24px;
+    margin-bottom: 20px;
+
+    .logo {
+        position: absolute;
+        top: 0px;
+        left: 32px;
+        width: 80px;
+        height: 80px;
+        background-color: transparent;
+        z-index: 2;
+        filter: brightness(0) saturate(100%) invert(34%) sepia(80%) saturate(1942%) hue-rotate(208deg) brightness(97%) contrast(98%);
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+            transition: all 0.3s ease-in-out;
+        }
+    }
+    .close-icon {
+        position: absolute;
+        top: -3px;
+        right: -5px;
+        width: 42px;
+        height: auto;
+        background-color: transparent;
+    }
 }
 
-
-
-.active {
+.language-active {
     font-weight: 700;
     text-decoration: underline;
     text-underline-offset: 4px;
     text-decoration-thickness: 3px;
     text-decoration-color: $secondary-color;
+}
+
+.side-menu.open {
+    transform: translateX(0);
 }
 
 @media screen and (max-width: 1600px) {
@@ -151,6 +229,12 @@ nav {
 @media screen and (max-width: 1150px) {
     nav {
         display: none;
+    }
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
     }
 }
 

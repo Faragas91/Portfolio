@@ -4,14 +4,37 @@
         <li><a href="#skills">{{ navSkills }}</a></li>
         <li><a href="#my-work">{{ navMyWork }}</a></li>
         <div>
-            <span (click)="switchToGerman()" #german>DE</span> /
-            <span (click)="switchToEnglish()" #english>EN</span>
+            <span (click)="switchToGerman()" [class.language-active]="currentLanguage === 'de'">DE</span> /
+            <span (click)="switchToEnglish()" [class.language-active]="currentLanguage === 'en'">EN</span>
         </div>
     </ul>
 </nav>
-<div class="hamburger-menu" (click)="toggleHamburgerMenu()">
-    <img src="/assets/header/hamburger_0.png">
-    <!-- <img src="/assets/header/hamburger_1.png">
-    <img src="/assets/header/hamburger_2.png">
-    <img src="/assets/header/hamburger_3.png"> -->
+<div (click)="toggleHamburgerMenu()">
+    <img class="hamburger-menu" src="/assets/header/hamburger_0.png">
 </div>
+
+<!-- Mobile Menu -->
+<div class="side-menu" [class.open]="isMenuOpen">
+    <div class="side-menu-header">
+        <div>
+            <a href="#header"><img href="#header" class="logo" src="/assets/general/logo.png" alt="Logo"></a>
+        </div>
+        <div class="hamburger-menu" (click)="toggleHamburgerMenu()">
+            <img
+            class="hamburger-icon"
+            [src]="'/assets/header/hamburger_' + hamburgerFrame + '.png'"
+            alt="Hamburger Menu"
+          />
+        </div>
+    </div>
+    <ul>
+        <li><a href="#about-me">{{ navAboutMe }}</a></li>
+        <li><a href="#skills">{{ navSkills }}</a></li>
+        <li><a href="#my-work">{{ navMyWork }}</a></li>
+        <li><a href="#contact">{{ navContact }}</a></li>
+        <div>
+            <span (click)="switchToGerman()" [class.language-active]="currentLanguage === 'de'">DE</span> /
+            <span (click)="switchToEnglish()" [class.language-active]="currentLanguage === 'en'">EN</span>
+        </div>
+    </ul>
+</div> 
