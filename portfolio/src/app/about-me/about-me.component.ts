@@ -20,7 +20,10 @@ export class AboutMeComponent {
   remote: string = '';
   relocate: string = '';
   aboutMeHeader: string = '';
-  aboutMeMainText: string = '';
+  aboutMeFirstSection: string = '';
+  aboutMeSecondSection: string = '';
+  aboutMeThirdSection: string = '';
+  aboutMeFourthSection: string = '';
   sendAMessage: string = '';
 
   ngOnInit() {
@@ -31,7 +34,10 @@ export class AboutMeComponent {
       this.remote = this.languageService.getTranslation('remote');
       this.relocate = this.languageService.getTranslation('relocate');
       this.aboutMeHeader = this.languageService.getTranslation('aboutMeHeader');
-      this.aboutMeMainText = this.languageService.getTranslation('aboutMeMainText');
+      this.aboutMeFirstSection = this.languageService.getTranslation('aboutMeFirstSection');
+      this.aboutMeSecondSection = this.languageService.getTranslation('aboutMeSecondSection');
+      this.aboutMeThirdSection = this.languageService.getTranslation('aboutMeThirdSection');
+      this.aboutMeFourthSection = this.languageService.getTranslation('aboutMeFourthSection');
       this.sendAMessage = this.languageService.getTranslation('sendAMessage');
     })
   }
