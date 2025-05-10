@@ -93,4 +93,11 @@ export class ContactFormComponent {
       this.sayHello = this.languageService.getTranslation('sayHello');
     })
   }
+
+  isFromValied() {
+    return this.privacyPolicyChecked &&
+        this.contactData.name.trim().length >= 0 &&
+        this.contactData.email.trim().length >= 0 &&
+        this.contactData.message.trim().length >= 5;
+  }
 }

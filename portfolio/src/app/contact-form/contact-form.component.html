@@ -63,8 +63,8 @@
       <button 
         type="submit" 
         class="submit-button" 
-        [disabled]="!privacyPolicyChecked"
-        [ngClass]="{ 'disabled-button': !privacyPolicyChecked, 'active-button': privacyPolicyChecked }">
+        [disabled]="!isFromValied()"
+        [ngClass]="{ 'disabled-button': !isFromValied(), 'active-button': isFromValied() }">
         {{ sayHello }}
       </button>
     </form>
