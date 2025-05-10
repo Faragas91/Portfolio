@@ -41,7 +41,7 @@ export class MyWorkComponent {
         techStack: ['JavaScript', 'HTML', 'CSS'],
         description: this.languageService.getTranslation('elPolloLocoDescription'),
         githubLink: 'https://github.com/Faragas91/EL_POLLO_LOCO.git',
-        liveLink: 'https://another-project.com',
+        liveLink: 'http://stefanredl.at/EL_POLLO_LOCO/',
       },
       {
         imageUrl: '/assets/projects/ring_of_fire_photo.png',
@@ -49,7 +49,7 @@ export class MyWorkComponent {
         techStack: ['Angular','TypeScript', 'HTML', 'SCSS', 'Firebase'],
         description: this.languageService.getTranslation('ringOfFireDescription'),
         githubLink: 'https://github.com/Faragas91/Ring-of-Fire.git',
-        liveLink: 'https://ring-of-fire.com',
+        liveLink: 'http://stefanredl.at/Ring_of_fire/',
       },
     ];
   }  
