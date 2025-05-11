@@ -33,7 +33,7 @@ export class MyWorkComponent {
         techStack: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
         description: this.languageService.getTranslation('joinDescription'),
         githubLink: 'https://github.com/Faragas91/Join.git',
-        liveLink: 'https://join-app.com',
+        liveLink: 'https://stefanredl.at/Join/',
       },
       {
         imageUrl: '/assets/projects/el_pollo_loco_photo.png',
@@ -41,7 +41,7 @@ export class MyWorkComponent {
         techStack: ['JavaScript', 'HTML', 'CSS'],
         description: this.languageService.getTranslation('elPolloLocoDescription'),
         githubLink: 'https://github.com/Faragas91/EL_POLLO_LOCO.git',
-        liveLink: 'http://stefanredl.at/EL_POLLO_LOCO/',
+        liveLink: 'https://stefanredl.at/EL_POLLO_LOCO/',
       },
       {
         imageUrl: '/assets/projects/ring_of_fire_photo.png',
@@ -49,7 +49,7 @@ export class MyWorkComponent {
         techStack: ['Angular','TypeScript', 'HTML', 'SCSS', 'Firebase'],
         description: this.languageService.getTranslation('ringOfFireDescription'),
         githubLink: 'https://github.com/Faragas91/Ring-of-Fire.git',
-        liveLink: 'http://stefanredl.at/Ring_of_fire/',
+        liveLink: 'https://stefanredl.at/Ring_of_fire/',
       },
     ];
   }  
