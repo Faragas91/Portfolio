@@ -3,6 +3,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import { LanguageService } from '../service/language.service';
+import { isPlatformBrowser } from '@angular/common';
+import { Inject, PLATFORM_ID } from '@angular/core';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-about-me',
@@ -12,7 +15,10 @@ import { LanguageService } from '../service/language.service';
   styleUrl: './about-me.component.scss'
 })
 export class AboutMeComponent {
-  constructor(private languageService: LanguageService) {}
+  constructor(
+    private languageService: LanguageService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+  ) {}
 
   workTogether: string = '';
   iAm: string = '';
@@ -40,5 +46,13 @@ export class AboutMeComponent {
       this.aboutMeFourthSection = this.languageService.getTranslation('aboutMeFourthSection');
       this.sendAMessage = this.languageService.getTranslation('sendAMessage');
     })
+    
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init({
+        duration: 1000,
+        once: true,
+        easing: 'ease-in-out',
+      });
+    }
   }
 }

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { LanguageService } from '../service/language.service';
+import { isPlatformBrowser } from '@angular/common';
+import { Inject, PLATFORM_ID } from '@angular/core';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-skills',
@@ -11,7 +14,9 @@ import { LanguageService } from '../service/language.service';
 })
 export class SkillsComponent {
   
-  constructor(private langueservice: LanguageService) {}
+  constructor(
+    private langueservice: LanguageService,
+    @Inject(PLATFORM_ID) private platformId: Object) {}
 
   skillSet: string = '';
   growthMindset: string = '';
@@ -96,6 +101,14 @@ export class SkillsComponent {
       this.skillSet = this.langueservice.getTranslation('skillSet');
       this.growthMindset = this.langueservice.getTranslation('growthMindset');
     })
+
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init({
+        duration: 1000,
+        once: true,
+        easing: 'ease-in-out',
+      });
+    }
   }
 }
 

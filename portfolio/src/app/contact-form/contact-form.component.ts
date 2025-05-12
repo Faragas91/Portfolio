@@ -5,6 +5,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LanguageService } from '../service/language.service';
 import { NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
+import { Inject, PLATFORM_ID } from '@angular/core';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-contact-form',
@@ -20,7 +23,10 @@ import { RouterLink } from '@angular/router';
 })
 export class ContactFormComponent {
 
-  constructor(public languageService: LanguageService){}
+  constructor(
+    public languageService: LanguageService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+  ){}
 
   contact: string = '';
   contactProblem: string = '';
@@ -91,6 +97,14 @@ export class ContactFormComponent {
       this.privacyPolicyLink = this.languageService.getTranslation('privacyPolicyLink');
       this.privacyPolicyText2 = this.languageService.getTranslation('privacyPolicyText2');
       this.sayHello = this.languageService.getTranslation('sayHello');
+
+      if (isPlatformBrowser(this.platformId)) {
+        AOS.init({
+          duration: 1000,
+          once: true,
+          easing: 'ease-in-out',
+        });
+      }
     })
   }
 
