@@ -37,7 +37,7 @@ export class MyWorkComponent {
       },
       {
         imageUrl: '/assets/projects/el_pollo_loco_photo.png',
-        title: 'EL Pollo Loco',
+        title: 'El Pollo Loco',
         techStack: ['JavaScript', 'HTML', 'CSS'],
         description: this.languageService.getTranslation('elPolloLocoDescription'),
         githubLink: 'https://github.com/Faragas91/EL_POLLO_LOCO.git',

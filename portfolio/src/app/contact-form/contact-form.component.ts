@@ -45,10 +45,10 @@ export class ContactFormComponent {
     message: '',
   };
 
-  mailTest = true;
+  mailTest = false;
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://stefanredl.at/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
