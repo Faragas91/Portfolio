@@ -10,19 +10,19 @@
     </ul>
 </nav>
 <div (click)="toggleHamburgerMenu()">
-    <img class="hamburger-menu" src="./assets/header/hamburger_0.png">
+    <img class="hamburger-menu" src="assets/header/hamburger_0.png">
 </div>
 
 <!-- Mobile Menu -->
 <div class="side-menu" [class.open]="isMenuOpen">
     <div class="side-menu-header">
         <div>
-            <a href="#header"><img class="logo" src="./assets/general/logo.png" alt="Logo"></a>
+            <a href="#header"><img class="logo" src="assets/general/logo.png" alt="Logo"></a>
         </div>
         <div class="hamburger-menu" (click)="toggleHamburgerMenu()">
             <img
             class="hamburger-icon"
-            [src]="'./assets/header/hamburger_' + hamburgerFrame + '.png'"
+            [src]="'assets/header/hamburger_' + hamburgerFrame + '.png'"
             alt="Hamburger Menu"
           />
         </div>
