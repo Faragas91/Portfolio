@@ -8,7 +8,7 @@
         <span>{{ needADeveloper }}</span>
         <p>{{ contactMe }}</p>
       </div>
-      <img class="ellipse-10" src="/assets/contact/Ellipse_10.png" alt="Ellipse 10">
+      <img class="ellipse-10" src="./assets/contact/Ellipse_10.png" alt="Ellipse 10">
     </div>
   </div>
   <div class="contact-form-right-container">
@@ -18,10 +18,10 @@
         <label for="name">{{ yourName }}</label>
         @if (!name.valid && name.touched && !name.disabled) {
           <div class="error-name">Your name is required</div>
-          <img class="error-icon" src="/assets/contact/error.png" alt="Error">
+          <img class="error-icon" src="./assets/contact/error.png" alt="Error">
         }
         @if (name.valid && name.touched && !name.disabled) {
-          <img class="done-icon" src="/assets/contact/done.png" alt="Done">
+          <img class="done-icon" src="./assets/contact/done.png" alt="Done">
         }
       </div>
   
@@ -30,10 +30,10 @@
         <label for="email">{{ yourEmail }}</label>
         @if (!email.valid && email.touched && !email.disabled) {
           <div class="error-email">Your email is required</div>  
-          <img class="error-icon" src="/assets/contact/error.png" alt="Error">
+          <img class="error-icon" src="./assets/contact/error.png" alt="Error">
         }
         @if (email.valid && email.touched && !email.disabled) {
-          <img class="done-icon" src="/assets/contact/done.png" alt="Done">
+          <img class="done-icon" src="./assets/contact/done.png" alt="Done">
         }
       </div>
       <div class="floating-label">
@@ -41,10 +41,10 @@
         <label for="message">{{ yourMessage }}</label>
         @if (!message.valid && message.touched && !message.disabled) {
             <div class="error-message">Your message is required</div>
-            <img class="error-icon" src="/assets/contact/error.png" alt="Error">
+            <img class="error-icon" src="./assets/contact/error.png" alt="Error">
         } 
         @if (message.valid && message.touched && !message.disabled) {
-          <img class="done-icon" src="/assets/contact/done.png" alt="Done">
+          <img class="done-icon" src="./assets/contact/done.png" alt="Done">
         }
       </div>
       <div class="custom-checkbox">
@@ -68,11 +68,11 @@
         {{ sayHello }}
       </button>
     </form>
-    <img class="ellipse-11" src="/assets/contact/Ellipse_11.png" alt="Ellipse 11">
+    <img class="ellipse-11" src="./assets/contact/Ellipse_11.png" alt="Ellipse 11">
   </div>
-  <img class="ellipse-9" src="/assets/contact/Ellipse_9.png" alt="Ellipse 9">
+  <img class="ellipse-9" src="./assets/contact/Ellipse_9.png" alt="Ellipse 9">
   <button class="scroll-top-button">
-    <a href="#header"><img src="/assets/contact/scroll-top.png" alt="Scroll to top"></a>
+    <a href="#header"><img src="./assets/contact/scroll-top.png" alt="Scroll to top"></a>
   </button>
 </div>
 
