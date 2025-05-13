@@ -30,7 +30,9 @@ export class ContactFormComponent {
 
   contact: string = '';
   contactProblem: string = '';
-  contactDescription: string = '';
+  contactDescriptionFirstSection: string = '';
+  contactDescriptionSecondSection: string = '';
+  contactDescriptionThirdSection: string = '';
   needADeveloper: string = '';
   contactMe: string = '';
   yourName: string = '';
@@ -87,7 +89,9 @@ export class ContactFormComponent {
     this.languageService.language$.subscribe(lang => {
       this.contact = this.languageService.getTranslation('contact');
       this.contactProblem = this.languageService.getTranslation('contactProblem');
-      this.contactDescription = this.languageService.getTranslation('contactDescription');
+      this.contactDescriptionFirstSection = this.languageService.getTranslation('contactDescriptionFirstSection');
+      this.contactDescriptionSecondSection = this.languageService.getTranslation('contactDescriptionSecondSection');
+      this.contactDescriptionThirdSection = this.languageService.getTranslation('contactDescriptionThirdSection');
       this.needADeveloper = this.languageService.getTranslation('needADeveloper');
       this.contactMe = this.languageService.getTranslation('contactMe');
       this.yourName = this.languageService.getTranslation('yourName');
