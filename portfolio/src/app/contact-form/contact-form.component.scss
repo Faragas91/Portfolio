@@ -25,7 +25,6 @@
     font-size: 90px;
     font-weight: 700;
     color: $secondary-color;
-    margin-bottom: 32px;
     margin-top: 75px;
     background-color: transparent;
 ;
@@ -102,7 +101,6 @@
   }
 }
 
-
 .contact-form-right-container {
   position: relative;
   width: 50%;
@@ -131,8 +129,7 @@
 .ellipse-10 {
   background-color: transparent;
   position: absolute;
-  top: 450px;
-  left: 150px;
+  left: 50%;
 }
 
 .ellipse-11 {
@@ -390,10 +387,50 @@
   font-family: $font-family-2;
 }
 
+.message-sent {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  z-index: 9999;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  background-color: #28a745;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInOut 3s ease-in-out forwards;
+
+  span {
+    color: $primary-color;
+    font-size: 16px;
+    background-color: transparent;
+    font-family: $font-family-2;
+    font-weight: 500;
+  }
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+.message-not-sent {
+  display: none;
+}
 
 @media screen and (max-width: 1350px) {
   .contact-form-main-container {
     padding: 32px;
+  }
+
+  .ellipse-10 {
+    width: 102px;
+    height: 102px;
   }
 }
 
@@ -450,6 +487,10 @@
   }
   .scroll-top-button {
     bottom: 32px;
+  }
+
+  .message-sent {
+    right: 25%;
   }
 } 
 

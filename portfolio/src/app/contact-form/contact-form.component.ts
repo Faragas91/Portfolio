@@ -38,12 +38,14 @@ export class ContactFormComponent {
   yourName: string = '';
   yourEmail: string = '';
   yourMessage: string = '';
+  messageSentText: string = '';
   privacyPolicyText1: string = '';
   privacyPolicyLink: string = '';
   privacyPolicyText2: string = '';
   sayHello: string = '';
 
   privacyPolicyChecked: boolean = false;
+  messageSent: boolean = false;
 
   http = inject(HttpClient);
   
@@ -77,12 +79,19 @@ export class ContactFormComponent {
           error: (error) => {
             console.error(error);
           },
-          complete: () => console.info('send post complete'),
+          complete: () => this.messageFeedback()
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
 
       ngForm.resetForm();
     }
+  }
+
+  messageFeedback() {
+    this.messageSent = true;
+    setTimeout(() => {
+      this.messageSent = false;
+    }, 5000);
   }
 
   ngOnInit() {
@@ -97,19 +106,19 @@ export class ContactFormComponent {
       this.yourName = this.languageService.getTranslation('yourName');
       this.yourEmail = this.languageService.getTranslation('yourEmail');
       this.yourMessage = this.languageService.getTranslation('yourMessage');
+      this.messageSentText = this.languageService.getTranslation('messageSentText');
       this.privacyPolicyText1 = this.languageService.getTranslation('privacyPolicyText1');
       this.privacyPolicyLink = this.languageService.getTranslation('privacyPolicyLink');
       this.privacyPolicyText2 = this.languageService.getTranslation('privacyPolicyText2');
       this.sayHello = this.languageService.getTranslation('sayHello');
-
-      if (isPlatformBrowser(this.platformId)) {
-        AOS.init({
-          duration: 1000,
-          once: true,
-          easing: 'ease-in-out',
-        });
-      }
     })
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init({
+        duration: 1000,
+        once: true,
+        easing: 'ease-in-out',
+      });
+    }
   }
 
   isFromValied() {
