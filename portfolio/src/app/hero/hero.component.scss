@@ -267,15 +267,7 @@
         width: 500px;
         height: auto;
         left: -50px;
-    }
-
-    .hero-left-container {
-        img {
-            height: 650px;
-            width: auto;
-        }
-    }
-    
+    }    
 }
 
 @media screen and (max-width: 468px) {
@@ -333,6 +325,13 @@
         }
         h2 {
             font-size: 24px;
+        }
+    }
+
+    .hero-left-container {
+        img {
+            height: auto;
+            width: 420px;
         }
     }
 

@@ -192,12 +192,9 @@ nav {
 
 @media screen and (max-width: 1600px) {
     nav {
-        ul {
-            gap: 32px;
-        }
-
         div {
             margin-left: 0px;
+            margin-top: 5px;
             gap: 16px;
         }
     }
@@ -207,22 +204,26 @@ nav {
 @media screen and (max-width: 1350px) {
     nav {
         ul {
-            gap: 24px;
+            gap: 32px;
+            li {
+                a {
+                    font-size: 20px;
+                }
+            }
         }
 
         div {
             margin-left: 0px;
             gap: 16px;
+            span {
+                font-size: 20px;
+            }
         }
     }
 }
 
 @media screen and (max-width: 1200px) {
     nav {
-        ul {
-            gap: 16px;
-        }
-
         div {
             margin-left: 0px;
             gap: 8px;
@@ -248,5 +249,10 @@ nav {
             left: 17px;
         }
     }
-    
+
+    .side-menu {
+        ul {
+            left: 40%;
+        }
+    }
 }
