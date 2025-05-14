@@ -24,10 +24,11 @@
     </div>
     <div class="about-me-text">
         <h2> {{ aboutMeHeader }} </h2>
-        <p>{{ aboutMeFirstSection }}</p><br>
-        <p>{{ aboutMeSecondSection }}</p><br>
-        <p>{{ aboutMeThirdSection }}</p><br>
-        <p>{{ aboutMeFourthSection }}</p><br>
+        @for ( sentence of aboutMeText.split(/(?<=[.!?])\s+/); track sentence) {
+            <p class="sentence"> 
+                {{ sentence }} 
+            </p>
+        }
         <div class="style-button">
             <a href="#contact"><span>{{ sendAMessage }}</span></a>
         </div>
