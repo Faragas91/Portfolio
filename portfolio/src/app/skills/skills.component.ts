@@ -88,7 +88,6 @@ export class SkillsComponent {
       name: 'Vue JS',
       image: 'assets/skills/vue js.png'
     },
-
   ]
 
 /**

@@ -62,32 +62,49 @@ export class ContactFormComponent {
     },
   };
 
-/**
- * Handles the submission of the contact form. If the form has been submitted
- * and is valid, it sends the form data to the specified endpoint. If the 
- * `mailTest` flag is false, it makes an HTTP POST request with the form data.
- * On successful submission, the form is reset, and a message feedback is shown.
- * If there is an error during submission, it logs the error to the console.
- * If `mailTest` is true, the form is simply reset without making an HTTP request.
- *
- * @param ngForm - The Angular form object containing form control and validation state.
- */
-
+  /**
+   * Called when the form is submitted.
+   *
+   * If the form is valid and this.mailTest is false, the form data is sent to the server.
+   * If the form is invalid or this.mailTest is true, the form is reset.
+   *
+   * @param ngForm The form that was submitted.
+   */
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData))
-        .subscribe({
-          next: (response) => {
-            ngForm.resetForm();
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => this.messageFeedback()
-        });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      ngForm.resetForm();
+    if (!ngForm.submitted || !ngForm.form.valid) return;
+
+    if (this.mailTest) {
+      this.handleMailTest(ngForm);
+    } else {
+      this.sendFormData(ngForm);
     }
+  }
+
+  /**
+   * Resets the form after a mail test.
+   *
+   * @param ngForm The form that was submitted.
+   */
+  private handleMailTest(ngForm: NgForm): void {
+    ngForm.resetForm();
+  }
+
+  /**
+   * Sends the form data to the server.
+   *
+   * If the request is successful, the form is reset.
+   * If the request fails, the error is logged to the console.
+   * When the request is complete, the message feedback is shown.
+   *
+   * @param ngForm The form that was submitted.
+   */
+  private sendFormData(ngForm: NgForm): void {
+    this.http.post(this.post.endPoint, this.post.body(this.contactData))
+      .subscribe({
+        next: () => ngForm.resetForm(),
+        error: (error) => console.error(error),
+        complete: () => this.messageFeedback()
+      });
   }
 
   /**
@@ -101,29 +118,63 @@ export class ContactFormComponent {
     }, 5000);
   }
 
-/**
- * Initializes the component by subscribing to the language service to get the current language.
- * Sets various text fields used in the contact form to their translated values based on the current language.
- */
+  /**
+   * Subscribes to the language service to update the component's text properties
+   * with the corresponding translations based on the current language. It sets
+   * the text for contact descriptions, form descriptions, message sent text,
+   * privacy policy descriptions, and the "say hello" button.
+   */
 
   ngOnInit() {
     this.languageService.language$.subscribe(lang => {
-      this.contact = this.languageService.getTranslation('contact');
-      this.contactProblem = this.languageService.getTranslation('contactProblem');
-      this.contactDescriptionFirstSection = this.languageService.getTranslation('contactDescriptionFirstSection');
-      this.contactDescriptionSecondSection = this.languageService.getTranslation('contactDescriptionSecondSection');
-      this.contactDescriptionThirdSection = this.languageService.getTranslation('contactDescriptionThirdSection');
-      this.needADeveloper = this.languageService.getTranslation('needADeveloper');
-      this.contactMe = this.languageService.getTranslation('contactMe');
-      this.yourName = this.languageService.getTranslation('yourName');
-      this.yourEmail = this.languageService.getTranslation('yourEmail');
-      this.yourMessage = this.languageService.getTranslation('yourMessage');
+      this.contactDescription();
+      this.contactFormDescription();
       this.messageSentText = this.languageService.getTranslation('messageSentText');
-      this.privacyPolicyText1 = this.languageService.getTranslation('privacyPolicyText1');
-      this.privacyPolicyLink = this.languageService.getTranslation('privacyPolicyLink');
-      this.privacyPolicyText2 = this.languageService.getTranslation('privacyPolicyText2');
+      this.privacyPlolicyDescription();
       this.sayHello = this.languageService.getTranslation('sayHello');
     })
+  }
+
+  /**
+   * Sets the contact description properties based on the current language.
+   * It updates the contact text, contact problem description, first, second,
+   * and third sections of the contact description, the "need a developer"
+   * text and the "contact me" text.
+   */
+
+  contactDescription() {
+    return  this.contact = this.languageService.getTranslation('contact'),
+      this.contactProblem = this.languageService.getTranslation('contactProblem'),
+      this.contactDescriptionFirstSection = this.languageService.getTranslation('contactDescriptionFirstSection'),   
+      this.contactDescriptionSecondSection = this.languageService.getTranslation('contactDescriptionSecondSection'),
+      this.contactDescriptionThirdSection = this.languageService.getTranslation('contactDescriptionThirdSection'),
+      this.needADeveloper = this.languageService.getTranslation('needADeveloper'),
+      this.contactMe = this.languageService.getTranslation('contactMe');
+  }
+
+  /**
+   * Updates the privacy policy text elements by setting their values
+   * based on the current language. It sets the texts for the first 
+   * privacy policy section, the privacy policy link, and the second 
+   * section of the privacy policy.
+   */
+
+  privacyPlolicyDescription() {
+    return this.privacyPolicyText1 = this.languageService.getTranslation('privacyPolicyText1'),
+      this.privacyPolicyLink = this.languageService.getTranslation('privacyPolicyLink'),
+      this.privacyPolicyText2 = this.languageService.getTranslation('privacyPolicyText2');
+  }
+
+  /**
+   * Updates the form field descriptions based on the current language.
+   * It sets the text for the user's name, email, and message input fields
+   * using translations provided by the language service.
+   */
+
+  contactFormDescription() {
+    return this.yourName = this.languageService.getTranslation('yourName'),
+      this.yourEmail = this.languageService.getTranslation('yourEmail'),
+      this.yourMessage = this.languageService.getTranslation('yourMessage');
   }
 
   /**
@@ -131,6 +182,7 @@ export class ContactFormComponent {
    * checked, and the name, email, and message fields are not empty and have
    * at least a length of 5 characters.
    */
+
   isFromValied() {
     return this.privacyPolicyChecked &&
         this.contactData.name.trim().length >= 0 &&

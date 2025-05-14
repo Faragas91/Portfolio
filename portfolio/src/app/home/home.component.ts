@@ -31,6 +31,12 @@ export class HomeComponent {
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {}
 
+  private baseColleagueData = [
+    { name: 'John Doe', projects: 'Project Join', translationKey: 'firstCollegue' },
+    { name: 'Jane Smith', projects: 'Project EL Pollo Loco', translationKey: 'secondCollegue' },
+    { name: 'Alice Johnson', projects: 'Project Ring of Fire', translationKey: 'thirdCollegue' },
+  ];
+
   /**
    * Initializes the component by subscribing to the language service and updating the
    * colleague evaluations accordingly. Also calls the animate sections function to
@@ -47,29 +53,20 @@ export class HomeComponent {
   }
 
   /**
-   * Updates the list of colleagues with their respective projects and descriptions.
-   * Each colleague has a name, the project they worked on, and a description
-   * retrieved from the language service for translation support.
+   * Updates the list of colleagues with translated descriptions.
+   * 
+   * This function maps over the baseColleagueData array and creates a new array 
+   * of colleagues. Each colleague object contains the name and projects from 
+   * baseColleagueData and a description obtained by translating the 
+   * colleague's translationKey using the language service.
    */
 
-  updateColleagueEvaluations() {
-    this.colleagues = [
-      {
-        name: 'John Doe',
-        projects: 'Project Join',
-        description: this.languageService.getTranslation('firstCollegue'),
-      },
-      {
-        name: 'Jane Smith',
-        projects: 'Project EL Pollo Loco',
-        description: this.languageService.getTranslation('secondCollegue'),
-      },
-      {
-        name: 'Alice Johnson',
-        projects: 'Project Ring of Fire',
-        description: this.languageService.getTranslation('thirdCollegue'),
-      },
-    ];
+  updateColleagueEvaluations(): void {
+    this.colleagues = this.baseColleagueData.map(colleague => ({
+      name: colleague.name,
+      projects: colleague.projects,
+      description: this.languageService.getTranslation(colleague.translationKey)
+    }));
   }
 
   /**
