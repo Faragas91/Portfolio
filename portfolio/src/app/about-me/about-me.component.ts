@@ -20,7 +20,10 @@ export class AboutMeComponent {
   remote: string = '';
   relocate: string = '';
   aboutMeHeader: string = '';
-  aboutMeText: string = '';
+  aboutMeFirstSection: string = '';
+  aboutMeSecondSection: string = '';
+  aboutMeThirdSection: string = '';
+  aboutMeFourthSection: string = '';
   sendAMessage: string = '';
 
   /**
@@ -35,7 +38,10 @@ export class AboutMeComponent {
       this.remote = this.languageService.getTranslation('remote');
       this.relocate = this.languageService.getTranslation('relocate');
       this.aboutMeHeader = this.languageService.getTranslation('aboutMeHeader');
-      this.aboutMeText = this.languageService.getTranslation('aboutMeText');
+      this.aboutMeFirstSection = this.languageService.getTranslation('aboutMeFirstSection');
+      this.aboutMeSecondSection = this.languageService.getTranslation('aboutMeSecondSection');
+      this.aboutMeThirdSection = this.languageService.getTranslation('aboutMeThirdSection');
+      this.aboutMeFourthSection = this.languageService.getTranslation('aboutMeFourthSection');
       this.sendAMessage = this.languageService.getTranslation('sendAMessage');
     })
   }
