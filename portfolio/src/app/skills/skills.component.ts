@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { LanguageService } from '../service/language.service';
-import { isPlatformBrowser } from '@angular/common';
-import { Inject, PLATFORM_ID } from '@angular/core';
-import * as AOS from 'aos';
 
 @Component({
   selector: 'app-skills',
@@ -14,9 +11,7 @@ import * as AOS from 'aos';
 })
 export class SkillsComponent {
   
-  constructor(
-    private langueservice: LanguageService,
-    @Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(private langueservice: LanguageService) {}
 
   skillSet: string = '';
   growthMindset: string = '';
@@ -96,19 +91,17 @@ export class SkillsComponent {
 
   ]
 
+/**
+ * Initializes the component by subscribing to the language service
+ * and sets the skill set and growth mindset text based on the 
+ * current language.
+ */
+
   ngOnInit() {
     this.langueservice.language$.subscribe(lang => {
       this.skillSet = this.langueservice.getTranslation('skillSet');
       this.growthMindset = this.langueservice.getTranslation('growthMindset');
     })
-
-    if (isPlatformBrowser(this.platformId)) {
-      AOS.init({
-        duration: 1000,
-        once: true,
-        easing: 'ease-in-out',
-      });
-    }
   }
 }
 

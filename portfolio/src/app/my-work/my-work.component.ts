@@ -16,6 +16,11 @@ export class MyWorkComponent {
   myWork: string = '';
   myWorkDescription: string = '';
 
+  /**
+   * Initialize the component by subscribing to the language service and
+   * set the headings and project descriptions based on the current language.
+   * Also update the project descriptions.
+   */
   ngOnInit() {
     this.languageService.language$.subscribe(lang => {
       this.myWork = this.languageService.getTranslation('myWork');
@@ -24,6 +29,12 @@ export class MyWorkComponent {
     })
     this.updateProjectDescriptions();
   }
+
+  /**
+   * Updates the `projects` array with project details including image URL,
+   * title, tech stack, description, GitHub link, and live link. The descriptions
+   * are translated based on the current language settings.
+   */
 
   updateProjectDescriptions() {
     this.projects = [

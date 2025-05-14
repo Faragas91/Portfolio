@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 import { Input } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import { Inject, PLATFORM_ID } from '@angular/core';
-import * as AOS from 'aos';
 
 @Component({
   selector: 'app-projects',
@@ -13,8 +10,7 @@ import * as AOS from 'aos';
 })
 export class ProjectsComponent {
 
-  constructor(
-    @Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor() {}
 
   @Input() imageUrl: string = '';
   @Input() title: string = '';
@@ -23,15 +19,5 @@ export class ProjectsComponent {
   @Input() githubLink: string = '';
   @Input() liveLink: string = '';
   @Input() reverseLayout: boolean = false;
-
-  ngOnInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      AOS.init({
-        duration: 1000,
-        once: true,
-        easing: 'ease-in-out',
-      });
-    }
-  }
   
 }

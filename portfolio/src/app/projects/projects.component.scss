@@ -26,6 +26,7 @@
     
         .projects-button {
           justify-content: flex-end;
+          background-color: transparent;
         }
     }
 }
@@ -93,6 +94,7 @@
 
 .projects-button {
     display: flex;
+    background-color: transparent;
     gap: 64px;
 }
 

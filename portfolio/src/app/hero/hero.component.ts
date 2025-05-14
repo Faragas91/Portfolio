@@ -10,11 +10,14 @@ import { HeaderComponent } from '../shared/header/header.component';
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
-  constructor(private languageService: LanguageService){
-
-  }
+  constructor(private languageService: LanguageService){}
 
   greeting: string = '';
+
+/**
+ * Subscribes to the language service to update the greeting property
+ * with the corresponding translation based on the current language.
+ */
 
   ngOnInit() {
     this.languageService.language$.subscribe(lang => {

@@ -5,9 +5,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LanguageService } from '../service/language.service';
 import { NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { isPlatformBrowser } from '@angular/common';
-import { Inject, PLATFORM_ID } from '@angular/core';
-import * as AOS from 'aos';
 
 @Component({
   selector: 'app-contact-form',
@@ -23,10 +20,7 @@ import * as AOS from 'aos';
 })
 export class ContactFormComponent {
 
-  constructor(
-    public languageService: LanguageService,
-    @Inject(PLATFORM_ID) private platformId: Object,
-  ){}
+  constructor(private languageService: LanguageService){}
 
   contact: string = '';
   contactProblem: string = '';
@@ -68,12 +62,22 @@ export class ContactFormComponent {
     },
   };
 
+/**
+ * Handles the submission of the contact form. If the form has been submitted
+ * and is valid, it sends the form data to the specified endpoint. If the 
+ * `mailTest` flag is false, it makes an HTTP POST request with the form data.
+ * On successful submission, the form is reset, and a message feedback is shown.
+ * If there is an error during submission, it logs the error to the console.
+ * If `mailTest` is true, the form is simply reset without making an HTTP request.
+ *
+ * @param ngForm - The Angular form object containing form control and validation state.
+ */
+
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-
             ngForm.resetForm();
           },
           error: (error) => {
@@ -82,17 +86,25 @@ export class ContactFormComponent {
           complete: () => this.messageFeedback()
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
       ngForm.resetForm();
     }
   }
 
+  /**
+   * Shows a success message after the form has been submitted.
+   * Sets the "messageSent" flag to true, and resets it to false after 5 seconds.
+   */
   messageFeedback() {
     this.messageSent = true;
     setTimeout(() => {
       this.messageSent = false;
     }, 5000);
   }
+
+/**
+ * Initializes the component by subscribing to the language service to get the current language.
+ * Sets various text fields used in the contact form to their translated values based on the current language.
+ */
 
   ngOnInit() {
     this.languageService.language$.subscribe(lang => {
@@ -112,15 +124,13 @@ export class ContactFormComponent {
       this.privacyPolicyText2 = this.languageService.getTranslation('privacyPolicyText2');
       this.sayHello = this.languageService.getTranslation('sayHello');
     })
-    if (isPlatformBrowser(this.platformId)) {
-      AOS.init({
-        duration: 1000,
-        once: true,
-        easing: 'ease-in-out',
-      });
-    }
   }
 
+  /**
+   * Returns true if the form is valid, meaning the privacy policy checkbox is
+   * checked, and the name, email, and message fields are not empty and have
+   * at least a length of 5 characters.
+   */
   isFromValied() {
     return this.privacyPolicyChecked &&
         this.contactData.name.trim().length >= 0 &&

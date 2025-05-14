@@ -192,6 +192,9 @@ nav {
 
 @media screen and (max-width: 1600px) {
     nav {
+        ul {
+            gap: 48px;
+        }
         div {
             margin-left: 0px;
             margin-top: 5px;
