@@ -19,11 +19,11 @@ export class AboutMeComponent {
   location: string = '';
   remote: string = '';
   relocate: string = '';
-  aboutMeHeader: string = '';
   aboutMeFirstSection: string = '';
   aboutMeSecondSection: string = '';
   aboutMeThirdSection: string = '';
   aboutMeFourthSection: string = '';
+  aboutMeMyGoal: string = '';
   sendAMessage: string = '';
 
   /**
@@ -37,11 +37,11 @@ export class AboutMeComponent {
       this.location = this.languageService.getTranslation('location');
       this.remote = this.languageService.getTranslation('remote');
       this.relocate = this.languageService.getTranslation('relocate');
-      this.aboutMeHeader = this.languageService.getTranslation('aboutMeHeader');
       this.aboutMeFirstSection = this.languageService.getTranslation('aboutMeFirstSection');
       this.aboutMeSecondSection = this.languageService.getTranslation('aboutMeSecondSection');
       this.aboutMeThirdSection = this.languageService.getTranslation('aboutMeThirdSection');
       this.aboutMeFourthSection = this.languageService.getTranslation('aboutMeFourthSection');
+      this.aboutMeMyGoal = this.languageService.getTranslation('aboutMeMyGoal');
       this.sendAMessage = this.languageService.getTranslation('sendAMessage');
     })
   }

@@ -8,14 +8,21 @@ export class LanguageService {
   private languageSubject = new BehaviorSubject<string>('en');
   language$ = this.languageSubject.asObservable();
 
+  /**
+   * Sets the language for the application.
+   *
+   * @param lang The language code to set, e.g. 'en' for English.
+   */
   setLanguage(lang: string) {
     this.languageSubject.next(lang);
   }
 
-  getLanguage(): string {
-    return this.languageSubject.value;
-  }
-
+  /**
+   * Retrieves the translation for a given key.
+   *
+   * @param key The translation key, e.g. 'navAboutMe'.
+   * @returns The translated string or a fallback string indicating the key was not found.
+   */
   getTranslation(key: string): string {
     const lang = this.languageSubject.value;
     return this.translations[lang][key] || `Translation not found for key: ${key}`;
@@ -33,11 +40,11 @@ export class LanguageService {
       location: 'located in Niederösterreich',
       remote: 'open to remote work',
       relocate: 'open to relocation',
-      aboutMeHeader: "Hi, I'm Stefan!",
-      aboutMeFirstSection: 'A passionate web developer with a focus on modern front-end technologies such as Angular, TypeScript and SCSS.',
-      aboutMeSecondSection: 'What excites me about programming is the combination of logic, creativity and structure. I love analyzing problems, finding elegant solutions and translating them into user-friendly interfaces. I am particularly motivated by the moment when a complex problem becomes a clear, functioning feature.',
-      aboutMeThirdSection: 'I like to work in a structured and solution-oriented way. I see challenges as a learning opportunity - I analyze, experiment and improve my approach until I find an efficient solution.  To expand my skills, I rely on continuous learning: through my own projects, online resources, exchanges with other developers or following current trends and best practices.',
-      aboutMeFourthSection: 'Qualities such as analytical thinking, creativity, teamwork and perseverance help me to think my way into complex tasks and implement them successfully. My goal is to write not only functional, but also aesthetically pleasing and maintainable code - and to constantly develop myself in the process.',
+      aboutMeFirstSection: 'Hi, I am a passionate web developer with a soft spot for modern frontend technologies.',
+      aboutMeSecondSection: 'I am fascinated by the combination of logic, creativity and structure in programming. I enjoy analyzing problems, developing well thought-out solutions and turning them into user-friendly interfaces. The moment when complex code is turned into a functioning feature is particularly motivating for me.',
+      aboutMeThirdSection: 'I work in a structured, solution-oriented way and see challenges as an opportunity to learn. Whether through my own projects, online resources or exchanging ideas with others. I am constantly educating myself to develop better solutions.',
+      aboutMeFourthSection: 'Analytical thinking, creativity, the ability to work in a team and perseverance help me to successfully implement even challenging tasks.',
+      aboutMeMyGoal: 'My goal is to write functional, maintainable and aesthetically pleasing code - with the aim of constantly developing myself further.',
       sendAMessage: 'Send a message',
       skillSet: 'Skill set',
       growthMindset: 'I have a special interest in learning',
@@ -80,11 +87,11 @@ export class LanguageService {
       location: 'Standort in Niederösterreich',
       remote: 'offen für Remote-Arbeit',
       relocate: 'offen für Umzüge',
-      aboutMeHeader: 'Hi, ich bin Stefan!',
-      aboutMeFirstSection: 'Ein leidenschaftlicher Webentwickler mit Fokus auf moderne Frontend-Technologien wie Angular, TypeScript und SCSS.',
-      aboutMeSecondSection: 'Was mich am Programmieren begeistert, ist die Kombination aus Logik, Kreativität und Struktur. Ich liebe es, Probleme zu analysieren, elegante Lösungen zu finden und diese in nutzerfreundliche Interfaces zu übersetzen. Dabei motiviert mich besonders der Moment, in dem ein komplexes Problem zu einem klaren, funktionierenden Feature wird.',
-      aboutMeThirdSection: 'Ich arbeite gerne strukturiert und lösungsorientiert. Herausforderungen sehe ich als Lernchance – ich analysiere, experimentiere und verbessere meinen Ansatz, bis ich eine effiziente Lösung finde.  Um meine Fähigkeiten zu erweitern, setze ich auf kontinuierliches Lernen: durch eigene Projekte, Online-Ressourcen, Austausch mit anderen Entwickler:innen oder das Verfolgen aktueller Trends und Best Practices.',
-      aboutMeFourthSection: 'Eigenschaften wie analytisches Denken, Kreativität, Teamfähigkeit und Ausdauer helfen mir, mich in komplexe Aufgaben hineinzudenken und sie erfolgreich umzusetzen. Mein Ziel ist es, nicht nur funktionalen, sondern auch ästhetisch ansprechenden und wartbaren Code zu schreiben – und mich dabei ständig weiterzuentwickeln.',
+      aboutMeFirstSection: 'Hi, ich bin ein leidenschaftlicher Webentwickler mit einem Faible für moderne Frontend-Technologien.',
+      aboutMeSecondSection: 'Mich fasziniert die Verbindung aus Logik, Kreativität und Struktur beim Programmieren. Ich analysiere gerne Probleme, entwickle durchdachte Lösungen und setze diese in nutzerfreundliche Interfaces um. Besonders motivierend ist für mich der Moment, wenn aus komplexem Code ein funktionierendes Feature entsteht.',
+      aboutMeThirdSection: 'Ich arbeite strukturiert, lösungsorientiert und sehe Herausforderungen als Chance zum Lernen. Ob durch eigene Projekte, Online-Ressourcen oder den Austausch mit anderen. Ich bilde mich ständig weiter, um bessere Lösungen zu entwickeln.',
+      aboutMeFourthSection: 'Analytisches Denken, Kreativität, Teamfähigkeit und Ausdauer helfen mir dabei, auch anspruchsvolle Aufgaben erfolgreich umzusetzen.',
+      aboutMeMyGoal: 'Mein Ziel ist es, funktionalen, wartbaren und ästhetischen Code zu schreiben – mit dem Anspruch, mich stetig weiterzuentwickeln.',
       sendAMessage: 'Sende eine Nachricht',
       skillSet: 'Fähigkeiten',
       growthMindset: 'Ich habe ein besonderes Interesse am Lernen',
