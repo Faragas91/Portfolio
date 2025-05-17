@@ -1,12 +1,20 @@
 @import './../../styles.scss';
 
+
+.contact-form-section {
+  background: linear-gradient(179.99deg, #FFFFFF 12.89%, #EAF0FF 91.39%);
+  width: 100%;
+}
+
 .contact-form-main-container {
   display: flex;
   justify-content: space-between;
-  background: linear-gradient(179.99deg, #FFFFFF 12.89%, #EAF0FF 91.39%);
   width: 100%;
   padding: 64px;
   position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: transparent;
 }
 
 .contact-form-left-container {

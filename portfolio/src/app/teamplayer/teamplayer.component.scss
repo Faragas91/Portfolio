@@ -1,7 +1,11 @@
 @import './../../styles.scss';
 
-.teamplayer-main-container {
+.teamplayer-section {
     background: linear-gradient(135deg, #5988ff, #0044ff);
+    width: 100%;
+}
+
+.teamplayer-main-container {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
@@ -9,6 +13,10 @@
     justify-content: center;
     gap: 32px;
     padding: 64px;
+    max-width: 1920px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: transparent;
 }
 
 .teamplayer-container{

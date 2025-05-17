@@ -17,6 +17,9 @@
     justify-content: space-around;
     padding: 0px 64px 0px 64px;
     height: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    z-index: 1;
 }
 
 .hero-left-container {
@@ -33,9 +36,15 @@
     }
 }
 
-.blue-circle {
+.ellipse-0 {
     position: absolute;
+    top: -200px;
+    left: -250px;
     background-color: transparent;
+    width: 892px;
+    height: auto;
+    object-fit: contain;
+    z-index: -1;
 }
 
 .hero-right-container {
@@ -82,10 +91,11 @@
     color: $secondary-color;
     margin-top: 100px;
     background-color: transparent;
+    height: 100%;
   
     .scroll-line {
         width: 2px;
-        height: 542px;
+        height: 100%;
         background-color: $secondary-color;
         margin-top: 10px;
     }
@@ -148,13 +158,9 @@
             font-size: 32px;
         }
     }
-    .scroll-line {
-        height: 641px !important;
-    }
 
-    .blue-circle {
-        width: 600px;
-        height: auto;
+    .ellipse-0 {
+       left: -220px;
     }
     
     .social-icons {
@@ -173,8 +179,8 @@
         }
     }
 
-    .scroll-line {
-        height: 671px !important;
+    .ellipse-0 {
+       left: -300px;
     }
 }
 
@@ -189,7 +195,6 @@
     .hero-container {
         flex-direction: column-reverse;
         align-items: center;
-        justify-content: space-between;
     }
 
     .hero-left-container {
@@ -220,9 +225,8 @@
         display: none;
     }
 
-    .blue-circle {
-        width: 750px;
-        height: auto;
+    .ellipse-0 {
+       left: -170px;
     }
 
     .scroll-down {
@@ -240,9 +244,8 @@
 
 @media screen and (max-width: 768px) {
    
-    .blue-circle {
-        width: 600px;
-        height: auto;
+    .ellipse-0 {
+        left: -300px;
     }
 }
 
@@ -256,24 +259,26 @@
             font-size: 30px;
         }
     }
-    .blue-circle {
-        left: -100px;
+    .ellipse-0 {
+        width: 700px;
+        height: auto;
+        left: -200px;
     }
 
 }
 
 @media screen and (max-width: 520px) {
-    .blue-circle {
-        width: 500px;
-        height: auto;
-        left: -50px;
+    .ellipse-0 {
+        left: -250px;
     }    
 }
 
 @media screen and (max-width: 468px) {
 
-    .blue-circle {
-        left: -75px;
+    .ellipse-0 {
+        width: 600px;
+        height: auto;
+        left: -200px;
     }
 
     .hero-left-container {
@@ -295,9 +300,8 @@
         }
     }
 
-    .blue-circle {
-        width: 450px;
-        height: auto;
+    .ellipse-0 {
+        left: -225px;
     }
 }
 @media screen and (max-width: 415px) {
@@ -311,9 +315,8 @@
         }
     }
 
-    .blue-circle {
-        width: 420px;
-        height: auto;
+    .ellipse-0 {
+        left: -260px;
     }
 }
 
@@ -335,8 +338,13 @@
         }
     }
 
-    .blue-circle {
-        width: 380px;
-        height: auto;
+    .ellipse-0 {
+        left: -300px;   
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .scroll-down {
+        bottom: 298px;
     }
 }

@@ -1,16 +1,17 @@
-<div class="teamplayer-main-container" data-aos="fade-left">
-    <div class="teamplayer-container">
-        <h2>{{ teamPlayer }}</h2>
-        <span>{{ saidAboutMe }}</span>
-    </div>
-    <div class="colleagues">
-        @for (colleague of colleagues; track $index) {
-        <div class="colleague">
-            <p class="colleague-name">{{ colleague.name }}</p>
-            <p class="colleague-projects">{{ colleague.projects }}</p>
-            <p class="colleague-description">{{ colleague.description }}</p>
+<div class="teamplayer-section">
+    <div class="teamplayer-main-container" data-aos="fade-left">
+        <div class="teamplayer-container">
+            <h2>{{ teamPlayer }}</h2>
+            <span>{{ saidAboutMe }}</span>
         </div>
-    }
+        <div class="colleagues">
+            @for (colleague of colleagues; track $index) {
+            <div class="colleague">
+                <p class="colleague-name">{{ colleague.name }}</p>
+                <p class="colleague-projects">{{ colleague.projects }}</p>
+                <p class="colleague-description">{{ colleague.description }}</p>
+            </div>
+        }
+        </div>
     </div>
 </div>
-

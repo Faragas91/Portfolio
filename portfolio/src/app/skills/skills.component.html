@@ -1,29 +1,30 @@
-<div class="skill-main-container" data-aos="fade-right" id="skills">
-    <span>{{ skillSet }}</span>
-    <div class="skills">
-      @for (skill of skills; track skill.name) {
-        <div 
-          class="skill custom-tooltip-wrapper"
-          [class.no-hover]="skill.name === 'Growth Mindset'">
-  
-          <img [src]="skill.image" [alt]="skill.name" />
-          <p>{{ skill.name }}</p>
-  
-          @if (skill.name === 'Growth Mindset') {
-            <div class="tooltip">
-                <span>{{ growthMindset }}</span>
-                <div class="tooltip-line">
-                    @for (learn of wantToLearn; track learn) {
-                        <div class="tooltip-language">
-                            <img [src]="learn.image" [alt]="learn.name" />
-                            <p>{{ learn.name }}</p>
-                        </div>
-                    }  
-                </div>
-            </div>
-          }
-        </div>
-      }
-    </div>
+<div class="skill-section">
+  <div class="skill-main-container" data-aos="fade-right" id="skills">
+      <span>{{ skillSet }}</span>
+      <div class="skills">
+        @for (skill of skills; track skill.name) {
+          <div 
+            class="skill custom-tooltip-wrapper"
+            [class.no-hover]="skill.name === 'Growth Mindset'">
+    
+            <img [src]="skill.image" [alt]="skill.name" />
+            <p>{{ skill.name }}</p>
+    
+            @if (skill.name === 'Growth Mindset') {
+              <div class="tooltip">
+                  <span>{{ growthMindset }}</span>
+                  <div class="tooltip-line">
+                      @for (learn of wantToLearn; track learn) {
+                          <div class="tooltip-language">
+                              <img [src]="learn.image" [alt]="learn.name" />
+                              <p>{{ learn.name }}</p>
+                          </div>
+                      }  
+                  </div>
+              </div>
+            }
+          </div>
+        }
+      </div>
+  </div>
 </div>
-  

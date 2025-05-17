@@ -1,6 +1,11 @@
 @import './../../styles.scss';
 
-.about-me {
+.about-me-section {
+  background-color: $primary-color;
+  width: 100%;
+}
+
+.about-me-main-container {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -8,6 +13,8 @@
   padding: 64px;
   gap: 64px;
   overflow: hidden;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .ellipse1 {
@@ -122,7 +129,7 @@
     }
   }
 
-  .about-me {
+  .about-me-main-container {
     padding: 32px;
   }
 
@@ -132,7 +139,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .about-me {
+  .about-me-main-container {
     flex-direction: column;
     align-items: center;
   }

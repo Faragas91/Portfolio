@@ -1,11 +1,19 @@
 @import './../../styles.scss';
 
+.skill-section {
+  background: linear-gradient(135deg, #5988ff, #0044ff);
+  width: 100%;
+}
+
 .skill-main-container {
-    background: linear-gradient(135deg, #5988ff, #0044ff);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    max-width: 1920px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: transparent;
 }
 
 span {

@@ -2,6 +2,7 @@
 
 footer {
     background: linear-gradient(135deg, #5988ff, #0044ff);
+    width: 100%;
 }
 
 .footer-main-content {
@@ -10,6 +11,9 @@ footer {
     align-items: center;
     background-color: transparent;
     padding: 64px;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
 
     .logo {
         background-color: transparent;
