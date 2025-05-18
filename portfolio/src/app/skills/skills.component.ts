@@ -13,8 +13,13 @@ export class SkillsComponent {
   
   constructor(private langueservice: LanguageService) {}
 
-  skillSet: string = '';
-  growthMindset: string = '';
+  mySkill: {
+    title: string;
+    growthMindset: string;
+  } = {
+    title: '',
+    growthMindset: ''
+  }
 
   skills = [
     {
@@ -98,8 +103,8 @@ export class SkillsComponent {
 
   ngOnInit() {
     this.langueservice.language$.subscribe(lang => {
-      this.skillSet = this.langueservice.getTranslation('skillSet');
-      this.growthMindset = this.langueservice.getTranslation('growthMindset');
+      this.mySkill.title = this.langueservice.getTranslation('mySkill.title');
+      this.mySkill.growthMindset = this.langueservice.getTranslation('my.Skill.growthMindset');
     })
   }
 }

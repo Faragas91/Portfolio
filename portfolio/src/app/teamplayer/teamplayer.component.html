@@ -1,8 +1,8 @@
 <div class="teamplayer-section">
     <div class="teamplayer-main-container" data-aos="fade-left">
         <div class="teamplayer-container">
-            <h2>{{ teamPlayer }}</h2>
-            <span>{{ saidAboutMe }}</span>
+            <h2>{{ teamPlayer.title }}</h2>
+            <span>{{ teamPlayer.saidAboutMe }}</span>
         </div>
         <div class="colleagues">
             @for (colleague of colleagues; track $index) {

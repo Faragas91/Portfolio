@@ -12,8 +12,13 @@ import { HeaderComponent } from '../shared/header/header.component';
 export class HeroComponent {
   constructor(private languageService: LanguageService){}
 
-  greeting: string = '';
-  scrollDownText: string = '';
+  hero: {
+    greeting: string;
+    scrollDownText: string;
+  } = {
+    greeting: '',
+    scrollDownText: ''
+  }
 
 /**
  * Subscribes to the language service to update the greeting property
@@ -22,8 +27,8 @@ export class HeroComponent {
 
   ngOnInit() {
     this.languageService.language$.subscribe(lang => {
-      this.greeting = this.languageService.getTranslation('greeting');
-      this.scrollDownText = this.languageService.getTranslation('scrollDownText');
+      this.hero.greeting = this.languageService.getTranslation('hero.greeting');
+      this.hero.scrollDownText = this.languageService.getTranslation('hero.scrollDownText');
     });
   }
 }

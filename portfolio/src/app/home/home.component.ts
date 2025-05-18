@@ -32,9 +32,9 @@ export class HomeComponent {
   ) {}
 
   private baseColleagueData = [
-    { name: 'John Doe', projects: 'Project Join', translationKey: 'firstCollegue' },
-    { name: 'Jane Smith', projects: 'Project EL Pollo Loco', translationKey: 'secondCollegue' },
-    { name: 'Alice Johnson', projects: 'Project Ring of Fire', translationKey: 'thirdCollegue' },
+    { name: 'John Doe', projects: 'Project Join', translationKey: 'teamPlayer.firstCollegue'},
+    { name: 'Jane Smith', projects: 'Project EL Pollo Loco', translationKey: 'teamPlayer.secondCollegue' },
+    { name: 'Alice Johnson', projects: 'Project Ring of Fire', translationKey: 'teamPlayer.thirdCollegue' },
   ];
 
   /**

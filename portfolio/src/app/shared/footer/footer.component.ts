@@ -12,11 +12,15 @@ import { RouterLink } from '@angular/router';
 export class FooterComponent {
   constructor(public languageService: LanguageService){}
 
-  legalNotice: string = '';
+  footer: {
+    legalNotice: string;
+  } = {
+    legalNotice: '',
+  }; 
 
   ngOnInit(){
     this.languageService.language$.subscribe(lang => {
-      this.legalNotice = this.languageService.getTranslation('legalNotice');
+      this.footer.legalNotice = this.languageService.getTranslation('footer.legalNotice');
     }) 
   }
 }

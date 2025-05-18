@@ -1,36 +1,36 @@
 <app-header></app-header>
 <div class="legal-notice-container">
   <div class="legal-notice-text">
-    <h1>Legal Notice</h1>
+    <h1>{{ legalNotice.title }}</h1>
 
-    <p><strong>Information and disclosure according to §5 (1) ECG, §25 MedienG, §63 GewO and §14 UGB</strong></p>
-    <p><strong>Website operator:</strong> Stefan Redl</p>
-    <p><strong>Address:</strong> Gaadner Straße 21/f/2, 2371 Hinterbrühl</p>
-    <p><strong>UID no:</strong><br><strong>Trade supervisory authority:</strong><br><strong>Memberships:</strong></p>
+    <p><strong>{{ legalNotice.intro }}</strong></p>
+    <p><strong>{{ legalNotice.operator }}</strong></p>
+    <p><strong>{{ legalNotice.address }}</strong></p>
+    <p><strong>{{ legalNotice.UIDTradeMembership }}</strong></p>
 
     <p>
-      <strong>Contact details:</strong><br>
-      Phone: 0677/62650062<br>
-      Email: stefanredl&#64;gmx.at
+      <strong>{{ legalNotice.contact }}</strong>
     </p>
 
-    <p><strong>Applicable legislation:</strong> www.ris.bka.gv.at</p>
+    <p><strong>{{ legalNotice.law }}</strong></p>
 
     <p>
-      <strong>Online dispute resolution:</strong>
-      Consumers... 
-      <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ODR platform</a>
+      <strong>{{ legalNotice.ODR }}</strong>
+      <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">
+        {{ legalNotice.ODRLink }}
+      </a>
     </p>
 
-    <p><strong>Copyright:</strong> The contents of this website ...</p>
-    <p><strong>Disclaimer:</strong> Despite careful checking ...</p>
+    <p><strong>{{ legalNotice.copyright }}</strong></p>
+    <p><strong>{{ legalNotice.disclaimer }}</strong></p>
 
     <p>
-      Source:
+      {{ legalNotice.source }}
       <a href="https://www.fairesrecht.at/kostenlos-impressum-erstellen-generator.php" target="_blank" rel="noopener">
         Imprint Generator Austria
       </a>
     </p>
+
   </div>
   <img class="ellipse-3" src="assets/projects/Ellipse_3.png" alt="Ellipse_3">
   <img class="ellipse-7" src="assets/projects/Ellipse_7.png" alt="Ellipse 7">

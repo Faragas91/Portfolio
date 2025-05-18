@@ -14,17 +14,31 @@ import { LanguageService } from '../service/language.service';
 export class AboutMeComponent {
   constructor(private languageService: LanguageService) {}
 
-  workTogether: string = '';
-  iAm: string = '';
-  location: string = '';
-  remote: string = '';
-  relocate: string = '';
-  aboutMeFirstSection: string = '';
-  aboutMeSecondSection: string = '';
-  aboutMeThirdSection: string = '';
-  aboutMeFourthSection: string = '';
-  aboutMeMyGoal: string = '';
-  sendAMessage: string = '';
+  aboutMe: {
+    workTogether: string;
+    iAm: string;
+    location: string;
+    remote: string;
+    relocate: string;
+    firstSection: string;
+    secondSection: string;
+    thirdSection: string;
+    fourthSection: string;
+    myGoal: string;
+    sendAMessage: string;
+  } = {
+    workTogether: '',
+    iAm: '',
+    location: '',
+    remote: '',
+    relocate: '',
+    firstSection: '',
+    secondSection: '',
+    thirdSection: '',
+    fourthSection: '',
+    myGoal: '',
+    sendAMessage: ''
+  }
 
   /**
    * Subscribes to the language service and updates the component's properties
@@ -32,17 +46,17 @@ export class AboutMeComponent {
    */
   ngOnInit() {
     this.languageService.language$.subscribe(lang => {
-      this.workTogether = this.languageService.getTranslation('workTogether');
-      this.iAm = this.languageService.getTranslation('iAm');
-      this.location = this.languageService.getTranslation('location');
-      this.remote = this.languageService.getTranslation('remote');
-      this.relocate = this.languageService.getTranslation('relocate');
-      this.aboutMeFirstSection = this.languageService.getTranslation('aboutMeFirstSection');
-      this.aboutMeSecondSection = this.languageService.getTranslation('aboutMeSecondSection');
-      this.aboutMeThirdSection = this.languageService.getTranslation('aboutMeThirdSection');
-      this.aboutMeFourthSection = this.languageService.getTranslation('aboutMeFourthSection');
-      this.aboutMeMyGoal = this.languageService.getTranslation('aboutMeMyGoal');
-      this.sendAMessage = this.languageService.getTranslation('sendAMessage');
+      this.aboutMe.workTogether = this.languageService.getTranslation('aboutMe.workTogether');
+      this.aboutMe.iAm = this.languageService.getTranslation('aboutMe.iAm');
+      this.aboutMe.location = this.languageService.getTranslation('aboutMe.location');
+      this.aboutMe.remote = this.languageService.getTranslation('aboutMe.remote');
+      this.aboutMe.relocate = this.languageService.getTranslation('aboutMe.relocate');
+      this.aboutMe.firstSection = this.languageService.getTranslation('aboutMe.firstSection');
+      this.aboutMe.secondSection = this.languageService.getTranslation('aboutMe.secondSection');
+      this.aboutMe.thirdSection = this.languageService.getTranslation('aboutMe.thirdSection');
+      this.aboutMe.fourthSection = this.languageService.getTranslation('aboutMe.fourthSection');
+      this.aboutMe.myGoal = this.languageService.getTranslation('aboutMe.myGoal');
+      this.aboutMe.sendAMessage = this.languageService.getTranslation('aboutMe.sendAMessage');
     })
   }
 }

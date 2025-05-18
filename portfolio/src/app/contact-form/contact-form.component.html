@@ -2,14 +2,14 @@
   <div class="contact-form-main-container" id="contact-form" data-aos="fade-left">
     <div class="contact-form-left-container">
       <div class="contact-text">
-        <h2>{{ contact }}</h2>
-        <h3>{{ contactProblem }}</h3>
-        <h4>{{ contactDescriptionFirstSection }}</h4>
-        <h4>{{ contactDescriptionSecondSection }}</h4>
-        <h4>{{ contactDescriptionThirdSection }}</h4>
+        <h2>{{ contact.title }}</h2>
+        <h3>{{ contact.problem }}</h3>
+        <h4>{{ contact.descriptionFirstSection }}</h4>
+        <h4>{{ contact.descriptionSecondSection }}</h4>
+        <h4>{{ contact.descriptionThirdSection }}</h4>
         <div class="contact-me">
-          <span>{{ needADeveloper }}</span>
-          <p>{{ contactMe }}</p>
+          <span>{{ contact.needADeveloper }}</span>
+          <p>{{ contact.contactMe }}</p>
         </div>
         <img class="ellipse-10" src="assets/contact/Ellipse_10.png" alt="Ellipse 10">
       </div>
@@ -18,7 +18,7 @@
       <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
         <div class="floating-label">
           <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder=" " required />
-          <label for="name">{{ yourName }}</label>
+          <label for="name">{{ contact.yourName }}</label>
           @if (!name.valid && name.touched && !name.disabled) {
             <div class="error-name">Your name is required</div>
             <img class="error-icon" src="assets/contact/error.png" alt="Error">
@@ -30,7 +30,7 @@
     
         <div class="floating-label">
           <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder=" " required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-          <label for="email">{{ yourEmail }}</label>
+          <label for="email">{{ contact.yourEmail }}</label>
           @if (!email.valid && email.touched && !email.disabled) {
             <div class="error-email">Your email is required</div>  
             <img class="error-icon" src="assets/contact/error.png" alt="Error">
@@ -41,7 +41,7 @@
         </div>
         <div class="floating-label">
           <textarea #message="ngModel" minlength="5" [(ngModel)]="contactData.message" id="message" name="message" placeholder=" " style="height:200px" required></textarea>
-          <label for="message">{{ yourMessage }}</label>
+          <label for="message">{{ contact.yourMessage }}</label>
           @if (!message.valid && message.touched && !message.disabled) {
               <div class="error-message">Your message is required</div>
               <img class="error-icon" src="assets/contact/error.png" alt="Error">
@@ -53,11 +53,11 @@
         <div class="custom-checkbox">
           <input type="checkbox" #myCheckbox="ngModel" name="privacyPolicy" [(ngModel)]="privacyPolicyChecked" required>
           <label for="myCheckbox">
-            {{ privacyPolicyText1 }}
+            {{ contact.privacyPolicyText1 }}
             <a [routerLink]="'/privacy-policy'" target="_blank" rel="noopener noreferrer">
-              {{ privacyPolicyLink }}
+              {{ contact.privacyPolicyLink }}
             </a>
-            {{ privacyPolicyText2 }}
+            {{ contact.privacyPolicyText2 }}
           </label>
         </div>
         @if (!myCheckbox.valid && myCheckbox.touched && !myCheckbox.disabled) {
@@ -68,14 +68,14 @@
           class="submit-button" 
           [disabled]="!isFromValied()"
           [ngClass]="{ 'disabled-button': !isFromValied(), 'active-button': isFromValied() }">
-          {{ sayHello }}
+          {{ contact.sayHello }}
         </button>
       </form>
       <img class="ellipse-11" src="assets/contact/Ellipse_11.png" alt="Ellipse 11">
     </div>
     <div 
       [ngClass]="{ 'message-sent': messageSent, 'message-not-sent': !messageSent }">
-      <span [innerHTML]="messageSentText"></span>
+      <span [innerHTML]="contact.messageSentText"></span>
     </div>
     <img class="ellipse-9" src="assets/contact/Ellipse_9.png" alt="Ellipse 9">
     <button class="scroll-top-button">

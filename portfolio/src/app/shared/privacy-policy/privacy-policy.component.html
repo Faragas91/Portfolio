@@ -3,167 +3,167 @@
     <div class="privacy-policy-container">
         <img class="ellipse-0" src="assets/header/Ellipse_0.png" alt="Ellipse 0">
         <div class="privacy-policy-text">
-            <h1>Privacy Policy</h1>
-            <p>As of Mai 16, 2025</p>
+            <h1> {{ privacyPolicy.title }}</h1>
+            <p> {{ privacyPolicy.lastUpdated }}</p>
 
-            <h2>Content Overview</h2>
+            <h2> {{ privacyPolicy.tableOfContents }}</h2>
             <ul class="index">
-                <li><a class="index-link" href="#m3">Controller</a></li>
-                <li><a class="index-link" href="#mOverview">Overview of Processing Operations</a></li>
-                <li><a class="index-link" href="#m2427">Applicable Legal Bases</a></li>
-                <li><a class="index-link" href="#m27">Security Measures</a></li>
-                <li><a class="index-link" href="#m25">Transfer of Personal Data</a></li>
-                <li><a class="index-link" href="#m24">International Data Transfers</a></li>
-                <li><a class="index-link" href="#m12">General Information on Data Storage and Erasure</a></li>
-                <li><a class="index-link" href="#m10">Rights of Data Subjects</a></li>
-                <li><a class="index-link" href="#m317">Business Services</a></li>
-                <li><a class="index-link" href="#m225">Provision of the Online Offer and Web Hosting</a></li>
-                <li><a class="index-link" href="#m134">Use of Cookies</a></li>
-                <li><a class="index-link" href="#m182">Contact and Request Management</a></li>
+                <li><a class="index-link" href="#m3">{{ privacyPolicy.controller }}</a></li>
+                <li><a class="index-link" href="#mOverview"> {{ privacyPolicy.overviewOfProcessingOperations }}</a></li>
+                <li><a class="index-link" href="#m2427"> {{ privacyPolicy.applicableLegalBases }}</a></li>
+                <li><a class="index-link" href="#m27"> {{ privacyPolicy.securityMeasures }}</a></li>
+                <li><a class="index-link" href="#m25"> {{ privacyPolicy.transferOfPersonalData }}</a></li>
+                <li><a class="index-link" href="#m24"> {{ privacyPolicy.internationalDataTransfer }}</a></li>
+                <li><a class="index-link" href="#m12"> {{ privacyPolicy.dataStorage }}</a></li>
+                <li><a class="index-link" href="#m10"> {{ privacyPolicy.rightsOfDataSubjects }} </a></li>
+                <li><a class="index-link" href="#m317"> {{ privacyPolicy.businessServices }} </a></li>
+                <li><a class="index-link" href="#m225"> {{ privacyPolicy.provisionOfOnlineServices }} </a></li>
+                <li><a class="index-link" href="#m134"> {{ privacyPolicy.useOfCookies }} </a></li>
+                <li><a class="index-link" href="#m182"> {{ privacyPolicy.contactAndRequestManagement }} </a></li>
             </ul>
 
-            <h2 id="m3">Person Responsible</h2>
+            <h2 id="m3"> {{ privacyPolicy.personResponsible }} </h2>
             <p>Stefan, Redl<br>
             Gaadner Straße 21/f/2<br>
             2371 Hinterbruhl</p>
             <p>Email Address: <a href="mailto:stefanredl@gmx.at">stefanredl&#64;gmx.at</a></p>
 
-            <h2 id="mOverview">Overview of Processing</h2>
-            <p>The following overview summarizes the types of data processed and the purposes of their processing and refers to the data subjects.</p>
+            <h2 id="mOverview"> {{ privacyPolicy.overviewOfProcessing }} </h2>
+            <p> {{ privacyPolicy.overviewOfProcessingText1 }} </p>
 
-            <h3>Types of Data Processed</h3>
+            <h3> {{ privacyPolicy.overviewOfProcessingText2 }}</h3>
             <ul>
-                <li>Inventory Data</li>
-                <li>Payment Data</li>
-                <li>Contact Data</li>
-                <li>Content Data</li>
-                <li>Contract Data</li>
-                <li>Usage Data</li>
-                <li>Meta, Communication, and Procedural Data</li>
-                <li>Log Data</li>
+                <li> {{ privacyPolicy.inventoryData }} </li>
+                <li> {{ privacyPolicy.paymentData }} </li>
+                <li> {{ privacyPolicy.contactData }} </li>
+                <li> {{ privacyPolicy.contentData }} </li>
+                <li> {{ privacyPolicy.contractData }} </li>
+                <li> {{ privacyPolicy.usageData }} </li>
+                <li> {{ privacyPolicy.meta}} </li>
+                <li> {{ privacyPolicy.logData}} </li>
             </ul>
 
-            <h3>Categories of Data Subjects</h3>
+            <h3> {{ privacyPolicy.categoriesOfDataSubjects}} </h3>
             <ul>
-                <li>Recipients of Services and Contracting Parties</li>
-                <li>Interested Parties</li>
-                <li>Communication Partners</li>
-                <li>Users</li>
-                <li>Business and Contractual Partners</li>
+                <li> {{ privacyPolicy.recipientsOfServicesAndContractingParties }} </li>
+                <li> {{ privacyPolicy.interestedParties }} </li>
+                <li> {{ privacyPolicy.communicatingPartners}} </li>
+                <li> {{ privacyPolicy.users}} </li>
+                <li> {{ privacyPolicy.businessAndContractualPartners}} </li>
             </ul>
 
-            <h3>Purposes of Processing</h3>
+            <h3> {{ privacyPolicy.purposesOfProcessing}} </h3>
             <ul>
-                <li>Provision of Contractual Services and Fulfillment of Contractual Obligations</li>
-                <li>Communication</li>
-                <li>Security Measures</li>
-                <li>Office and Organizational Procedures</li>
-                <li>Organizational and Administrative Procedures</li>
-                <li>Feedback</li>
-                <li>Provision of Our Online Offer and User Friendliness</li>
-                <li>Information Technology Infrastructure</li>
-                <li>Business Processes and Economic Procedures</li>
+                <li> {{ privacyPolicy.provisionOfContractualServices}} </li>
+                <li> {{ privacyPolicy.communication}} </li>
+                <li> {{ privacyPolicy.security}} </li>
+                <li> {{ privacyPolicy.office}} </li>
+                <li> {{ privacyPolicy.organization}} </li>
+                <li> {{ privacyPolicy.feedback}} </li>
+                <li> {{ privacyPolicy.provisionOfServices}} </li>
+                <li> {{ privacyPolicy.infrastructure}} </li>
+                <li> {{ privacyPolicy.economic}} </li>
             </ul>
 
-            <h2 id="m2427">Applicable Legal Bases</h2>
-            <p><strong>Applicable Legal Bases under the GDPR:</strong> Below is an overview of the legal bases of the GDPR on which we process personal data. Please note that in addition to the GDPR, national data protection regulations may apply in your or our country of residence or headquarters. Should more specific legal bases be relevant in individual cases, we will inform you about them in this Privacy Policy.</p>
+            <h2 id="m2427"> {{ privacyPolicy.applicableLegalBases}} </h2>
+            <p><strong> {{ privacyPolicy.applicableLegalBasesUnderGDPR}} </strong> {{ privacyPolicy.applicableLegalBasesUnderGDPRText }} </p>
 
             <ul>
-                <li><strong>Consent (Art. 6 para. 1 sentence 1 lit. a) GDPR)</strong> - The data subject has given consent to the processing of personal data concerning him or her for one or more specific purposes.</li>
-                <li><strong>Contract Performance and Pre-contractual Inquiries (Art. 6 para. 1 sentence 1 lit. b) GDPR)</strong> - Processing is necessary for the performance of a contract to which the data subject is a party or in order to take steps at the request of the data subject prior to entering into a contract.</li>
-                <li><strong>Legal Obligation (Art. 6 para. 1 sentence 1 lit. c) GDPR)</strong> - Processing is necessary for compliance with a legal obligation to which the controller is subject.</li>
-                <li><strong>Legitimate Interests (Art. 6 para. 1 sentence 1 lit. f) GDPR)</strong> - Processing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data.</li>
+                <li><strong> {{ privacyPolicy.consent }} </strong> {{ privacyPolicy.consentText }} </li>
+                <li><strong> {{ privacyPolicy.contract }} </strong> {{ privacyPolicy.contractText }} </li>
+                <li><strong> {{ privacyPolicy.legalObligation }} </strong> {{ privacyPolicy.legalObligationText }} </li>
+                <li><strong> {{ privacyPolicy.legalInterest }} </strong> {{ privacyPolicy.legalInterestText }} </li>
             </ul>
 
-            <p><strong>National Data Protection Regulations in Austria:</strong> In addition to the data protection regulations of the GDPR, national regulations on data protection apply in Austria. These include, in particular, the Federal Act on the Protection of Natural Persons with regard to the Processing of Personal Data (Data Protection Act - DSG). The Data Protection Act contains special regulations on the right to information, the right to rectification or erasure, the processing of special categories of personal data, processing for other purposes and transfer as well as automated decision-making in individual cases.</p>
+            <p><strong> {{ privacyPolicy.nationalDataProtectionRegulations }} </strong> {{ privacyPolicy.nationalDataProtectionRegulationsText }} </p>
 
-            <p><strong>Note on the Applicability of the GDPR and Swiss FADP:</strong> This privacy notice serves to provide information in accordance with both the Swiss FADP and the General Data Protection Regulation (GDPR). For this reason, please note that the terms of the GDPR are used due to their broader geographical application and comprehensibility. In particular, instead of the terms “processing” of “personal data,” “overriding interest,” and “sensitive personal data” used in the Swiss FADP, the terms “processing” of “personal data,” “legitimate interest,” and “special categories of data” used in the GDPR are used. However, the legal meaning of the terms will continue to be determined in accordance with the Swiss FADP within the scope of the Swiss FADP.</p>
+            <p><strong> {{ privacyPolicy.swissFADP}} </strong> {{ privacyPolicy.swissFADPText }} </p>
 
-            <h2 id="m27">Security Measures</h2>
-            <p>We take appropriate technical and organizational measures to ensure a level of security appropriate to the risk, taking into account the state of the art, the costs of implementation and the nature, scope, context, and purposes of processing as well as the risk of varying likelihood and severity for the rights and freedoms of natural persons, in accordance with legal requirements.</p>
+            <h2 id="m27"> {{ privacyPolicy.securityMeasures }} </h2>
+            <p> {{ privacyPolicy.securityMeasuresText1 }} </p>
 
-            <p>The measures include, in particular, ensuring the confidentiality, integrity, and availability of data by controlling physical and electronic access to the data as well as access, input, disclosure, availability, and separation of the data. Furthermore, we have established procedures that ensure the exercise of data subject rights, the deletion of data, and responses to data threats. Furthermore, we take the protection of personal data into account as early as the development or selection of hardware, software, and processes in accordance with the principle of data protection, through technology design, and data protection-friendly default settings.</p>
+            <p> {{ privacyPolicy.securityMeasuresText2 }} </p>
 
-            <h2 id="m25">Transfer of Personal Data</h2>
-            <p>When we process personal data, it may be transferred to other entities, companies, legally independent organizational units, or individuals or disclosed to them. The recipients of this data may include, for example, service providers commissioned with IT tasks or providers of services and content that are integrated into a website. In such cases, we observe the legal requirements and, in particular, conclude corresponding contracts or agreements with the recipients of your data that serve to protect your data.</p>
+            <h2 id="m25"> {{ privacyPolicy.transferOfPersonalData }} </h2>
+            <p> {{ privacyPolicy.transferOfPersonalDataText }} </p>
 
-            <h2 id="m12">General Information on Data Retention and Deletion</h2>
-            <p>We delete personal data we process in accordance with legal provisions as soon as the underlying consents are withdrawn or there are no further legal grounds for processing. This applies to cases where the original purpose of processing ceases to exist or the data is no longer required. Exceptions to this rule apply if legal obligations or special interests require a longer retention or archiving of the data.</p>
-            <p>In particular, data that must be retained for commercial or tax reasons, or whose storage is necessary for legal prosecution or to protect the rights of other natural or legal persons, must be archived accordingly.</p>
-            <p>Our data protection notices contain additional information on the retention and deletion of data that specifically apply to certain processing operations.</p>
-            <p>If there are multiple indications of a retention period or deletion deadline for a piece of data, the longest period always applies.</p>
-            <p>If a deadline does not explicitly start on a specific date and lasts at least one year, it automatically begins at the end of the calendar year in which the triggering event occurred. In the case of ongoing contractual relationships in which data is stored, the triggering event is the time of termination or other ending of the legal relationship.</p>
-            <p>Data that is no longer needed for the original intended purpose but is retained due to legal requirements or other reasons will be processed solely for the purposes that justify its retention.</p>
-            <p><strong>Further information on processing operations, procedures, and services:</strong></p>
+            <h2 id="m12"> {{ privacyPolicy.generalInformation}} </h2>
+            <p> {{ privacyPolicy.generalInformationText1 }} </p>
+            <p> {{ privacyPolicy.generalInformationText2 }} </p>
+            <p> {{ privacyPolicy.generalInformationText3 }} </p>
+            <p> {{ privacyPolicy.generalInformationText4 }} </p>
+            <p> {{ privacyPolicy.generalInformationText5 }} </p>
+            <p> {{ privacyPolicy.generalInformationText6 }} </p>
+            <p><strong> {{ privacyPolicy.furtherNotes}} </strong></p>
             <ul class="m-elements">
-                <li><strong>Retention and deletion of data:</strong> The following general retention periods apply under Austrian law for retention and archiving:
+                <li><strong> {{ privacyPolicy.retentionAndDeletion }} </strong>
                     <ul>
-                    <li>10 years - Retention period for books and records, annual financial statements, inventories, management reports, opening balances, accounting documents, and invoices as well as all necessary work instructions and other organizational documents (Federal Tax Code (BAO §132), Commercial Code (UGB §§190-212)).</li>
-                    <li>6 years - Other business documents: Received commercial or business letters, copies of sent commercial or business letters, and other documents relevant for tax purposes. These include, for example, hourly wage records, business calculation sheets, calculation documents, price lists, and payroll documents, unless they are already accounting documents and cash register receipts (Federal Tax Code (BAO §132), Commercial Code (UGB §§190-212)).</li>
-                    <li>3 years - Data required to consider potential warranty and compensation claims or similar contractual claims and rights and associated inquiries, based on past business experience and customary industry practices, are stored for the duration of the regular statutory limitation period of three years (§§ 1478, 1480 ABGB).</li>
+                    <li> {{ privacyPolicy.retentionAndDeletion10Years }} </li>
+                    <li> {{ privacyPolicy.retentionAndDeletion6Years }} </li>
+                    <li> {{ privacyPolicy.retentionAndDeletion3Years }} </li>
                     </ul>
                 </li>
             </ul>
 
-            <h2 id="m10">Rights of the Data Subjects</h2>
-            <p>Rights of data subjects under the GDPR: As a data subject, you are entitled to various rights under the GDPR, particularly those outlined in Articles 15 to 21 GDPR:</p>
+            <h2 id="m10"> {{ privacyPolicy.rightsOfDataSubjects }} </h2>
+            <p> {{ privacyPolicy.rightsOfDataSubjectsText }} </p>
             <ul>
-                <li><strong>Right to object:</strong> You have the right, for reasons arising from your particular situation, to object at any time to the processing of personal data concerning you, which is carried out pursuant to Art. 6 Para. 1 lit. e or f GDPR; this also applies to profiling based on these provisions. If your personal data is processed for direct marketing purposes, you have the right to object at any time to the processing of your personal data for such marketing purposes; this also applies to profiling, insofar as it is related to such direct marketing.</li>
-                <li><strong>Right to withdraw consent:</strong> You have the right to withdraw any consent you have given at any time.</li>
-                <li><strong>Right of access:</strong> You have the right to request confirmation as to whether data concerning you is being processed and to receive information about this data as well as additional details and a copy of the data in accordance with legal provisions.</li>
-                <li><strong>Right to rectification:</strong> You have the right, in accordance with legal provisions, to request the completion of data concerning you or the rectification of incorrect data concerning you.</li>
-                <li><strong>Right to erasure and restriction of processing:</strong> You have the right, in accordance with legal provisions, to demand that data concerning you be deleted immediately or, alternatively, to request restriction of the processing of the data in accordance with legal provisions.</li>
-                <li><strong>Right to data portability:</strong> You have the right to receive data concerning you that you have provided to us in a structured, commonly used, and machine-readable format, or to request its transfer to another controller, in accordance with legal provisions.</li>
-                <li><strong>Right to lodge a complaint with a supervisory authority:</strong> You have the right, without prejudice to any other administrative or judicial remedy, to lodge a complaint with a supervisory authority, particularly in the Member State of your habitual residence, place of work, or place of the alleged infringement, if you consider that the processing of personal data concerning you infringes the GDPR.</li>
+                <li><strong> {{ privacyPolicy.rightToObject }} </strong> {{ privacyPolicy.rightToObjectText}} </li>
+                <li><strong> {{ privacyPolicy.rightToWithdraw }} </strong> {{ privacyPolicy.rightToWithdrawText}} </li>
+                <li><strong> {{ privacyPolicy.rightToAccess }} </strong> {{ privacyPolicy.rightToAccessText }} </li>
+                <li><strong> {{ privacyPolicy.rightToRectification }} </strong> {{ privacyPolicy.rightToRectificationText}} </li>
+                <li><strong> {{ privacyPolicy.rightToErasure }} </strong> {{ privacyPolicy.rightToErasureText }} </li>
+                <li><strong> {{ privacyPolicy.rightToDataPortability }} </strong> {{ privacyPolicy.rightToDataPortabilityText}} </li>
+                <li><strong> {{ privacyPolicy.rightToLodgeComplaint }} </strong> {{ privacyPolicy.rightToLodgeComplaintText}} </li>
             </ul>
 
-            <h2 id="m317">Business Services</h2>
-            <p>We process data from our contractual and business partners, e.g., customers and prospects (collectively referred to as "contractual partners"), as part of contractual and comparable legal relationships, as well as associated measures and regarding communication with contractual partners (or pre-contractually), such as responding to inquiries.</p>
-            <p>We use this data to fulfill our contractual obligations. This includes, in particular, obligations to provide agreed services, any update obligations, and remedies for warranty and other service disruptions. Furthermore, we use the data to safeguard our rights and for administrative tasks associated with these obligations and corporate organization. We also process the data based on our legitimate interests in proper and economical business management as well as in security measures to protect our contractual partners and our business operations from misuse, risks to their data, secrets, information, and rights (e.g., involving telecommunications, transport, and other support services as well as subcontractors, banks, tax and legal advisors, payment service providers, or financial authorities). In accordance with applicable law, we only disclose the data of contractual partners to third parties as necessary for the aforementioned purposes or to fulfill legal obligations. Contractual partners are informed of other forms of processing, such as for marketing purposes, within this privacy policy.</p>
-            <p>We inform contractual partners about the data required for the aforementioned purposes before or during data collection, e.g., in online forms, through special markings (e.g., colors) or symbols (e.g., asterisks or similar), or in person.</p>
-            <p>We delete the data after the expiry of legal warranty and comparable obligations, i.e., generally after four years unless the data is stored in a customer account, e.g., as long as it is required for archiving due to legal reasons (e.g., for tax purposes, usually ten years). Data disclosed to us by the contractual partner in the context of an order is deleted in accordance with the specifications and generally after the end of the order.</p>
+            <h2 id="m317"> {{ privacyPolicy.businessServices }} </h2>
+            <p> {{ privacyPolicy.businessServicesText1 }} </p>
+            <p> {{ privacyPolicy.businessServicesText2 }}</p>
+            <p> {{ privacyPolicy.businessServicesText3 }} </p>
+            <p> {{ privacyPolicy.businessServicesText4 }} </p>
             <ul class="m-elements">
-                <li><strong>Processed Data Types:</strong> Master data (e.g., full name, residential address, contact information, customer number, etc.); Payment data (e.g., bank account details, invoices, payment history); Contact data (e.g., postal and email addresses or phone numbers); Contract data (e.g., contract subject, duration, customer category); Usage data (e.g., page views and duration, click paths, usage intensity and frequency, device types and operating systems used, interactions with content and functions). Meta, communication, and procedural data (e.g., IP addresses, timestamps, identification numbers, involved persons).</li>
-                <li><strong>Affected Persons:</strong> Service recipients and clients; Prospective customers. Business and contractual partners.</li>
-                <li><strong>Purposes of Processing:</strong> Provision of contractual services and fulfillment of contractual obligations; Security measures; Communication; Office and organizational procedures; Organizational and administrative procedures. Business processes and economic procedures.</li>
-                <li><strong>Retention and Deletion:</strong> Deletion in accordance with the details in the section "General Information on Data Storage and Deletion."</li>
-                <li><strong>Legal Bases:</strong> Contract performance and pre-contractual inquiries (Art. 6(1)(1)(b) GDPR); Legal obligation (Art. 6(1)(1)(c) GDPR). Legitimate interests (Art. 6(1)(1)(f) GDPR).</li>
+                <li><strong> {{ privacyPolicy.businessProcessedDataTypes }} </strong> {{ privacyPolicy.businessProcessedDataTypesText }} </li>
+                <li><strong> {{ privacyPolicy.businessAffectedPersons }} </strong> {{ privacyPolicy.businessAffectedPersonsText }} </li>
+                <li><strong> {{ privacyPolicy.businessPurposesOfProcessing }} </strong> {{ privacyPolicy.businessPurposesOfProcessingText }} </li>
+                <li><strong> {{ privacyPolicy.businessRetentionAndDeletion }} </strong> {{ privacyPolicy.businessRetentionAndDeletionText }} </li>
+                <li><strong> {{ privacyPolicy.businessLegalBases }} </strong> {{ privacyPolicy.businessLegalBasesText }} </li>
             </ul>
-            <p><strong>Further Notes on Processing Activities, Procedures, and Services:</strong></p>
+            <p><strong> {{ privacyPolicy.furtherNotes}} </strong></p>
             <ul class="m-elements">
-                <li><strong>Online shop, order forms, e-commerce, and delivery:</strong> We process our customers' data to enable them to select, purchase, or order the chosen products, goods, and related services, as well as their payment and delivery or execution. If required for fulfilling an order, we engage service providers, particularly postal, shipping, and delivery companies, to deliver or execute services for our customers. To process payment transactions, we use the services of banks and payment service providers. The required details are marked as such during the ordering or comparable purchasing process and include the information necessary for delivery, provision, and billing as well as contact information for any necessary follow-ups; 
-                <li><strong>Legal Basis:</strong> Contract performance and pre-contractual inquiries (Art. 6(1)(1)(b) GDPR).</li>
+                <li><strong> {{ privacyPolicy.onlineShop }} </strong> {{ privacyPolicy.onlineShopText }} </li>
+                <li><strong> {{ privacyPolicy.onlineShopLegalBases}} </strong> {{ privacyPolicy.onlineShopLegalBasesText }} </li>
             </ul>
-            <h2 id="m225">Provision of Online Services and Web Hosting</h2>
-            <p>We process users' data to provide them with our online services. For this purpose, we process users' IP addresses, which are necessary to transmit the content and functionalities of our online services to the browser or device of the users.</p>
+            <h2 id="m225"> {{ privacyPolicy.provisionOfOnlineServicesAndWebhosting }} </h2>
+            <p> {{ privacyPolicy.provisionOfOnlineServicesAndWebhostingText }} </p>
             <ul class="m-elements">
-                <li><strong>Processed Data Types:</strong> Usage data (e.g., page views and duration, click paths, usage intensity and frequency, device types and operating systems used, interactions with content and functionalities); Meta, communication, and procedural data (e.g., IP addresses, timestamps, identification numbers, involved persons). Log data (e.g., log files regarding logins, data retrieval, or access times).</li>
-                <li><strong>Affected Persons:</strong> Users (e.g., website visitors, users of online services).</li>
-                <li><strong>Purposes of Processing:</strong> Provision of our online offering and user-friendliness; Information technology infrastructure (operation and provision of information systems and technical devices (computers, servers, etc.)). Security measures.</li>
-                <li><strong>Retention and Deletion:</strong> Deletion in accordance with the details in the section "General Information on Data Storage and Deletion."</li>
-                <li><strong>Legal Bases:</strong> Legitimate interests (Art. 6(1)(1)(f) GDPR).</li>
+                <li><strong> {{ privacyPolicy.provisionProcessedDataTypes }} </strong> {{ privacyPolicy.provisionProcessedDataTypesText }} </li>
+                <li><strong> {{ privacyPolicy.provisionAffectedPersons }} </strong> {{ privacyPolicy.provisionAffectedPersonsText }} </li>
+                <li><strong> {{ privacyPolicy.provisionPurposesOfProcessing }} </strong> {{ privacyPolicy.provisionPurposesOfProcessingText }} </li>
+                <li><strong> {{ privacyPolicy.provisionRetentionAndDeletion }} </strong> {{ privacyPolicy.provisionRetentionAndDeletionText }} </li>
+                <li><strong> {{ privacyPolicy.provisionLegalBases }} </strong> {{ privacyPolicy.provisionLegalBasesText }} </li>
             </ul>
-            <p><strong>Further Notes on Processing Activities, Procedures, and Services:</strong></p>
+            <p><strong> {{ privacyPolicy.furtherNotes }} </strong></p>
             <ul class="m-elements">
-                <li><strong>Collection of Access Data and Log Files:</strong> Access to our online offering is logged as "server log files." These log files may include the address and name of the accessed web pages and files, date and time of access, transferred data volumes, notifications about successful access, browser type and version, the user's operating system, referrer URL (the previously visited page), and generally IP addresses and the requesting provider. The server log files can be used for security purposes, e.g., to prevent server overloads (especially in the case of abusive attacks, so-called DDoS attacks) and to ensure server load and stability;</li>
-                <li><strong>Legal Basis:</strong> Legitimate interests (Art. 6(1)(1)(f) GDPR).</li>
-                <li><strong>Data Deletion:</strong> Log file information is stored for a maximum of 30 days and then deleted or anonymized. Data that requires further retention for evidentiary purposes is exempt from deletion until the respective incident is conclusively resolved.</li>
+                <li><strong> {{ privacyPolicy.collectionOfAccessData }} </strong> {{ privacyPolicy.collectionOfAccessDataText }} </li>
+                <li><strong> {{ privacyPolicy.collectionOfAccessDataLegalBasis }} </strong> {{ privacyPolicy.collectionOfAccessDataLegalBasisText }} </li>
+                <li><strong> {{ privacyPolicy.collectionOfAccessDataDataDeletion }} </strong> {{ privacyPolicy.collectionOfAccessDataDataDeletionText }} </li>
             </ul>
-            <h2 id="m134">Use of Cookies</h2>
-            <p>The term "cookies" refers to functions that store and retrieve information on users' devices. Cookies can also serve different purposes, such as ensuring the functionality, security, and comfort of online offerings, as well as analyzing visitor flows. We use cookies in accordance with legal requirements. Where necessary, we obtain prior consent from users. Where consent is not required, we rely on our legitimate interests. This applies when storing and retrieving information is essential to provide expressly requested content and functionalities. This includes storing settings and ensuring the functionality and security of our online offering. Consent can be revoked at any time. We provide clear information about their scope and the cookies used.</p>
-            <p><strong>Notes on Legal Bases for Data Protection:</strong> Whether we process personal data using cookies depends on user consent. Where consent is provided, it serves as the legal basis. Without consent, we rely on our legitimate interests as outlined in this section and in the context of the respective services and procedures.</p>
-            <p><strong>Retention Period:</strong> Regarding the retention period, the following types of cookies are distinguished:</p>
+            <h2 id="m134"> {{ privacyPolicy.useOfCookies }} </h2>
+            <p> {{ privacyPolicy.useOfCookiesText }} </p>
+            <p><strong> {{ privacyPolicy.useOfCookiesNotesOnLegalBases }} </strong> {{ privacyPolicy.useOfCookiesNotesOnLegalBasesText }} </p>
+            <p><strong> {{ privacyPolicy.useOfCookiesRetention }} </strong> {{ privacyPolicy.useOfCookiesRetentionText }} </p>
             <ul>
-                <li><strong>Temporary Cookies (also: Session Cookies):</strong> Temporary cookies are deleted at the latest after a user leaves an online offering and closes their device (e.g., browser or mobile application).</li>
-                <li><strong>Permanent Cookies:</strong> Permanent cookies remain stored even after closing the device. For example, login statuses can be saved, and preferred content displayed directly when a user revisits a website. Likewise, the usage data collected through cookies can be used for reach measurement. Unless otherwise specified in the consent process, users should assume that these are permanent and may be stored for up to two years.</li>
+                <li><strong> {{ privacyPolicy.useOfCookiesTemporaryCookies }} </strong> {{ privacyPolicy.useOfCookiesTemporaryCookiesText }} </li>
+                <li><strong> {{ privacyPolicy.useOfCookiesPermanentCookies }} </strong> {{ privacyPolicy.useOfCookiesPermanentCookiesText }} </li>
             </ul>
-            <p><strong>General Notes on Revocation and Objection (Opt-out):</strong> Users can revoke their consent at any time and may also object to processing in accordance with legal provisions, including through their browser's privacy settings.</p>
+            <p><strong> {{ privacyPolicy.useOfCookiesOptOut }} </strong> {{ privacyPolicy.useOfCookiesOptOutText }} </p>
             <ul class="m-elements">
-                <li><strong>Processed Data Types:</strong> Meta, communication, and procedural data (e.g., IP addresses, timestamps, identification numbers, involved persons).</li>
-                <li><strong>Affected Persons:</strong> Users (e.g., website visitors, users of online services).</li>
-                <li><strong>Legal Bases:</strong> Legitimate interests (Art. 6(1)(1)(f) GDPR). Consent (Art. 6(1)(1)(a) GDPR).</li>
+                <li><strong> {{ privacyPolicy.useOfCookiesProcessedDataTypes }} </strong> {{ privacyPolicy.useOfCookiesProcessedDataTypesText }} </li>
+                <li><strong> {{ privacyPolicy.useOfCookiesAffectedPersons }} </strong> {{ privacyPolicy.useOfCookiesAffectedPersonsText }} </li>
+                <li><strong> {{ privacyPolicy.useOfCookiesLegalBases }} </strong> {{ privacyPolicy.useOfCookiesLegalBasesText }} </li>
             </ul>
-            <p><strong>Further Notes on Processing Activities, Procedures</strong></p>
+            <p><strong> {{ privacyPolicy.furtherNotesOnProcessingActivitiesAndProcedures }} </strong></p>
         </div>
         <img class="ellipse-3" src="assets/projects/Ellipse_3.png" alt="Ellipse 3">
         <img class="ellipse-4" src="assets/projects/Ellipse_4.png" alt="Ellipse 4">

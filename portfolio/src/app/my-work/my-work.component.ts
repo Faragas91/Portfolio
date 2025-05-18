@@ -13,15 +13,20 @@ export class MyWorkComponent {
   constructor(private languageService: LanguageService) {}
   projects: any[] = [];
 
-  myWork: string = '';
-  myWorkDescription: string = '';
+  myWork: {
+    title: string;
+    description: string;
+  } = {
+    title: '',
+    description: '',
+  };
 
   private baseProjects = [
     {
       imageUrl: '/assets/projects/join_photo.png',
       title: 'Join',
       techStack: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
-      description: this.languageService.getTranslation('joinDescription'),
+      descriptionKey: 'myWork.joinDescription',
       githubLink: 'https://github.com/Faragas91/Join.git',
       liveLink: 'https://stefanredl.at/Join/',
     },
@@ -29,7 +34,7 @@ export class MyWorkComponent {
       imageUrl: '/assets/projects/el_pollo_loco_photo.png',
       title: 'El Pollo Loco',
       techStack: ['JavaScript', 'HTML', 'CSS'],
-      description: this.languageService.getTranslation('elPolloLocoDescription'),
+      descriptionKey: 'myWork.elPolloLocoDescription',
       githubLink: 'https://github.com/Faragas91/EL_POLLO_LOCO.git',
       liveLink: 'https://stefanredl.at/EL_POLLO_LOCO/',
     },
@@ -37,7 +42,7 @@ export class MyWorkComponent {
       imageUrl: '/assets/projects/ring_of_fire_photo.png',
       title: 'Ring of Fire',
       techStack: ['Angular','TypeScript', 'HTML', 'SCSS', 'Firebase'],
-      description: this.languageService.getTranslation('ringOfFireDescription'),
+      descriptionKey: 'myWork.ringOfFireDescription',
       githubLink: 'https://github.com/Faragas91/Ring-of-Fire.git',
       liveLink: 'https://stefanredl.at/Ring_of_fire/',
     },
@@ -50,8 +55,8 @@ export class MyWorkComponent {
    */
   ngOnInit() {
     this.languageService.language$.subscribe(lang => {
-      this.myWork = this.languageService.getTranslation('myWork');
-      this.myWorkDescription = this.languageService.getTranslation('myWorkDescription');
+      this.myWork.title = this.languageService.getTranslation('myWork.title');
+      this.myWork.description = this.languageService.getTranslation('myWork.description');
       this.updateProjectDescriptions();
     })
     this.updateProjectDescriptions();
@@ -65,7 +70,7 @@ export class MyWorkComponent {
   updateProjectDescriptions() {
     this.projects = this.baseProjects.map((project) => ({
       ...project,
-      description: this.languageService.getTranslation(project.description),
+      description: this.languageService.getTranslation(project.descriptionKey),
     }));
   }  
 }

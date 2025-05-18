@@ -19,8 +19,13 @@ export class TeamplayerComponent {
         description: string;
     } [] = [];
 
-    teamPlayer: string = '';
-    saidAboutMe: string = '';
+    teamPlayer: {
+      title: string;
+      saidAboutMe: string;
+    } = {
+      title: '',
+      saidAboutMe: ''
+    }
   
   /**
    * Subscribes to the language service and updates the component's properties
@@ -28,8 +33,8 @@ export class TeamplayerComponent {
    */
     ngOnInit() {
       this.languageService.language$.subscribe((lang) => {
-        this.teamPlayer = this.languageService.getTranslation('teamPlayer');
-        this.saidAboutMe = this.languageService.getTranslation('saidAboutMe');
+        this.teamPlayer.title = this.languageService.getTranslation('teamPlayer.title');
+        this.teamPlayer.saidAboutMe = this.languageService.getTranslation('teamPlayer.saidAboutMe');
       });
     }
 }

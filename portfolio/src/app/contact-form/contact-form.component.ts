@@ -22,21 +22,39 @@ export class ContactFormComponent {
 
   constructor(private languageService: LanguageService){}
 
-  contact: string = '';
-  contactProblem: string = '';
-  contactDescriptionFirstSection: string = '';
-  contactDescriptionSecondSection: string = '';
-  contactDescriptionThirdSection: string = '';
-  needADeveloper: string = '';
-  contactMe: string = '';
-  yourName: string = '';
-  yourEmail: string = '';
-  yourMessage: string = '';
-  messageSentText: string = '';
-  privacyPolicyText1: string = '';
-  privacyPolicyLink: string = '';
-  privacyPolicyText2: string = '';
-  sayHello: string = '';
+  contact: {
+    title: string;
+    problem: string;
+    descriptionFirstSection: string;
+    descriptionSecondSection: string;
+    descriptionThirdSection: string;
+    needADeveloper: string;
+    contactMe: string;
+    yourName: string;
+    yourEmail: string;
+    yourMessage: string;
+    messageSentText: string;
+    privacyPolicyText1: string;
+    privacyPolicyLink: string;
+    privacyPolicyText2: string;
+    sayHello: string;
+  } = {
+    title: '',
+    problem: '',
+    descriptionFirstSection: '',
+    descriptionSecondSection: '',
+    descriptionThirdSection: '',
+    needADeveloper: '',
+    contactMe: '',
+    yourName: '',
+    yourEmail: '',
+    yourMessage: '',
+    messageSentText: '',
+    privacyPolicyText1: '',
+    privacyPolicyLink: '',
+    privacyPolicyText2: '',
+    sayHello: ''
+  };
 
   privacyPolicyChecked: boolean = false;
   messageSent: boolean = false;
@@ -129,9 +147,9 @@ export class ContactFormComponent {
     this.languageService.language$.subscribe(lang => {
       this.contactDescription();
       this.contactFormDescription();
-      this.messageSentText = this.languageService.getTranslation('messageSentText');
+      this.contact.messageSentText = this.languageService.getTranslation('contact.messageSentText');
       this.privacyPlolicyDescription();
-      this.sayHello = this.languageService.getTranslation('sayHello');
+      this.contact.sayHello = this.languageService.getTranslation('contact.sayHello');
     })
   }
 
@@ -143,13 +161,13 @@ export class ContactFormComponent {
    */
 
   contactDescription() {
-    return  this.contact = this.languageService.getTranslation('contact'),
-      this.contactProblem = this.languageService.getTranslation('contactProblem'),
-      this.contactDescriptionFirstSection = this.languageService.getTranslation('contactDescriptionFirstSection'),   
-      this.contactDescriptionSecondSection = this.languageService.getTranslation('contactDescriptionSecondSection'),
-      this.contactDescriptionThirdSection = this.languageService.getTranslation('contactDescriptionThirdSection'),
-      this.needADeveloper = this.languageService.getTranslation('needADeveloper'),
-      this.contactMe = this.languageService.getTranslation('contactMe');
+    return  this.contact.title = this.languageService.getTranslation('contact.title'),
+      this.contact.problem = this.languageService.getTranslation('contact.problem'),
+      this.contact.descriptionFirstSection = this.languageService.getTranslation('contact.descriptionFirstSection'),
+      this.contact.descriptionSecondSection = this.languageService.getTranslation('contact.descriptionSecondSection'),
+      this.contact.descriptionThirdSection = this.languageService.getTranslation('contact.descriptionThirdSection'),
+      this.contact.needADeveloper = this.languageService.getTranslation('contact.needADeveloper'),
+      this.contact.contactMe = this.languageService.getTranslation('contact.contactMe');
   }
 
   /**
@@ -160,9 +178,9 @@ export class ContactFormComponent {
    */
 
   privacyPlolicyDescription() {
-    return this.privacyPolicyText1 = this.languageService.getTranslation('privacyPolicyText1'),
-      this.privacyPolicyLink = this.languageService.getTranslation('privacyPolicyLink'),
-      this.privacyPolicyText2 = this.languageService.getTranslation('privacyPolicyText2');
+    return this.contact.privacyPolicyText1 = this.languageService.getTranslation('contact.privacyPolicyText1'),
+      this.contact.privacyPolicyLink = this.languageService.getTranslation('contact.privacyPolicyLink'),
+      this.contact.privacyPolicyText2 = this.languageService.getTranslation('contact.privacyPolicyText2');
   }
 
   /**
@@ -172,9 +190,9 @@ export class ContactFormComponent {
    */
 
   contactFormDescription() {
-    return this.yourName = this.languageService.getTranslation('yourName'),
-      this.yourEmail = this.languageService.getTranslation('yourEmail'),
-      this.yourMessage = this.languageService.getTranslation('yourMessage');
+    return this.contact.yourName = this.languageService.getTranslation('contact.yourName'),
+      this.contact.yourEmail = this.languageService.getTranslation('contact.yourEmail'),
+      this.contact.yourMessage = this.languageService.getTranslation('contact.yourMessage');
   }
 
   /**

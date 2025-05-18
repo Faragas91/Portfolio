@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { LanguageService } from '../../service/language.service';
-import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -14,10 +13,18 @@ export class NavbarComponent {
     
   }
 
-  navAboutMe: string = '';
-  navSkills: string = '';
-  navMyWork: string = '';
-  navContact: string = '';
+  nav: {
+    aboutMe: string;
+    skills: string;
+    myWork: string;
+    contact: string;
+  } = { 
+    aboutMe: '',
+    skills: '', 
+    myWork: '', 
+    contact: '' 
+  };
+
   currentLanguage: string = 'en';
   isMenuOpen: boolean = false;
   hamburgerFrame: number = 0;
@@ -37,7 +44,6 @@ export class NavbarComponent {
     this.languageService.setLanguage('en');
   }
 
-
   /**
    * Initializes the component by subscribing to the language service and
    * updating the component's properties with the corresponding translations.
@@ -45,10 +51,10 @@ export class NavbarComponent {
   ngOnInit() {
     this.languageService.language$.subscribe(lang => {
       this.currentLanguage = lang;
-      this.navAboutMe = this.languageService.getTranslation('navAboutMe');
-      this.navSkills = this.languageService.getTranslation('navSkills');
-      this.navMyWork = this.languageService.getTranslation('navMyWork');
-      this.navContact = this.languageService.getTranslation('navContact');
+      this.nav.aboutMe = this.languageService.getTranslation('nav.aboutMe');
+      this.nav.skills = this.languageService.getTranslation('nav.skills');
+      this.nav.myWork = this.languageService.getTranslation('nav.myWork');
+      this.nav.contact = this.languageService.getTranslation('nav.contact');
     })
   }
 
