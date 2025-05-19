@@ -19,7 +19,6 @@ export class PrivacyPolicyComponent {
     title: string;
     lastUpdated: string;
     tableOfContents: string;
-    controller: string;
     overviewOfProcessingOperations: string;
     applicableLegalBases: string;
     securityMeasures: string;
@@ -32,7 +31,6 @@ export class PrivacyPolicyComponent {
     useOfCookies: string;
     contactAndRequestManagement: string;
     personResponsible: string;
-    overviewOfProcessing: string;
     overviewOfProcessingText1: string;
     overviewOfProcessingText2: string;
     inventoryData: string;
@@ -52,7 +50,6 @@ export class PrivacyPolicyComponent {
     purposesOfProcessing: string;
     provisionOfContractualServices: string;
     communication: string;
-    security: string;
     office: string;
     organization: string;
     feedback: string;
@@ -108,15 +105,15 @@ export class PrivacyPolicyComponent {
     businessServicesText2: string;
     businessServicesText3: string;
     businessServicesText4: string;
-    businessProcessedDataTypes: string;
+    processedDataTypes: string;
     businessProcessedDataTypesText: string;
-    businessAffectedPersons: string;
+    affectedPersons: string;
     businessAffectedPersonsText: string;
     businessPurposesOfProcessing: string;
     businessPurposesOfProcessingText: string;
     businessRetentionAndDeletion: string;
     businessRetentionAndDeletionText: string;
-    businessLegalBases: string;
+    legalBases: string;
     businessLegalBasesText: string;
     onlineShop: string;
     onlineShopText: string;
@@ -125,15 +122,12 @@ export class PrivacyPolicyComponent {
     provisionOfOnlineServicesAndWebhosting: string;
     provisionOfOnlineServicesAndWebhostingText: string;
     provisionOfOnlineServicesText: string;
-    provisionProcessedDataTypes: string;
     provisionProcessedDataTypesText: string;
-    provisionAffectedPersons: string;
     provisionAffectedPersonsText: string;
     provisionPurposesOfProcessing: string;
     provisionPurposesOfProcessingText: string;
     provisionRetentionAndDeletion: string;
     provisionRetentionAndDeletionText: string;
-    provisionLegalBases: string;
     provisionLegalBasesText: string;
     collectionOfAccessData: string;
     collectionOfAccessDataText: string;
@@ -152,11 +146,8 @@ export class PrivacyPolicyComponent {
     useOfCookiesPermanentCookiesText: string;
     useOfCookiesOptOut: string;
     useOfCookiesOptOutText: string;
-    useOfCookiesProcessedDataTypes: string;
     useOfCookiesProcessedDataTypesText: string;
-    useOfCookiesAffectedPersons: string;
     useOfCookiesAffectedPersonsText: string;
-    useOfCookiesLegalBases: string;
     useOfCookiesLegalBasesText: string;
     furtherNotesOnProcessingActivitiesAndProcedures: string;
 
@@ -164,7 +155,6 @@ export class PrivacyPolicyComponent {
     title: '',
     lastUpdated: '',
     tableOfContents: '',
-    controller: '',
     overviewOfProcessingOperations: '',
     applicableLegalBases: '',
     securityMeasures: '',
@@ -177,7 +167,6 @@ export class PrivacyPolicyComponent {
     useOfCookies: '',
     contactAndRequestManagement: '',
     personResponsible: '',
-    overviewOfProcessing: '',
     overviewOfProcessingText1: '',
     overviewOfProcessingText2: '',
     inventoryData: '',
@@ -197,7 +186,6 @@ export class PrivacyPolicyComponent {
     purposesOfProcessing: '',
     provisionOfContractualServices: '',
     communication: '',
-    security: '',
     office: '',
     organization: '',
     feedback: '',
@@ -253,15 +241,15 @@ export class PrivacyPolicyComponent {
     businessServicesText2: '',
     businessServicesText3: '',
     businessServicesText4: '',
-    businessProcessedDataTypes: '',
+    processedDataTypes: '',
     businessProcessedDataTypesText: '',
-    businessAffectedPersons: '',
+    affectedPersons: '',
     businessAffectedPersonsText: '',
     businessPurposesOfProcessing: '',
     businessPurposesOfProcessingText: '',
     businessRetentionAndDeletion: '',
     businessRetentionAndDeletionText: '',
-    businessLegalBases: '',
+    legalBases: '',
     businessLegalBasesText: '',
     onlineShop: '',
     onlineShopText: '',
@@ -270,15 +258,12 @@ export class PrivacyPolicyComponent {
     provisionOfOnlineServicesAndWebhosting: '',
     provisionOfOnlineServicesAndWebhostingText: '',
     provisionOfOnlineServicesText: '',
-    provisionProcessedDataTypes: '',
     provisionProcessedDataTypesText: '',
-    provisionAffectedPersons: '',
     provisionAffectedPersonsText: '',
     provisionPurposesOfProcessing: '',
     provisionPurposesOfProcessingText: '',
     provisionRetentionAndDeletion: '',
     provisionRetentionAndDeletionText: '',
-    provisionLegalBases: '',
     provisionLegalBasesText: '',
     collectionOfAccessData: '',
     collectionOfAccessDataText: '',
@@ -297,11 +282,8 @@ export class PrivacyPolicyComponent {
     useOfCookiesPermanentCookiesText: '',
     useOfCookiesOptOut: '',
     useOfCookiesOptOutText: '',
-    useOfCookiesProcessedDataTypes: '',
     useOfCookiesProcessedDataTypesText: '',
-    useOfCookiesAffectedPersons: '',
     useOfCookiesAffectedPersonsText: '',
-    useOfCookiesLegalBases: '',
     useOfCookiesLegalBasesText: '',
     furtherNotesOnProcessingActivitiesAndProcedures: '',
   }
