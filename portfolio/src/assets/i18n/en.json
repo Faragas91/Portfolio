@@ -1,3 +1,4 @@
+
 {
     "nav": {
         "aboutMe": "About me",
@@ -58,7 +59,7 @@
         "sayHello": "Say Hello ;)"
     },
     "footer": {
-        "legalNotice": "Legal Notice"
+        "legalNoticePage": "Legal Notice"
     },
     "legalNotice": {
         "title": "Legal Notice",

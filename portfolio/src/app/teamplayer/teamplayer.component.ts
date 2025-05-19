@@ -33,8 +33,7 @@ export class TeamplayerComponent {
    */
     ngOnInit() {
       this.languageService.language$.subscribe((lang) => {
-        this.teamPlayer.title = this.languageService.getTranslation('teamPlayer.title');
-        this.teamPlayer.saidAboutMe = this.languageService.getTranslation('teamPlayer.saidAboutMe');
+        this.languageService.translateLanguage(this.teamPlayer, 'teamPlayer');
       });
     }
 }

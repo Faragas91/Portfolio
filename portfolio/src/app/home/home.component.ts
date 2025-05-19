@@ -5,6 +5,7 @@ import { SkillsComponent } from "./../skills/skills.component";
 import { MyWorkComponent } from "./../my-work/my-work.component";
 import { TeamplayerComponent } from "./../teamplayer/teamplayer.component";
 import { ContactFormComponent } from './../contact-form/contact-form.component';
+import { FooterComponent } from '../shared/footer/footer.component';
 import { LanguageService } from './../service/language.service';
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, PLATFORM_ID } from '@angular/core';
@@ -21,7 +22,9 @@ import * as AOS from 'aos';
     SkillsComponent, 
     MyWorkComponent, 
     TeamplayerComponent, 
-    ContactFormComponent]
+    ContactFormComponent,
+    FooterComponent
+  ]
 })
 export class HomeComponent {
   colleagues: any[] = [];

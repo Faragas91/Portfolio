@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { LanguageService } from '../../service/language.service';
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-privacy-policy',
   standalone: true,
-  imports: [ HeaderComponent ],
+  imports: [HeaderComponent, FooterComponent],
   templateUrl: './privacy-policy.component.html',
   styleUrl: './privacy-policy.component.scss'
 })
@@ -288,12 +289,13 @@ export class PrivacyPolicyComponent {
     furtherNotesOnProcessingActivitiesAndProcedures: '',
   }
 
+  /**
+   * Lifecycle hook that is called after data-bound properties of a directive are initialized.
+   * Subscription to language observable and translation of the privacy policy data.
+   */
   ngOnInit() {
-    this.languageService.language$.subscribe(lang => {
-      Object.keys(this.privacyPolicy).forEach((key) => {
-        const typedKey = key as keyof typeof this.privacyPolicy;
-        this.privacyPolicy[typedKey] = this.languageService.getTranslation(`privacyPolicy.${typedKey}`);
-      });
+    this.languageService.language$.subscribe((lang) => {
+      this.languageService.translateLanguage(this.privacyPolicy, 'privacyPolicy');
     });
   }
 }

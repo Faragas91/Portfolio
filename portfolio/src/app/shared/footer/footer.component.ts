@@ -13,14 +13,14 @@ export class FooterComponent {
   constructor(public languageService: LanguageService){}
 
   footer: {
-    legalNotice: string;
+    legalNoticePage: string;
   } = {
-    legalNotice: '',
+    legalNoticePage: '',
   }; 
 
   ngOnInit(){
     this.languageService.language$.subscribe(lang => {
-      this.footer.legalNotice = this.languageService.getTranslation('footer.legalNotice');
+      this.footer.legalNoticePage = this.languageService.getTranslation('footer.legalNoticePage');
     }) 
   }
 }

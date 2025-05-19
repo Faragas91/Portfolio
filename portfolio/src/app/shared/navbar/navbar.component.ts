@@ -51,10 +51,7 @@ export class NavbarComponent {
   ngOnInit() {
     this.languageService.language$.subscribe(lang => {
       this.currentLanguage = lang;
-      this.nav.aboutMe = this.languageService.getTranslation('nav.aboutMe');
-      this.nav.skills = this.languageService.getTranslation('nav.skills');
-      this.nav.myWork = this.languageService.getTranslation('nav.myWork');
-      this.nav.contact = this.languageService.getTranslation('nav.contact');
+      this.languageService.translateLanguage(this.nav, 'nav');
     })
   }
 

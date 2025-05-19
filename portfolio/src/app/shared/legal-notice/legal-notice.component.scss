@@ -79,6 +79,17 @@
   }
 }
 
+.ellipse-0 {
+    position: absolute;
+    top: -250px;
+    left: -150px;
+    background-color: transparent;
+    width: 400px;
+    height: auto;
+    object-fit: contain;
+    z-index: -1;
+}
+
 .ellipse-3 {
   position: absolute;
   top: 215px;
@@ -113,6 +124,13 @@
       }
 
       font-size: 16px;
+    }
+
+    .ellipse-0 {
+      top: -300px;
+      left: -175px;
+      width: 400px;
+      height: auto;
     }
   }
 }

@@ -104,7 +104,7 @@ export class SkillsComponent {
   ngOnInit() {
     this.langueservice.language$.subscribe(lang => {
       this.mySkill.title = this.langueservice.getTranslation('mySkill.title');
-      this.mySkill.growthMindset = this.langueservice.getTranslation('my.Skill.growthMindset');
+      this.mySkill.growthMindset = this.langueservice.getTranslation('mySkill.growthMindset');
     })
   }
 }

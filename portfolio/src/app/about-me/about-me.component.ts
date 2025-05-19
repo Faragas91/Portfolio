@@ -41,22 +41,13 @@ export class AboutMeComponent {
   }
 
   /**
-   * Subscribes to the language service and updates the component's properties
-   * with the corresponding translations.
+   * Initializes the component by subscribing to the language service and
+   * translating the component's aboutMe properties into their corresponding
+   * values based on the current language.
    */
   ngOnInit() {
     this.languageService.language$.subscribe(lang => {
-      this.aboutMe.workTogether = this.languageService.getTranslation('aboutMe.workTogether');
-      this.aboutMe.iAm = this.languageService.getTranslation('aboutMe.iAm');
-      this.aboutMe.location = this.languageService.getTranslation('aboutMe.location');
-      this.aboutMe.remote = this.languageService.getTranslation('aboutMe.remote');
-      this.aboutMe.relocate = this.languageService.getTranslation('aboutMe.relocate');
-      this.aboutMe.firstSection = this.languageService.getTranslation('aboutMe.firstSection');
-      this.aboutMe.secondSection = this.languageService.getTranslation('aboutMe.secondSection');
-      this.aboutMe.thirdSection = this.languageService.getTranslation('aboutMe.thirdSection');
-      this.aboutMe.fourthSection = this.languageService.getTranslation('aboutMe.fourthSection');
-      this.aboutMe.myGoal = this.languageService.getTranslation('aboutMe.myGoal');
-      this.aboutMe.sendAMessage = this.languageService.getTranslation('aboutMe.sendAMessage');
+      this.languageService.translateLanguage(this.aboutMe, 'aboutMe');
     })
   }
 }
