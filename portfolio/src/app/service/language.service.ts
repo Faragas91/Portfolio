@@ -1,33 +1,41 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { TRANSLATIONS } from './translations';
+
+type Language = keyof typeof TRANSLATIONS;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LanguageService {
-  private languageSubject = new BehaviorSubject<string>('en');
+  private languageSubject = new BehaviorSubject<Language>('en');
   language$ = this.languageSubject.asObservable();
 
+  translations = TRANSLATIONS;
+
   /**
-   * Sets the language for the application.
+   * Sets the language of the application.
+   * Emits the new language through the language$ observable.
    *
-   * @param lang The language code to set, e.g. 'en' for English.
+   * @param lang The language to set. Must be one of the languages specified in TRANSLATIONS.
    */
-  setLanguage(lang: string) {
+  setLanguage(lang: Language) {
     this.languageSubject.next(lang);
   }
 
   /**
    * Returns the translation for a given key.
+   * The key is a dot-separated string of object properties to traverse to get the translation.
+   * If the key does not exist in the current language's translations, returns a string indicating
+   * that the translation was not found.
    *
-   * @param key A dot-separated key, e.g. 'nav.aboutMe'.
-   * @returns The translation for the key in the current language.
-   * @throws {string} If no translation is found for the key.
+   * @param key The key for the translation to retrieve.
+   * @returns The translation for the given key, or a message indicating that it was not found.
    */
   getTranslation(key: string): string {
     const lang = this.languageSubject.value;
     const parts = key.split('.');
-    let result: any = this.translations[lang];
+    let result: any = this.translations[lang]; 
 
     for (const part of parts) {
       if (result && result[part] !== undefined) {
@@ -36,455 +44,20 @@ export class LanguageService {
         return `Translation not found for key: ${key}`;
       }
     }
-    return result;
+    return typeof result === 'string' ? result : JSON.stringify(result);
   }
 
-
-  translations: { [lang: string]: { [section: string]: string | { [key: string]: string}}} = {
-    en: {
-      nav: {
-        aboutMe: 'About me',
-        skills: 'Skill set',
-        myWork: 'My work',
-        contact: 'Contact',
-      },
-
-      hero: {
-        greeting: 'Hello! I am Stefan',
-        scrollDownText: 'Scroll down',
-      },
-
-      aboutMe: {
-        workTogether: "Let's work together",
-        iAm: 'I am',
-        location: 'located in Niederösterreich',
-        remote: 'open to remote work',
-        relocate: 'open to relocation',
-        firstSection: 'Hi, I am a passionate web developer with a soft spot for modern frontend technologies.',
-        secondSection: 'I am fascinated by the combination of logic, creativity and structure in programming. I enjoy analyzing problems, developing well thought-out solutions and turning them into user-friendly interfaces. The moment when complex code is turned into a functioning feature is particularly motivating for me.',
-        thirdSection: 'I work in a structured, solution-oriented way and see challenges as an opportunity to learn. Whether through my own projects, online resources or exchanging ideas with others. I am constantly educating myself to develop better solutions.',
-        gourthSection: 'Analytical thinking, creativity, the ability to work in a team and perseverance help me to successfully implement even challenging tasks.',
-        myGoal: 'My goal is to write functional, maintainable and aesthetically pleasing code - with the aim of constantly developing myself further.',
-        sendAMessage: 'Send a message',
-      },
-
-      mySkill: {
-        title: 'Skill set',
-        growthMindset: 'I have a special interest in learning',
-      },
-
-      myWork: {
-        title: 'My work',
-        description: 'Explore a selection of my work here - Interact with the projects to see my skills in aciton',
-        joinDescription: 'Join is a project management tool inspired by the Kanban system. Tasks can be created and moved to the relevant category using the drag-and-drop function.',
-        elPolloLocoDescription: "El Pollo Loco is a classic jump & run game in which the player takes control of Pepe, who bravely fights back against the evil chickens. To defeat these hostile creatures, Pepe can either attack with Tabasco salsa bottles or jump on them. Finally, Pepe faces the final boss, who is anything but pleased with Pepe's courageous actions.",
-        ringOfFireDescription: 'Ring of fire is a social card game in which players draw their cards and must follow the rules of each card. Cards are drawn until there are no cards left in the pile.',
-      },
-      
-      teamPlayer: {
-        title: 'Need a team player',
-        saidAboutMe: 'Here what my colleagues said about me',
-        firstCollegue: 'Stefan is a talented developer with a passion for creating innovative solutions. He is skilled in HTML, CSS, and JavaScript. He has a knack for problem-solving and enjoys tackling complex challenges. He is a team player and loves collaborating with others to bring ideas to life.',
-        secondCollegue: 'Working with Stefan was a lot of fun, his quick solution finding and calm manner made it easy for us to complete this project.',
-        thirdCollegue: 'Stefan was the rock in our project work, when someone got stuck, Stefan helped us with innovative ideas and was able to demonstrate his talent for teamwork.',
-      },
-      
-      contact: {
-        title: 'Contact',
-        problem: 'Got a problem to solve!',
-        descriptionFirstSection: "As a frontend developer, I develop user-friendly and modern web applications that work optimally on all devices.",
-        descriptionSecondSection: "My focus is on adding real value to your project through clean and maintainable code and creative UI solutions.",
-        descriptionThirdSection: "So if you are looking for a dedicated frontend developer who combines technical know-how with an eye for design and turns your vision into reality, don't hesitate to contact me. Let's create innovative and successful digital experiences together!",
-        needADeveloper: 'Need a Frontend Developer',
-        contactMe: 'Contact me',
-        yourName: 'Your name',
-        yourEmail: 'Your email',
-        yourMessage: 'Your message',
-        messageSentText: 'Thank you for your message!<br> I will get back to you shortly.',
-        privacyPolicyText1: "I've read the",
-        privacyPolicyLink: 'privacy policy',
-        privacyPolicyText2: ' and agree to the processing of my data as outlined', 
-        sayHello: 'Say Hello ;)',      
-      },  
-      
-      footer: {
-        legalNotice: 'Legal Notice',
-      },
-      
-      legalNotice: {
-        header: 'Legal Notice',
-        title: 'Legal Notice',
-        intro: 'Information and disclosure according to §5 (1) ECG, §25 MedienG, §63 GewO and §14 UGB',
-        operator: 'Website operator: Stefan Redl',
-        address: 'Address: Gaadner Straße 21/f/2, 2371 Hinterbrühl',
-        UIDTradeMembership: 'UID no:\nTrade supervisory authority:\nMemberships:',
-        contact: 'Contact details:\nPhone: 0677/62650062\nEmail: stefanredl@gmx.at',
-        law: 'Applicable legislation: www.ris.bka.gv.at',
-        ODR: 'Online dispute resolution: Consumers have the opportunity to submit complaints to the EU’s Online Dispute Resolution platform.',
-        ODRLink: 'ODR platform',
-        copyright: 'Copyright: The contents of this website are subject to copyright.',
-        disclaimer: 'Disclaimer: Despite careful checking, we accept no liability for the content of external links.',
-        source: 'Source:',
-      },
-
-      privacyPolicy: {
-        title: 'Privacy Policy',
-        lastUpdated: '16.May.2025',
-        tableOfContents: 'Table of Contents',
-        overviewOfProcessingOperations: 'Overview of Processing Operations',
-        applicableLegalBases: 'Applicable Legal Bases',
-        securityMeasures: 'Security Measures',
-        transferOfPersonalData: 'Transfer of Personal Data',
-        internationalDataTransfer: 'International Data Transfer',
-        dataStorage: 'General Information on Data Storage and Erasure',
-        rightsOfDataSubjects: 'Rights of the Data Subjects',
-        businessServices: 'Business Services',
-        provisionOfOnlineServices: 'Provision of the Online Offer and Web Hosting',
-        useOfCookies: 'Use of Cookies',
-        contactAndRequestManagement: 'Contact and Request Management',
-        personResponsible: 'Person Responsible',
-        overviewOfProcessingText1: 'The following overview summarizes the types of data processed and the purposes of their processing and refers to the data subjects.',
-        overviewOfProcessingText2: 'Types of Data Processed',
-        inventoryData: 'Inventory Data',
-        paymentData: 'Payment Data',
-        contactData: 'Contact Data',
-        contentData: 'Content Data',
-        contractData: 'Contract Data',
-        usageData: 'Usage Data',
-        meta: 'Meta, Communication and Procedural Data',
-        logData: 'Log Data',
-        categoriesOfDataSubjects: 'Categories of Data Subjects',
-        recipientsOfServicesAndContractingParties: 'Recipients of Services and Contracting Parties',
-        interestedParties: 'Interested Parties',
-        communicatingPartners: 'Communicating Partners',
-        users: 'Users',
-        businiessAndContractualPartners: 'Business and Contractual Partners',
-        purposesOfProcessing: 'Purposes of Processing',
-        provisionOfContractualServices: 'Provision of Contractual Services and Fulfillment of Contractual Obligations',
-        communication: 'Communication',
-        office: 'Office and Organizational Procedures',
-        organizational: 'Organizational and Administrative Procedures',
-        feedback: 'Feedback',
-        provisionOfServices: 'Provision of Our Online Offer and User Friendliness',
-        infrastructure: 'Informaton Technology Infrastructure',
-        economic: 'Business Processes and Economic Procedures',
-        applicableLegalBasesUnderGDPR: 'Applicable Legal Bases Under GDPR',
-        applicableLegalBasesUnderGDPRText: 'Below is an overview of the legal bases of the GDPR on which we process personal data. Please note that in addition to the GDPR, national data protection regulations may apply in your or our country of residence or headquarters. Should more specific legal bases be relevant in individual cases, we will inform you about them in this Privacy Policy.',
-        consent: 'Consent (Art. 6 para. 1 sentence 1 lit. a) GDPR)',
-        consentText: '- The data subject has given consent to the processing of personal data concerning him or her for one or more specific purposes.',
-        contract: 'Contract Performance and Pre-contractual Inquiries (Art. 6 para. 1 sentence 1 lit. b) GDPR)',
-        contractText: '- Processing is necessary for the performance of a contract to which the data subject is a party or in order to take steps at the request of the data subject prior to entering into a contract.',
-        legalObligation: 'Legal Obligation (Art. 6 para. 1 sentence 1 lit. c) GDPR)',
-        legalObligationText: '- Processing is necessary for compliance with a legal obligation to which the controller is subject.',
-        legalInterest: 'Legitimate Interest (Art. 6 para. 1 sentence 1 lit. f) GDPR)',
-        legalInterestText: '- Processing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data.',
-        nationalDataProtectionRegulations: 'National Data Protection Regulations in Austria',
-        nationalDataProtectionRegulationsText: 'In addition to the data protection regulations of the GDPR, national regulations on data protection apply in Austria. These include, in particular, the Federal Act on the Protection of Natural Persons with regard to the Processing of Personal Data (Data Protection Act - DSG). The Data Protection Act contains special regulations on the right to information, the right to rectification or erasure, the processing of special categories of personal data, processing for other purposes and transfer as well as automated decision-making in individual cases.',
-        swissFADP: 'Note on the Applicability of the GDPR and Swiss FADP: ',
-        swissFADPText: 'This privacy notice serves to provide information in accordance with both the Swiss FADP and the General Data Protection Regulation (GDPR). For this reason, please note that the terms of the GDPR are used due to their broader geographical application and comprehensibility. In particular, instead of the terms “processing” of “personal data,” “overriding interest,” and “sensitive personal data” used in the Swiss FADP, the terms “processing” of “personal data,” “legitimate interest,” and “special categories of data” used in the GDPR are used. However, the legal meaning of the terms will continue to be determined in accordance with the Swiss FADP within the scope of the Swiss FADP.',
-        securityMeasuresText1: 'We take appropriate technical and organizational measures to ensure a level of security appropriate to the risk, taking into account the state of the art, the costs of implementation and the nature, scope, context, and purposes of processing as well as the risk of varying likelihood and severity for the rights and freedoms of natural persons, in accordance with legal requirements.',
-        securityMeasuresText2: 'The measures include, in particular, ensuring the confidentiality, integrity, and availability of data by controlling physical and electronic access to the data as well as access, input, disclosure, availability, and separation of the data. Furthermore, we have established procedures that ensure the exercise of data subject rights, the deletion of data, and responses to data threats. Furthermore, we take the protection of personal data into account as early as the development or selection of hardware, software, and processes in accordance with the principle of data protection, through technology design, and data protection-friendly default settings.',
-        transferOfPersonalDataText: 'When we process personal data, it may be transferred to other entities, companies, legally independent organizational units, or individuals or disclosed to them. The recipients of this data may include, for example, service providers commissioned with IT tasks or providers of services and content that are integrated into a website. In such cases, we observe the legal requirements and, in particular, conclude corresponding contracts or agreements with the recipients of your data that serve to protect your data.',
-        generalInformation: 'General Information on Data Rentention and Deletion',
-        generalInformationText1: 'We delete personal data we process in accordance with legal provisions as soon as the underlying consents are withdrawn or there are no further legal grounds for processing. This applies to cases where the original purpose of processing ceases to exist or the data is no longer required. Exceptions to this rule apply if legal obligations or special interests require a longer retention or archiving of the data.',
-        generalInformationText2: 'In particular, data that must be retained for commercial or tax reasons, or whose storage is necessary for legal prosecution or to protect the rights of other natural or legal persons, must be archived accordingly.',
-        generalInformationText3: 'Our data protection notices contain additional information on the retention and deletion of data that specifically apply to certain processing operations.',
-        generalInformationText4: 'If there are multiple indications of a retention period or deletion deadline for a piece of data, the longest period always applies.',
-        generalInformationText5: 'If a deadline does not explicitly start on a specific date and lasts at least one year, it automatically begins at the end of the calendar year in which the triggering event occurred. In the case of ongoing contractual relationships in which data is stored, the triggering event is the time of termination or other ending of the legal relationship.',
-        generalInformationText6: 'Data that is no longer needed for the original intended purpose but is retained due to legal requirements or other reasons will be processed solely for the purposes that justify its retention.',
-        furtherNotes: 'Further information on processing operations, procedures, and services:',
-        retentionAndDeletion: 'Retention and deletion of data:',
-        retentionAndDeletionText: 'The following general retention periods apply under Austrian law for retention and archiving:',
-        retentionAndDeletion10Years: '10 years - Retention period for books and records, annual financial statements, inventories, management reports, opening balances, accounting documents, and invoices as well as all necessary work instructions and other organizational documents (Federal Tax Code (BAO §132), Commercial Code (UGB §§190-212)).',
-        retentionAndDeletion6Years: '6 years - Other business documents: Received commercial or business letters, copies of sent commercial or business letters, and other documents relevant for tax purposes. These include, for example, hourly wage records, business calculation sheets, calculation documents, price lists, and payroll documents, unless they are already accounting documents and cash register receipts (Federal Tax Code (BAO §132), Commercial Code (UGB §§190-212)).',
-        retentionAndDeletion3Years: '3 years - Data required to consider potential warranty and compensation claims or similar contractual claims and rights and associated inquiries, based on past business experience and customary industry practices, are stored for the duration of the regular statutory limitation period of three years (§§ 1478, 1480 ABGB).',
-        rightsOfDataSubjectsText: 'Rights of data subjects under the GDPR: As a data subject, you are entitled to various rights under the GDPR, particularly those outlined in Articles 15 to 21 GDPR:',
-        rightToObject: 'Right to object:',
-        rightToObjectText: 'You have the right, for reasons arising from your particular situation, to object at any time to the processing of personal data concerning you, which is carried out pursuant to Art. 6 Para. 1 lit. e or f GDPR; this also applies to profiling based on these provisions. If your personal data is processed for direct marketing purposes, you have the right to object at any time to the processing of your personal data for such marketing purposes; this also applies to profiling, insofar as it is related to such direct marketing.',
-        rightToWithdraw: 'Right to withdraw consent:',
-        rightToWithdrawText: 'You have the right to withdraw any consent you have given at any time.',
-        rightToAccess: 'Right of access:',
-        rightToAccessText: 'You have the right to request confirmation as to whether data concerning you is being processed and to receive information about this data as well as additional details and a copy of the data in accordance with legal provisions.',
-        rightToRectification: 'Right to rectification:',
-        rightToRectificationText: 'You have the right, in accordance with legal provisions, to request the completion of data concerning you or the rectification of incorrect data concerning you.',
-        rightToErasure: 'Right to erasure and restriction of processing:',
-        rightToErasureText: 'You have the right, in accordance with legal provisions, to demand that data concerning you be deleted immediately or, alternatively, to request restriction of the processing of the data in accordance with legal provisions.',
-        rightToDataPortability: 'Right to data portability:',
-        rightToDataPortabilityText: 'You have the right to receive data concerning you that you have provided to us in a structured, commonly used, and machine-readable format, or to request its transfer to another controller, in accordance with legal provisions.',
-        rightToLodgeComplaint: 'Right to lodge a complaint with a supervisory authority:',
-        rightToLodgeComplaintText: 'You have the right, without prejudice to any other administrative or judicial remedy, to lodge a complaint with a supervisory authority, particularly in the Member State of your habitual residence, place of work, or place of the alleged infringement, if you consider that the processing of personal data concerning you infringes the GDPR.',
-        businessServicesText1: 'We process data from our contractual and business partners, e.g., customers and prospects (collectively referred to as "contractual partners"), as part of contractual and comparable legal relationships, as well as associated measures and regarding communication with contractual partners (or pre-contractually), such as responding to inquiries.',
-        businessServicesText2: 'We use this data to fulfill our contractual obligations. This includes, in particular, obligations to provide agreed services, any update obligations, and remedies for warranty and other service disruptions. Furthermore, we use the data to safeguard our rights and for administrative tasks associated with these obligations and corporate organization. We also process the data based on our legitimate interests in proper and economical business management as well as in security measures to protect our contractual partners and our business operations from misuse, risks to their data, secrets, information, and rights (e.g., involving telecommunications, transport, and other support services as well as subcontractors, banks, tax and legal advisors, payment service providers, or financial authorities). In accordance with applicable law, we only disclose the data of contractual partners to third parties as necessary for the aforementioned purposes or to fulfill legal obligations. Contractual partners are informed of other forms of processing, such as for marketing purposes, within this privacy policy.',
-        businessServicesText3: 'We inform contractual partners about the data required for the aforementioned purposes before or during data collection, e.g., in online forms, through special markings (e.g., colors) or symbols (e.g., asterisks or similar), or in person.',
-        businessServicesText4: 'We delete the data after the expiry of legal warranty and comparable obligations, i.e., generally after four years unless the data is stored in a customer account, e.g., as long as it is required for archiving due to legal reasons (e.g., for tax purposes, usually ten years). Data disclosed to us by the contractual partner in the context of an order is deleted in accordance with the specifications and generally after the end of the order.',
-        processedDataTypes: 'Processed Data Types:',
-        businessProcessedDataTypesText: 'Master data (e.g., full name, residential address, contact information, customer number, etc.); Payment data (e.g., bank account details, invoices, payment history); Contact data (e.g., postal and email addresses or phone numbers); Contract data (e.g., contract subject, duration, customer category); Usage data (e.g., page views and duration, click paths, usage intensity and frequency, device types and operating systems used, interactions with content and functions). Meta, communication, and procedural data (e.g., IP addresses, timestamps, identification numbers, involved persons).',
-        affectedPersons: 'Affected Persons:',
-        businessAffectedPersonsText: 'Service recipients and clients; Prospective customers. Business and contractual partners.',
-        businessPurposesOfProcessing: 'Purposes of Processing:',
-        businessPurposesOfProcessingText: 'Provision of contractual services and fulfillment of contractual obligations; Security measures; Communication; Office and organizational procedures; Organizational and administrative procedures. Business processes and economic procedures.',
-        businessRetentionAndDeletion: 'Retention and Deletion:',
-        businessRetentionAndDeletionText: 'Deletion in accordance with the details in the section "General Information on Data Storage and Deletion."',
-        legalBases: 'Legal Bases:',
-        businessLegalBasesText: 'Contract performance and pre-contractual inquiries (Art. 6(1)(1)(b) GDPR); Legal obligation (Art. 6(1)(1)(c) GDPR). Legitimate interests (Art. 6(1)(1)(f) GDPR).',
-        onlineShop: 'Online shop, order forms, e-commerce, and delivery:',
-        onlineShopText: "We process our customers' data to enable them to select, purchase, or order the chosen products, goods, and related services, as well as their payment and delivery or execution. If required for fulfilling an order, we engage service providers, particularly postal, shipping, and delivery companies, to deliver or execute services for our customers. To process payment transactions, we use the services of banks and payment service providers. The required details are marked as such during the ordering or comparable purchasing process and include the information necessary for delivery, provision, and billing as well as contact information for any necessary follow-ups;'",
-        onlineShopLegalBases: 'Legal Basis:',
-        onlineShopLegalBasesText: 'Contract performance and pre-contractual inquiries (Art. 6(1)(1)(b) GDPR).',
-        provisionOfOnlineServicesAndWebhosting: 'Provision of Online Services and Web Hosting:',
-        provisionOfOnlineServicesAndWebhostingText: "We process users' data to provide them with our online services. For this purpose, we process users' IP addresses, which are necessary to transmit the content and functionalities of our online services to the browser or device of the users.",
-        provisionProcessedDataTypesText: 'Usage data (e.g., page views and duration, click paths, usage intensity and frequency, device types and operating systems used, interactions with content and functionalities); Meta, communication, and procedural data (e.g., IP addresses, timestamps, identification numbers, involved persons). Log data (e.g., log files regarding logins, data retrieval, or access times).',
-        provisionAffectedPersonsText: 'Users (e.g., website visitors, users of online services).',
-        provisionPurposesOfProcessing: 'Purposes of Processing:',
-        provisionPurposesOfProcessingText: 'Provision of our online offering and user-friendliness; Information technology infrastructure (operation and provision of information systems and technical devices (computers, servers, etc.)). Security measures.',
-        provisionRetentionAndDeletion: 'Retention and Deletion:',
-        provisionRetentionAndDeletionText: 'Deletion in accordance with the details in the section "General Information on Data Storage and Deletion."',
-        provisionLegalBasesText: 'Contract performance and pre-contractual inquiries (Art. 6(1)(1)(b) GDPR); Legal obligation (Art. 6(1)(1)(c) GDPR). Legitimate interests (Art. 6(1)(1)(f) GDPR).',
-        collectionOfAccessData: 'Collection of Access Data and Log Files:',
-        collectionOfAccessDataText: "'Access to our online offering is logged as 'server log files.' These log files may include the address and name of the accessed web pages and files, date and time of access, transferred data volumes, notifications about successful access, browser type and version, the user's operating system, referrer URL (the previously visited page), and generally IP addresses and the requesting provider. The server log files can be used for security purposes, e.g., to prevent server overloads (especially in the case of abusive attacks, so-called DDoS attacks) and to ensure server load and stability;'",
-        collectionOfAccessDataLegalBasis: 'Legal Basis:',
-        collectionOfAccessDataLegalBasisText: 'Legitimate interests (Art. 6(1)(1)(f) GDPR).',
-        collectionOfAccessDataDataDeletion: 'Data Deletion:',
-        collectionOfAccessDataDataDeletionText: 'Log file information is stored for a maximum of 30 days and then deleted or anonymized. Data that requires further retention for evidentiary purposes is exempt from deletion until the respective incident is conclusively resolved.',
-        useOfCookiesText: "'The term 'cookies' refers to functions that store and retrieve information on users' devices. Cookies can also serve different purposes, such as ensuring the functionality, security, and comfort of online offerings, as well as analyzing visitor flows. We use cookies in accordance with legal requirements. Where necessary, we obtain prior consent from users. Where consent is not required, we rely on our legitimate interests. This applies when storing and retrieving information is essential to provide expressly requested content and functionalities. This includes storing settings and ensuring the functionality and security of our online offering. Consent can be revoked at any time. We provide clear information about their scope and the cookies used.'",
-        useOfCookiesNotesOnLegalBases: 'Notes on Legal Bases for Data Protection:',
-        useOfCookiesNotesOnLegalBasesText: 'Whether we process personal data using cookies depends on user consent. Where consent is provided, it serves as the legal basis. Without consent, we rely on our legitimate interests as outlined in this section and in the context of the respective services and procedures.',
-        useOfCookiesRetention: 'Retention Period:',
-        useOfCookiesRetentionText: 'Regarding the retention period, the following types of cookies are distinguished:',
-        useOfCookiesTemporaryCookies: 'Temporary Cookies (also: Session Cookies):',
-        useOfCookiesTemporaryCookiesText: 'Temporary cookies are deleted at the latest after a user leaves an online offering and closes their device (e.g., browser or mobile application).',
-        useOfCookiesPermanentCookies: 'Permanent Cookies:',
-        useOfCookiesPermanentCookiesText: 'Permanent cookies remain stored even after closing the device. For example, login statuses can be saved, and preferred content displayed directly when a user revisits a website. Likewise, the usage data collected through cookies can be used for reach measurement. Unless otherwise specified in the consent process, users should assume that these are permanent and may be stored for up to two years.',
-        useOfCookiesOptOut: 'General Notes on Revocation and Objection (Opt-out):',
-        useOfCookiesOptOutText: "'Users can revoke their consent at any time and may also object to processing in accordance with legal provisions, including through their browser's privacy settings.'",
-        useOfCookiesProcessedDataTypesText: 'Meta, communication, and procedural data (e.g., IP addresses, timestamps, identification numbers, involved persons).',
-        useOfCookiesAffectedPersonsText: 'Users (e.g., website visitors, users of online services).',
-        useOfCookiesLegalBasesText: 'Legitimate interests (Art. 6(1)(1)(f) GDPR). Consent (Art. 6(1)(1)(a) GDPR).',
-        furtherNotesOnProcessingActivitiesAndProcedures: 'Further Notes on Processing Activities, Procedures:',
-      }
-    },
-
-    de: {
-      nav: {
-        aboutMe: 'Über mich',
-        skills: 'Fähigkeiten',
-        myWork: 'Meine Arbeit',
-        contact: 'Kontakt',
-      },
-
-      hero: {
-        greeting: 'Hallo! Ich bin Stefan',
-        scrollDownText: 'Scroll weiter',
-      },
-
-      aboutMe: {
-        workTogether: 'Lass uns zusammen arbeiten',
-        iAm: 'Ich bin',
-        location: 'Standort in Niederösterreich',
-        remote: 'offen für Remote-Arbeit',
-        relocate: 'offen für Umzüge',
-        firstSection: 'Hi, ich bin ein leidenschaftlicher Webentwickler mit einem Faible für moderne Frontend-Technologien.',
-        secondSection: 'Mich fasziniert die Verbindung aus Logik, Kreativität und Struktur beim Programmieren. Ich analysiere gerne Probleme, entwickle durchdachte Lösungen und setze diese in nutzerfreundliche Interfaces um. Besonders motivierend ist für mich der Moment, wenn aus komplexem Code ein funktionierendes Feature entsteht.',
-        thirdSection: 'Ich arbeite strukturiert, lösungsorientiert und sehe Herausforderungen als Chance zum Lernen. Ob durch eigene Projekte, Online-Ressourcen oder den Austausch mit anderen. Ich bilde mich ständig weiter, um bessere Lösungen zu entwickeln.',
-        fourthSection: 'Analytisches Denken, Kreativität, Teamfähigkeit und Ausdauer helfen mir dabei, auch anspruchsvolle Aufgaben erfolgreich umzusetzen.',
-        myGoal: 'Mein Ziel ist es, funktionalen, wartbaren und ästhetischen Code zu schreiben – mit dem Anspruch, mich stetig weiterzuentwickeln.',
-        sendAMessage: 'Sende eine Nachricht',
-      },
-
-      mySkill: {
-        title: 'Fähigkeiten',
-        growthMindset: 'Ich habe ein besonderes Interesse am Lernen',
-      },
-
-      myWork: {
-        title: 'Meine Arbeit',
-        description: 'Hier finden Sie eine Auswahl meiner Arbeiten - Interagieren Sie mit den Projekten, um meine Fähigkeiten in Aktion zu sehen',
-        joinDescription: 'Join ist ein Projektmanagement-Tool, das durch das Kanban-System inspiriert wurde. Dabei können Aufgaben erstellt und mithilfe der Drag-and-Drop-Funktion in die jeweilige Kategorie verschoben werden. ',
-        elPolloLocoDescription: 'El Pollo Loco ist ein klassisches Jump & Run-Spiel, in dem der Spieler die Kontrolle über Pepe übernimmt, der sich mutig gegen die bösen Hühner zur Wehr setzt. Um diese feindlichen Kreaturen zu besiegen, kann Pepe entweder mit Tabasco-Salsa-Flaschen angreifen oder auf sie springen. Schließlich steht Pepe dem Endboss gegenüber, der alles andere als erfreut über Pepes mutige Aktionen ist.',
-        ringOfFireDescription: 'Ring of fire ist ein gesellschaftliches Karten-Spiel, bei dem Spieler ihre Karten ziehen und die Regeln der jeweiligen Karte befolgen müssen. Es wird so lange gezogen, bis keine Karten mehr auf dem Stapel sind.',
-      },
-
-      teamPlayer: {
-        title: 'Brauchen Sie einen Teamplayer',
-        saidAboutMe: 'Hier ist, was meine Kollegen über mich sagten',
-        firstCollegue: 'Stefan ist ein talentierter Entwickler mit einer Leidenschaft für die Schaffung innovativer Lösungen. Er beherrscht HTML, CSS und JavaScript. Er hat ein Talent für Problemlösungen und genießt es, komplexe Herausforderungen zu meistern. Er ist ein Teamplayer und liebt es, mit anderen zusammenzuarbeiten, um Ideen zum Leben zu erwecken.',
-        secondCollegue: 'Die Zusammenarbeit mit Stefan hat sehr viel Spaß gemacht, durch die schnelle Lösungsfindung und ruhige Art war uns ein leichtes dieses Projekt fertigzustellen.',
-        thirdCollegue: 'Stefan war bei uns Projektarbeit der Fels in der Brandung, wenn jemand nicht weiter kam, half uns Stefan mit innovative Ideen und konnte sein Talent für die Teamarbeit darbieten.',
-      },
-     
-      contact: {
-        title: 'Kontakt',
-        problem: 'Haben Sie ein Problem, das gelöst werden sollte!',
-        descriptionFirstSection: "Als Frontend Developer entwickle ich benutzerfreundliche und moderne Webanwendungen, die auf allen Geräten optimal funktionieren.",
-        descriptionSecondSection: "Mein Fokus liegt darauf, durch sauberen und wartbaren Code sowie durch kreative UI-Lösungen echten Mehrwert für Ihr Projekt zu schaffen.",
-        descriptionThirdSection: "Wenn Sie also einen engagierten Frontend Developer suchen, der technisches Know-how mit einem Auge für Design verbindet und Ihre Vision in die Realität umsetzt, zögern Sie nicht, mich zu kontaktieren. Lassen Sie uns gemeinsam innovative und erfolgreiche digitale Erlebnisse schaffen!",
-        needADeveloper: 'Brauchen Sie einen Frontend-Entwickler',
-        contactMe: 'Kontaktiere mich',
-        yourName: 'Ihr Name',
-        yourEmail: 'Ihre E-Mail',
-        yourMessage: 'Ihre Nachricht',
-        messageSentText: 'Vielen Dank für Ihre Nachricht!<br> Ich melde mich in Kürze zurück.',
-        privacyPolicyText1: 'Ich habe die',
-        privacyPolicyLink: 'Datenschutzerklärung',
-        privacyPolicyText2: ' gelesen und stimme zu, dass meine Daten verarbeitet werden, wie beschrieben',
-        sayHello: 'Sagen Sie Hallo ;)',      
-      },
-
-      footer: {
-        legalNotice: 'Rechtliche Hinweise',
-      },
-
-      legalNotice: {
-        header: 'Rechtliche Hinweise',
-        title: 'Rechtliche Hinweise',
-        intro: 'Informationen und Offenlegung gemäß §5 (1) ECG, §25 MedienG, §63 GewO und §14 UGB',
-        operator: 'Website-Betreiber: Stefan Redl',
-        address: 'Adresse: Gaadner Straße 21/f/2, 2371 Hinterbrühl',
-        UIDTradeMembership: 'UID-Nr:\nGewerbebehörde:\nMitgliedschaften:',
-        contact: 'Kontaktdaten:\nTelefon: 0677/62650062\nE-Mail: stefanredl@gmx.at',
-        law: 'Anwendbare Rechtsvorschriften: www.ris.bka.gv.at',
-        ODR: 'Online-Streitbeilegung: Verbraucher haben die Möglichkeit, Beschwerden an die Online-Streitbeilegungsplattform der EU zu richten.',
-        ODRLink: 'ODR-Plattform',
-        copyright: 'Urheberrecht: Die Inhalte dieser Website unterliegen dem Urheberrecht.',
-        disclaimer: 'Haftungsausschluss: Trotz sorgfältiger Kontrolle übernehmen wir keine Haftung für Inhalte externer Links.',
-        source: 'Quelle:',
-      },
-
-      privacyPolicy: {
-        title: 'Datenschutzerklärung',
-        lastUpdated: '16.Mai.2025',
-        tableOfContents: 'Inhaltsverzeichnis',
-        overviewOfProcessingOperations: 'Überblick über die Verarbeitungsprozesse',
-        applicableLegalBases: 'Geltende Rechtsgrundlagen',
-        securityMeasures: 'Sicherheitsmaßnahmen',
-        transferOfPersonalData: 'Übermittlung von personenbezogenen Daten',
-        internationalDataTransfer: 'Internationale Datenübertragung',
-        dataStorage: 'Allgemeine Informationen zur Datenspeicherung und -löschung',
-        rightsOfDataSubjects: 'Rechte der betroffenen Personen',
-        businessServices: 'Dienstleistungen für Unternehmen',
-        provisionOfOnlineServices: 'Bereitstellung des Online-Angebots und Webhosting',
-        useOfCookies: 'Verwendung von Cookies',
-        contactAndRequestManagement: 'Contact and Request Management',
-        personResponsible: 'Kontakt- und Anfrageverwaltung',
-        overviewOfProcessingText1: 'Die folgende Übersicht gibt einen Überblick über die Arten der verarbeiteten Daten und die Zwecke ihrer Verarbeitung und verweist auf die betroffenen Personen.',
-        overviewOfProcessingText2: 'Arten von verarbeiteten Daten',
-        inventoryData: 'Inventardaten',
-        paymentData: 'Zahlungsdaten',
-        contactData: 'Kontaktdaten',
-        contentData: 'Inhaltliche Daten',
-        contractData: 'Vertragsdaten',
-        usageData: 'Verwendungsdaten',
-        meta: 'Meta-, Kommunikations- und Verfahrensdaten',
-        logData: 'Protokolldaten',
-        categoriesOfDataSubjects: 'Kategorien von betroffenen Personen',
-        recipientsOfServicesAndContractingParties: 'Empfänger von Dienstleistungen und Vertragsparteien',
-        interestedParties: 'Interessierte Parteien',
-        communicatingPartners: 'Kommunikationspartner',
-        users: 'Benutzer',
-        businiessAndContractualPartners: 'Geschäfts- und Vertragspartner',
-        purposesOfProcessing: 'Zwecke der Verarbeitung',
-        provisionOfContractualServices: 'Erbringung vertraglicher Dienstleistungen und Erfüllung vertraglicher Verpflichtungen',
-        communication: 'Kommunikation',
-        office: 'Büro- und Organisationsabläufe',
-        organizational: 'Organisatorische und administrative Abläufe',
-        feedback: 'Rückmeldung',
-        provisionOfServices: 'Bereitstellung unseres Online-Angebots und Benutzerfreundlichkeit',
-        infrastructure: 'Infrastruktur der Informationstechnologie',
-        economic: 'Geschäftsprozesse und wirtschaftliche Abläufe',
-        applicableLegalBasesUnderGDPR: 'Anwendbare Rechtsgrundlagen gemäß GDPR',
-        applicableLegalBasesUnderGDPRText: 'Im Folgenden finden Sie einen Überblick über die Rechtsgrundlagen der DSGVO, auf denen wir personenbezogene Daten verarbeiten. Bitte beachten Sie, dass neben der DSGVO auch nationale Datenschutzbestimmungen in Ihrem oder unserem Wohnsitz- oder Hauptsitzland gelten können. Sollten im Einzelfall spezifischere Rechtsgrundlagen relevant sein, werden wir Sie in dieser Datenschutzrichtlinie darüber informieren.',
-        consent: 'Einwilligung (Art. 6 Abs. 1 Satz 1 lit. a) GDPR)',
-        consentText: '- Die betroffene Person hat ihre Einwilligung zur Verarbeitung der sie betreffenden personenbezogenen Daten für einen oder mehrere bestimmte Zwecke gegeben.',
-        contract: 'Vertragsdurchführung und vorvertragliche Anfragen (Art. 6 Abs. 1 Satz 1 lit. b) GDPR)',
-        contractText: '- Die Verarbeitung ist für die Erfüllung eines Vertrags, dessen Vertragspartei die betroffene Person ist, oder für die Durchführung von Maßnahmen erforderlich, die auf Antrag der betroffenen Person vor Abschluss eines Vertrags erfolgen.',
-        legalObligation: 'Gesetzliche Verpflichtung (Art. 6 Abs. 1 Satz 1 lit. c) GDPR)',
-        legalObligationText: '- Die Verarbeitung ist erforderlich, um einer rechtlichen Verpflichtung nachzukommen, der der Verantwortliche unterliegt.',
-        legalInterest: 'Berechtigtes Interesse (Art. 6 Abs. 1 Satz 1 lit. f) DSGVO)',
-        legalInterestText: '- Die Verarbeitung ist erforderlich für die Zwecke der berechtigten Interessen, die der Verantwortliche oder ein Dritter verfolgt, es sei denn, diese Interessen werden von den Interessen oder Grundrechten und -freiheiten der betroffenen Person, die den Schutz personenbezogener Daten erfordern, überwogen.',
-        nationalDataProtectionRegulations: 'Nationale Datenschutzvorschriften in Österreich',
-        nationalDataProtectionRegulationsText: 'Neben den Datenschutzvorschriften der DSGVO gelten in Österreich nationale Vorschriften zum Datenschutz. Dazu gehört insbesondere das Bundesgesetz zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten (Datenschutzgesetz - DSG). Das Datenschutzgesetz enthält besondere Regelungen zum Auskunftsrecht, zum Recht auf Berichtigung oder Löschung, zur Verarbeitung besonderer Kategorien personenbezogener Daten, zur Verarbeitung zu anderen Zwecken und zur Übermittlung sowie zur automatisierten Entscheidungsfindung in Einzelfällen.',
-        swissFADP: 'Hinweis zur Anwendbarkeit der DSGVO und des Schweizer DSG:',
-        swissFADPText: 'Diese Datenschutzerklärung dient der Information gemäß sowohl dem Schweizer DSG als auch der Datenschutz-Grundverordnung (DSGVO). Aus diesem Grund wird darauf hingewiesen, dass die Begriffe der DSGVO aufgrund ihrer breiteren geografischen Anwendung und Verständlichkeit verwendet werden. Insbesondere werden anstelle der im Schweizer DSG verwendeten Begriffe „Verarbeitung“ personenbezogener Daten, „überwiegendes Interesse“ und „sensible personenbezogene Daten“ die in der DSGVO verwendeten Begriffe „Verarbeitung“ personenbezogener Daten, „berechtigtes Interesse“ und „besondere Kategorien von Daten“ verwendet. Die rechtliche Bedeutung der Begriffe wird jedoch weiterhin gemäß dem Schweizer DSG im Rahmen des Schweizer DSG bestimmt.',
-        securityMeasuresText1: 'Wir treffen geeignete technische und organisatorische Maßnahmen, um ein dem Risiko angemessenes Sicherheitsniveau zu gewährleisten, wobei der Stand der Technik, die Kosten der Umsetzung sowie die Art, der Umfang, der Kontext und die Zwecke der Verarbeitung sowie das Risiko unterschiedlicher Wahrscheinlichkeit und Schwere für die Rechte und Freiheiten natürlicher Personen berücksichtigt werden, gemäß den gesetzlichen Anforderungen.',
-        securityMeasuresText2: 'Die Maßnahmen umfassen insbesondere die Gewährleistung der Vertraulichkeit, Integrität und Verfügbarkeit von Daten durch Kontrolle des physischen und elektronischen Zugangs zu den Daten sowie des Zugriffs, der Eingabe, der Offenlegung, der Verfügbarkeit und der Trennung der Daten. Darüber hinaus haben wir Verfahren eingerichtet, die die Ausübung der Rechte der betroffenen Personen, die Löschung von Daten und die Reaktion auf Datenbedrohungen sicherstellen. Außerdem berücksichtigen wir den Schutz personenbezogener Daten bereits bei der Entwicklung oder Auswahl von Hardware, Software und Prozessen gemäß dem Prinzip des Datenschutzes, durch datenschutzfreundliches Design und datenschutzfreundliche Voreinstellungen.',
-        transferOfPersonalDataText: 'Wenn wir personenbezogene Daten verarbeiten, können diese an andere Stellen, Unternehmen, rechtlich unabhängige organisatorische Einheiten oder Personen übermittelt oder offengelegt werden. Die Empfänger dieser Daten können beispielsweise Dienstleister sein, die mit IT-Aufgaben beauftragt sind, oder Anbieter von Dienstleistungen und Inhalten, die in eine Website integriert sind. In solchen Fällen beachten wir die gesetzlichen Anforderungen und schließen insbesondere entsprechende Verträge oder Vereinbarungen mit den Empfängern Ihrer Daten ab, die dem Schutz Ihrer Daten dienen.',
-        generalInformation: 'Allgemeine Informationen zur Datenaufbewahrung und -löschung',
-        generalInformationText1: 'Wir löschen personenbezogene Daten, die wir verarbeiten, gemäß den gesetzlichen Bestimmungen, sobald die zugrunde liegenden Einwilligungen widerrufen werden oder keine weiteren rechtlichen Grundlagen für die Verarbeitung bestehen. Dies gilt für Fälle, in denen der ursprüngliche Zweck der Verarbeitung nicht mehr besteht oder die Daten nicht mehr benötigt werden. Ausnahmen von dieser Regel gelten, wenn gesetzliche Verpflichtungen oder besondere Interessen eine längere Aufbewahrung oder Archivierung der Daten erfordern.',
-        generalInformationText2: 'Insbesondere Daten, die aus handels- oder steuerrechtlichen Gründen aufbewahrt werden müssen oder deren Speicherung für die rechtliche Verfolgung oder zum Schutz der Rechte anderer natürlicher oder juristischer Personen erforderlich ist, müssen entsprechend archiviert werden.',
-        generalInformationText3: 'Unsere Datenschutzhinweise enthalten zusätzliche Informationen zur Aufbewahrung und Löschung von Daten, die speziell für bestimmte Verarbeitungsoperationen gelten.',
-        generalInformationText4: 'Wenn es mehrere Hinweise auf einen Aufbewahrungszeitraum oder eine Löschfrist für ein Stück Daten gibt, gilt immer der längste Zeitraum.',
-        generalInformationText5: 'Wenn eine Frist nicht ausdrücklich an einem bestimmten Datum beginnt und mindestens ein Jahr dauert, beginnt sie automatisch am Ende des Kalenderjahres, in dem das auslösende Ereignis eingetreten ist. Im Falle von laufenden Vertragsverhältnissen, in denen Daten gespeichert werden, ist das auslösende Ereignis der Zeitpunkt der Beendigung oder eines anderen Endes des Rechtsverhältnisses.',
-        generalInformationText6: 'Daten, die für den ursprünglichen vorgesehenen Zweck nicht mehr benötigt werden, aber aufgrund gesetzlicher Anforderungen oder anderer Gründe aufbewahrt werden, werden ausschließlich für die Zwecke verarbeitet, die ihre Aufbewahrung rechtfertigen.',
-        furtherNotes: 'Weitere Informationen zu Verarbeitungsoperationen, Verfahren und Dienstleistungen:',
-        retentionAndDeletion: 'Aufbewahrung und Löschung von Daten:',
-        retentionAndDeletionText: 'Die folgenden allgemeinen Aufbewahrungsfristen gelten nach österreichischem Recht für die Aufbewahrung und Archivierung:',
-        retentionAndDeletion10Years: '10 Jahre - Aufbewahrungsfrist für Bücher und Aufzeichnungen, Jahresabschlüsse, Bestände, Managementberichte, Eröffnungsbilanzen, Buchhaltungsunterlagen und Rechnungen sowie alle erforderlichen Arbeitsanweisungen und anderen organisatorischen Dokumente (Bundesabgabenordnung (BAO §132), Unternehmensgesetzbuch (UGB §§190-212)).',
-        retentionAndDeletion6Years: '6 Jahre - Andere Geschäftsdokumente: Eingegangene Handels- oder Geschäftsschreiben, Kopien gesendeter Handels- oder Geschäftsschreiben und andere für steuerliche Zwecke relevante Dokumente. Dazu gehören beispielsweise Stundenlohnaufzeichnungen, Geschäftskalkulationsblätter, Berechnungsunterlagen, Preislisten und Lohnunterlagen, es sei denn, sie sind bereits Buchhaltungsunterlagen und Kassenbelege (Bundesabgabenordnung (BAO §132), Unternehmensgesetzbuch (UGB §§190-212)).',
-        retentionAndDeletion3Years: '3 Jahre - Daten, die erforderlich sind, um potenzielle Gewährleistungs- und Schadensersatzansprüche oder ähnliche vertragliche Ansprüche und Rechte sowie damit verbundene Anfragen zu berücksichtigen, werden für die Dauer der regulären gesetzlichen Verjährungsfrist von drei Jahren (§§ 1478, 1480 ABGB) gespeichert.',
-        rightsOfDataSubjectsText: 'Rechte der betroffenen Personen gemäß der DSGVO: Als betroffene Person haben Sie verschiedene Rechte gemäß der DSGVO, insbesondere die in den Artikeln 15 bis 21 DSGVO aufgeführten:',
-        rightToObject: 'Recht auf Widerspruch:',
-        rightToObjectText: 'Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit Widerspruch gegen die Verarbeitung personenbezogener Daten, die Sie betreffen, einzulegen, die gemäß Art. 6 Abs. 1 lit. e oder f DSGVO erfolgt; dies gilt auch für Profiling, das auf diesen Bestimmungen basiert. Wenn Ihre personenbezogenen Daten für Zwecke der Direktwerbung verarbeitet werden, haben Sie das Recht, jederzeit Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten zu solchen Marketingzwecken einzulegen; dies gilt auch für Profiling, soweit es sich auf eine solche Direktwerbung bezieht.',
-        rightToWithdraw: 'Recht auf Widerruf der Einwilligung:',
-        rightToWithdrawText: 'Sie haben das Recht, jede Einwilligung, die Sie gegeben haben, jederzeit zu widerrufen.',
-        rightToAccess: 'Recht auf Auskunft:',
-        rightToAccessText: 'Sie haben das Recht, die Bestätigung zu verlangen, ob Daten, die Sie betreffen, verarbeitet werden, und Informationen über diese Daten sowie weitere Einzelheiten und eine Kopie der Daten gemäß den gesetzlichen Bestimmungen zu erhalten.',
-        rightToRectification: 'Recht auf Berichtigung:',
-        rightToRectificationText: 'Sie haben das Recht, gemäß den gesetzlichen Bestimmungen die Vervollständigung von Sie betreffenden Daten oder die Berichtigung unrichtiger Daten zu verlangen.',
-        rightToErasure: 'Recht auf Löschung und Einschränkung der Verarbeitung:',
-        rightToErasureText: 'Sie haben das Recht, gemäß den gesetzlichen Bestimmungen zu verlangen, dass die Sie betreffenden Daten unverzüglich gelöscht werden, oder alternativ die Einschränkung der Verarbeitung der Daten gemäß den gesetzlichen Bestimmungen zu verlangen.',
-        rightToDataPortability: 'Recht auf Datenübertragbarkeit:',
-        rightToDataPortabilityText: 'Sie haben das Recht, die Sie betreffenden Daten, die Sie uns bereitgestellt haben, in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten oder deren Übertragung an einen anderen Verantwortlichen zu verlangen, gemäß den gesetzlichen Bestimmungen.',
-        rightToLodgeComplaint: 'Recht auf Beschwerde bei einer Aufsichtsbehörde:',
-        rightToLodgeComplaintText: 'Sie haben das Recht, unbeschadet anderer verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe, bei einer Aufsichtsbehörde Beschwerde einzulegen, insbesondere in dem Mitgliedstaat Ihres gewöhnlichen Aufenthalts, Ihres Arbeitsplatzes oder des Ortes des angeblichen Verstoßes, wenn Sie der Ansicht sind, dass die Verarbeitung personenbezogener Daten, die Sie betreffen, gegen die DSGVO verstößt.',
-        businessServicesText1: 'Wir verarbeiten Daten von unseren vertraglichen und Geschäftspartnern, z.B. Kunden und Interessenten (gemeinsam als „Vertragspartner“ bezeichnet), im Rahmen vertraglicher und vergleichbarer Rechtsverhältnisse sowie in Bezug auf damit verbundene Maßnahmen und die Kommunikation mit Vertragspartnern (oder vorvertraglich), wie z.B. die Beantwortung von Anfragen.',
-        businessServicesText2: 'Wir verwenden diese Daten, um unsere vertraglichen Verpflichtungen zu erfüllen. Dazu gehören insbesondere Verpflichtungen zur Erbringung vereinbarter Dienstleistungen, etwaige Aktualisierungspflichten und Abhilfemaßnahmen bei Gewährleistungs- und anderen Dienstunterbrechungen. Darüber hinaus verwenden wir die Daten, um unsere Rechte zu wahren und für administrative Aufgaben, die mit diesen Verpflichtungen und der Unternehmensorganisation verbunden sind. Wir verarbeiten die Daten auch auf Grundlage unserer berechtigten Interessen an einer ordnungsgemäßen und wirtschaftlichen Unternehmensführung sowie an Sicherheitsmaßnahmen, um unsere Vertragspartner und unsere Geschäftstätigkeit vor Missbrauch, Risiken für deren Daten, Geheimnisse, Informationen und Rechte zu schützen (z.B. im Zusammenhang mit Telekommunikation, Transport und anderen Unterstützungsdiensten sowie Subunternehmern, Banken, Steuer- und Rechtsberatern, Zahlungsdienstleistern oder Finanzbehörden). In Übereinstimmung mit den geltenden Gesetzen geben wir die Daten der Vertragspartner nur an Dritte weiter, soweit dies für die vorgenannten Zwecke oder zur Erfüllung gesetzlicher Verpflichtungen erforderlich ist. Vertragspartner werden über andere Formen der Verarbeitung, wie z.B. zu Marketingzwecken, innerhalb dieser Datenschutzerklärung informiert.',
-        businessServicesText3: 'Wir informieren die Vertragspartner über die für die vorgenannten Zwecke erforderlichen Daten vor oder während der Datenerhebung, z.B. in Online-Formularen, durch besondere Kennzeichnungen (z.B. Farben) oder Symbole (z.B. Sterne oder Ähnliches) oder persönlich.',
-        businessServicesText4: 'Wir löschen die Daten nach Ablauf der gesetzlichen Gewährleistungs- und vergleichbaren Verpflichtungen, d.h. in der Regel nach vier Jahren, es sei denn, die Daten werden in einem Kundenkonto gespeichert, z.B. solange sie aus rechtlichen Gründen (z.B. steuerlich, in der Regel zehn Jahre) archiviert werden müssen. Daten, die uns der Vertragspartner im Rahmen eines Auftrags übermittelt hat, werden gemäß den Vorgaben und in der Regel nach Abschluss des Auftrags gelöscht.',
-        processedDataTypes: 'Verarbeitete Datentypen:',
-        businessProcessedDataTypesText: 'Stammdaten (z.B. vollständiger Name, Wohnadresse, Kontaktdaten, Kundennummer usw.); Zahlungsdaten (z.B. Bankverbindungsdaten, Rechnungen, Zahlungshistorie); Kontaktdaten (z.B. Post- und E-Mail-Adressen oder Telefonnummern); Vertragsdaten (z.B. Vertragsgegenstand, Dauer, Kundenkategorie); Nutzungsdaten (z.B. Seitenaufrufe und -dauer, Klickpfade, Nutzungsintensität und -häufigkeit, verwendete Gerätetypen und Betriebssysteme, Interaktionen mit Inhalten und Funktionen). Meta-, Kommunikations- und Verfahrensdaten (z.B. IP-Adressen, Zeitstempel, Identifikationsnummern, beteiligte Personen).',
-        affectedPersons: 'Betroffene Personen:',
-        businessAffectedPersonsText: 'Leistungsnehmer und Klienten; Interessenten. Geschäftliche und vertragliche Partner.',
-        businessPurposesOfProcessing: 'Zwecke der Verarbeitung:',
-        businessPurposesOfProcessingText: 'Bereitstellung vertraglicher Dienstleistungen und Erfüllung vertraglicher Verpflichtungen; Sicherheitsmaßnahmen; Kommunikation; Büro- und organisatorische Verfahren; organisatorische und administrative Verfahren. Geschäftsprozesse und wirtschaftliche Verfahren.',
-        businessRetentionAndDeletion: 'Aufbewahrung und Löschung:',
-        businessRetentionAndDeletionText: 'Löschung gemäß den Angaben im Abschnitt "Allgemeine Informationen zur Datenspeicherung und -löschung."',
-        legalBases: 'Rechtsgrundlagen:',
-        businessLegalBasesText: 'Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 Satz 1 lit. b) DSGVO); Rechtliche Verpflichtung (Art. 6 Abs. 1 Satz 1 lit. c) DSGVO). Berechtigte Interessen (Art. 6 Abs. 1 Satz 1 lit. f) DSGVO).',
-        onlineShop: 'Online-Shop, Bestellformulare, E-Commerce und Lieferung:',
-        onlineShopText: 'Wir verarbeiten die Daten unserer Kunden, um ihnen die Auswahl, den Kauf oder die Bestellung der gewählten Produkte, Waren und damit verbundenen Dienstleistungen sowie deren Zahlung und Lieferung oder Ausführung zu ermöglichen. Wenn erforderlich, um eine Bestellung zu erfüllen, beauftragen wir Dienstleister, insbesondere Post-, Versand- und Lieferunternehmen, um Dienstleistungen für unsere Kunden zu liefern oder auszuführen. Zur Abwicklung von Zahlungstransaktionen nutzen wir die Dienste von Banken und Zahlungsdienstleistern. Die erforderlichen Angaben werden während des Bestell- oder vergleichbaren Kaufprozesses als solche gekennzeichnet und umfassen die für Lieferung, Bereitstellung und Abrechnung notwendigen Informationen sowie Kontaktdaten für etwaige notwendige Nachfragen.',
-        onlineShopLegalBases: 'Rechtsgrundlage:',
-        onlineShopLegalBasesText: 'Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 Satz 1 lit. b) DSGVO).',
-        provisionOfOnlineServicesAndWebhosting: 'Bereitstellung von Online-Diensten und Webhosting:',
-        provisionOfOnlineServicesAndWebhostingText: 'Wir verarbeiten die Daten der Nutzer, um ihnen unsere Online-Dienste bereitzustellen. Zu diesem Zweck verarbeiten wir die IP-Adressen der Nutzer, die erforderlich sind, um die Inhalte und Funktionalitäten unserer Online-Dienste an den Browser oder das Gerät der Nutzer zu übertragen.',
-        provisionProcessedDataTypesText: 'Nutzungsdaten (z.B. Seitenaufrufe und -dauer, Klickpfade, Nutzungsintensität und -häufigkeit, verwendete Gerätetypen und Betriebssysteme, Interaktionen mit Inhalten und Funktionalitäten); Meta-, Kommunikations- und Verfahrensdaten (z.B. IP-Adressen, Zeitstempel, Identifikationsnummern, beteiligte Personen). Protokolldaten (z.B. Protokolldateien zu Logins, Datenabrufen oder Zugriffszeiten).',
-        provisionAffectedPersonsText: 'Nutzer (z.B. Webseitenbesucher, Nutzer von Online-Diensten).',
-        provisionPurposesOfProcessing: 'Zwecke der Verarbeitung:',
-        provisionPurposesOfProcessingText: 'Bereitstellung unseres Online-Angebots und Benutzerfreundlichkeit; informationstechnische Infrastruktur (Betrieb und Bereitstellung von Informationssystemen und technischen Geräten (Computer, Server usw.)). Sicherheitsmaßnahmen.',
-        provisionRetentionAndDeletion: 'Aufbewahrung und Löschung:',
-        provisionRetentionAndDeletionText: 'Löschung gemäß den Angaben im Abschnitt "Allgemeine Informationen zur Datenspeicherung und -löschung."',
-        provisionLegalBasesText: 'Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 Satz 1 lit. b) DSGVO); Rechtliche Verpflichtung (Art. 6 Abs. 1 Satz 1 lit. c) DSGVO). Berechtigte Interessen (Art. 6 Abs. 1 Satz 1 lit. f) DSGVO).',
-        collectionOfAccessData: 'Erhebung von Zugriffs- und Protokolldaten:',
-        collectionOfAccessDataText: 'Der Zugriff auf unser Online-Angebot wird als „Serverprotokolldateien“ protokolliert. Diese Protokolldateien können die Adresse und den Namen der aufgerufenen Webseiten und Dateien, Datum und Uhrzeit des Zugriffs, übertragene Datenmengen, Benachrichtigungen über erfolgreichen Zugriff, Browsertyp und -version, das Betriebssystem des Nutzers, die Referrer-URL (die zuvor besuchte Seite) sowie allgemein IP-Adressen und den anfragenden Anbieter enthalten. Die Serverprotokolldateien können zu Sicherheitszwecken verwendet werden, z.B. um Serverüberlastungen (insbesondere im Falle von missbräuchlichen Angriffen, sogenannten DDoS-Angriffen) zu verhindern und die Serverlast und -stabilität sicherzustellen.',
-        collectionOfAccessDataLegalBasis: 'Rechtsgrundlage:',
-        collectionOfAccessDataLegalBasisText: 'Berechtigte Interessen (Art. 6 Abs. 1 Satz 1 lit. f) DSGVO).',
-        collectionOfAccessDataDataDeletion: 'Datenlöschung:',
-        collectionOfAccessDataDataDeletionText: 'Protokolldaten werden maximal 30 Tage gespeichert und anschließend gelöscht oder anonymisiert. Daten, die aus Beweisgründen länger aufbewahrt werden müssen, sind von der Löschung ausgenommen, bis der jeweilige Vorfall abschließend geklärt ist.',
-        useOfCookiesText: "'Der Begriff 'Cookies' bezieht sich auf Funktionen, die Informationen auf den Geräten der Nutzer speichern und abrufen. Cookies können auch verschiedene Zwecke erfüllen, wie z.B. die Gewährleistung der Funktionalität, Sicherheit und Benutzerfreundlichkeit von Online-Angeboten sowie die Analyse des Besucherflusses. Wir verwenden Cookies gemäß den gesetzlichen Anforderungen. Wo erforderlich, holen wir die vorherige Zustimmung der Nutzer ein. Wo keine Zustimmung erforderlich ist, stützen wir uns auf unsere berechtigten Interessen. Dies gilt, wenn das Speichern und Abrufen von Informationen erforderlich ist, um ausdrücklich angeforderte Inhalte und Funktionalitäten bereitzustellen. Dazu gehört das Speichern von Einstellungen und die Gewährleistung der Funktionalität und Sicherheit unseres Online-Angebots. Die Zustimmung kann jederzeit widerrufen werden. Wir geben klare Informationen über den Umfang und die verwendeten Cookies.'",
-        useOfCookiesNotesOnLegalBases: 'Hinweise zu den Rechtsgrundlagen für den Datenschutz:',
-        useOfCookiesNotesOnLegalBasesText: 'Ob wir personenbezogene Daten mithilfe von Cookies verarbeiten, hängt von der Zustimmung der Nutzer ab. Wenn die Zustimmung erteilt wird, dient sie als Rechtsgrundlage. Ohne Zustimmung stützen wir uns auf unsere berechtigten Interessen, wie in diesem Abschnitt und im Kontext der jeweiligen Dienstleistungen und Verfahren dargelegt.',
-        useOfCookiesRetention: 'Aufbewahrungsfrist:',
-        useOfCookiesRetentionText: 'Hinsichtlich der Aufbewahrungsfrist werden folgende Arten von Cookies unterschieden:',
-        useOfCookiesTemporaryCookies: 'Temporäre Cookies (auch: Sitzungs-Cookies):',
-        useOfCookiesTemporaryCookiesText: 'Temporäre Cookies werden spätestens gelöscht, nachdem ein Nutzer ein Online-Angebot verlässt und sein Gerät (z.B. Browser oder mobile Anwendung) schließt.',
-        useOfCookiesPermanentCookies: 'Permanente Cookies:',
-        useOfCookiesPermanentCookiesText: 'Permanente Cookies bleiben auch nach dem Schließen des Geräts gespeichert. Beispielsweise können Anmeldestatus gespeichert werden, und bevorzugte Inhalte werden direkt angezeigt, wenn ein Nutzer eine Website erneut besucht. Ebenso können die durch Cookies gesammelten Nutzungsdaten zur Reichweitenmessung verwendet werden. Sofern im Einwilligungsprozess nicht anders angegeben, sollten Nutzer davon ausgehen, dass es sich um permanente Cookies handelt, die bis zu zwei Jahre gespeichert werden können.',
-        useOfCookiesOptOut: 'Allgemeine Hinweise zum Widerruf und Widerspruch (Opt-out):',
-        useOfCookiesOptOutText: "'Nutzer können ihre Zustimmung jederzeit widerrufen und können auch der Verarbeitung gemäß den gesetzlichen Bestimmungen widersprechen, einschließlich über die Datenschutzeinstellungen ihres Browsers.'",
-        useOfCookiesProcessedDataTypesText: 'Meta-, Kommunikations- und Verfahrensdaten (z.B. IP-Adressen, Zeitstempel, Identifikationsnummern, beteiligte Personen).',
-        useOfCookiesAffectedPersonsText: 'Nutzer (z.B. Webseitenbesucher, Nutzer von Online-Diensten).',
-        useOfCookiesLegalBasesText: 'Berechtigte Interessen (Art. 6 Abs. 1 Satz 1 lit. f) DSGVO). Zustimmung (Art. 6 Abs. 1 Satz 1 lit. a) DSGVO).',
-        furtherNotesOnProcessingActivitiesAndProcedures: 'Weitere Hinweise zu Verarbeitungsaktivitäten und Verfahren:',
-      }
-    },
-  };
+  /**
+   * Recursively translates all properties of the given object.
+   *
+   * @param section The object to translate.
+   * @param basekey The base key to use when getting translations. If a key does not exist in the
+   *     current language's translations, the key is appended to the base key before retrieval.
+   *     Defaults to an empty string, meaning that the translation key is just the property name.
+   */
+  translateLanguage(section: any, basekey: string = '') {
+    Object.keys(section).forEach((key) => {
+      section[key] = this.getTranslation(`${basekey}.${key}`);
+    })
+  }
 }
