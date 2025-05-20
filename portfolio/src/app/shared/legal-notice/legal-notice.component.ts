@@ -43,20 +43,13 @@ export class LegalNoticeComponent {
     source: '',
   };
 
+  /**
+   * Subscribes to the language service and updates the component's properties
+   * with the corresponding translations.
+   */
   ngOnInit() {
     this.languageService.language$.subscribe(lang => {
-      this.legalNotice.title = this.languageService.getTranslation('legalNotice.title');
-      this.legalNotice.intro = this.languageService.getTranslation('legalNotice.intro');
-      this.legalNotice.operator = this.languageService.getTranslation('legalNotice.operator');
-      this.legalNotice.address = this.languageService.getTranslation('legalNotice.address');
-      this.legalNotice.UIDTradeMembership = this.languageService.getTranslation('legalNotice.UIDTradeMembership');
-      this.legalNotice.contact = this.languageService.getTranslation('legalNotice.contact');
-      this.legalNotice.law = this.languageService.getTranslation('legalNotice.law');
-      this.legalNotice.ODR = this.languageService.getTranslation('legalNotice.ODR');
-      this.legalNotice.ODRLink = this.languageService.getTranslation('legalNotice.ODRLink');
-      this.legalNotice.copyright = this.languageService.getTranslation('legalNotice.copyright');
-      this.legalNotice.disclaimer = this.languageService.getTranslation('legalNotice.disclaimer');
-      this.legalNotice.source = this.languageService.getTranslation('legalNotice.source');
+      this.languageService.translateLanguage(this.legalNotice, 'legalNotice');
     })
   }
 }

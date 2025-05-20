@@ -290,10 +290,7 @@ export class PrivacyPolicyComponent {
 
   ngOnInit() {
     this.languageService.language$.subscribe(lang => {
-      Object.keys(this.privacyPolicy).forEach((key) => {
-        const typedKey = key as keyof typeof this.privacyPolicy;
-        this.privacyPolicy[typedKey] = this.languageService.getTranslation(`privacyPolicy.${typedKey}`);
-      });
+      this.languageService.translateLanguage(this.privacyPolicy, 'privacyPolicy');
     });
   }
 }

@@ -145,54 +145,8 @@ export class ContactFormComponent {
 
   ngOnInit() {
     this.languageService.language$.subscribe(lang => {
-      this.contactDescription();
-      this.contactFormDescription();
-      this.contact.messageSentText = this.languageService.getTranslation('contact.messageSentText');
-      this.privacyPlolicyDescription();
-      this.contact.sayHello = this.languageService.getTranslation('contact.sayHello');
+      this.languageService.translateLanguage(this.contact, 'contact');
     })
-  }
-
-  /**
-   * Sets the contact description properties based on the current language.
-   * It updates the contact text, contact problem description, first, second,
-   * and third sections of the contact description, the "need a developer"
-   * text and the "contact me" text.
-   */
-
-  contactDescription() {
-    return  this.contact.title = this.languageService.getTranslation('contact.title'),
-      this.contact.problem = this.languageService.getTranslation('contact.problem'),
-      this.contact.descriptionFirstSection = this.languageService.getTranslation('contact.descriptionFirstSection'),
-      this.contact.descriptionSecondSection = this.languageService.getTranslation('contact.descriptionSecondSection'),
-      this.contact.descriptionThirdSection = this.languageService.getTranslation('contact.descriptionThirdSection'),
-      this.contact.needADeveloper = this.languageService.getTranslation('contact.needADeveloper'),
-      this.contact.contactMe = this.languageService.getTranslation('contact.contactMe');
-  }
-
-  /**
-   * Updates the privacy policy text elements by setting their values
-   * based on the current language. It sets the texts for the first 
-   * privacy policy section, the privacy policy link, and the second 
-   * section of the privacy policy.
-   */
-
-  privacyPlolicyDescription() {
-    return this.contact.privacyPolicyText1 = this.languageService.getTranslation('contact.privacyPolicyText1'),
-      this.contact.privacyPolicyLink = this.languageService.getTranslation('contact.privacyPolicyLink'),
-      this.contact.privacyPolicyText2 = this.languageService.getTranslation('contact.privacyPolicyText2');
-  }
-
-  /**
-   * Updates the form field descriptions based on the current language.
-   * It sets the text for the user's name, email, and message input fields
-   * using translations provided by the language service.
-   */
-
-  contactFormDescription() {
-    return this.contact.yourName = this.languageService.getTranslation('contact.yourName'),
-      this.contact.yourEmail = this.languageService.getTranslation('contact.yourEmail'),
-      this.contact.yourMessage = this.languageService.getTranslation('contact.yourMessage');
   }
 
   /**

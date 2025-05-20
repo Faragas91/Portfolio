@@ -27,8 +27,7 @@ export class HeroComponent {
 
   ngOnInit() {
     this.languageService.language$.subscribe(lang => {
-      this.hero.greeting = this.languageService.getTranslation('hero.greeting');
-      this.hero.scrollDownText = this.languageService.getTranslation('hero.scrollDownText');
+      this.languageService.translateLanguage(this.hero, 'hero');
     });
   }
 }

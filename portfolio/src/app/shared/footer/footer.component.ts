@@ -20,7 +20,7 @@ export class FooterComponent {
 
   ngOnInit(){
     this.languageService.language$.subscribe(lang => {
-      this.footer.legalNotice = this.languageService.getTranslation('footer.legalNotice');
+      this.languageService.translateLanguage(this.footer, 'footer');
     }) 
   }
 }

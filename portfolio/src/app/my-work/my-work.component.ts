@@ -55,8 +55,7 @@ export class MyWorkComponent {
    */
   ngOnInit() {
     this.languageService.language$.subscribe(lang => {
-      this.myWork.title = this.languageService.getTranslation('myWork.title');
-      this.myWork.description = this.languageService.getTranslation('myWork.description');
+      this.languageService.translateLanguage(this.myWork, 'myWork');
       this.updateProjectDescriptions();
     })
     this.updateProjectDescriptions();
