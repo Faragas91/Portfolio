@@ -20,7 +20,7 @@ export const en = {
         firstSection: 'Hi, I am a passionate web developer with a soft spot for modern frontend technologies.',
         secondSection: 'I am fascinated by the combination of logic, creativity and structure in programming. I enjoy analyzing problems, developing well thought-out solutions and turning them into user-friendly interfaces. The moment when complex code is turned into a functioning feature is particularly motivating for me.',
         thirdSection: 'I work in a structured, solution-oriented way and see challenges as an opportunity to learn. Whether through my own projects, online resources or exchanging ideas with others. I am constantly educating myself to develop better solutions.',
-        gourthSection: 'Analytical thinking, creativity, the ability to work in a team and perseverance help me to successfully implement even challenging tasks.',
+        fourthSection: 'Analytical thinking, creativity, the ability to work in a team and perseverance help me to successfully implement even challenging tasks.',
         myGoal: 'My goal is to write functional, maintainable and aesthetically pleasing code - with the aim of constantly developing myself further.',
         sendAMessage: 'Send a message',
     },

@@ -4,18 +4,18 @@
       <div class="contact-text">
         <h2>{{ contact.title }}</h2>
         <h3>{{ contact.problem }}</h3>
-        <h4>{{ contact.descriptionFirstSection }}</h4>
-        <h4>{{ contact.descriptionSecondSection }}</h4>
-        <h4>{{ contact.descriptionThirdSection }}</h4>
+        <h4 data-aos="zoom-in" >{{ contact.descriptionFirstSection }}</h4>
+        <h4 data-aos="zoom-in" >{{ contact.descriptionSecondSection }}</h4>
+        <h4 data-aos="zoom-in" >{{ contact.descriptionThirdSection }}</h4>
         <div class="contact-me">
-          <span>{{ contact.needADeveloper }}</span>
-          <p>{{ contact.contactMe }}</p>
+          <span data-aos="zoom-in" >{{ contact.needADeveloper }}</span>
+          <p data-aos="zoom-in" >{{ contact.contactMe }}</p>
         </div>
         <img class="ellipse-10" src="assets/contact/Ellipse_10.png" alt="Ellipse 10">
       </div>
     </div>
     <div class="contact-form-right-container">
-      <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+      <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" data-aos="zoom-out">
         <div class="floating-label">
           <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder=" " required />
           <label for="name">{{ contact.yourName }}</label>

@@ -12,15 +12,15 @@
                     </span>
                 }
             </div>
-            <p>{{ description }}</p>
+            <p data-aos="zoom-in" >{{ description }}</p>
         </div>
         <div class="projects-button">
-            <div class="style-button" > 
+            <div class="style-button" data-aos="slide-up" > 
                 @if (githubLink) {
                     <a [href]="githubLink" target="_blank"><span>Github</span></a>
                 }
             </div>
-            <div class="style-button">
+            <div class="style-button" data-aos="slide-up">
                 @if (liveLink) {
                     <a [href]="liveLink" target="_blank"><span>Live Test</span></a>
                 }

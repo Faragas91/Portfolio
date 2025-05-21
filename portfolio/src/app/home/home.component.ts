@@ -78,9 +78,9 @@ export class HomeComponent {
   animateSections(): void {
     if (isPlatformBrowser(this.platformId)) {
       AOS.init({
-        duration: 250,
+        duration: 500,
         easing: 'ease-in-out',
-        });
+      });
     }
   }
 }
