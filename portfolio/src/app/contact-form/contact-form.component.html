@@ -54,7 +54,7 @@
           <input type="checkbox" #myCheckbox="ngModel" name="privacyPolicy" [(ngModel)]="privacyPolicyChecked" required>
           <label for="myCheckbox">
             {{ contact.privacyPolicyText1 }}
-            <a [routerLink]="'/privacy-policy'" target="_blank" rel="noopener noreferrer">
+            <a [routerLink]="'/privacy-policy'" rel="noopener noreferrer">
               {{ contact.privacyPolicyLink }}
             </a>
             {{ contact.privacyPolicyText2 }}
