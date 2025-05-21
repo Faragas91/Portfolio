@@ -78,8 +78,7 @@ export class HomeComponent {
   animateSections(): void {
     if (isPlatformBrowser(this.platformId)) {
       AOS.init({
-        duration: 200,
-        once: true,
+        duration: 250,
         easing: 'ease-in-out',
         });
     }
