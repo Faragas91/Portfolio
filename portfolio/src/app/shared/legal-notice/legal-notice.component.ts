@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeaderComponent } from '../header/header.component'; 
+import { FooterComponent } from '../footer/footer.component';
 import { LanguageService } from '../../service/language.service';
 
 @Component({
@@ -8,7 +9,10 @@ import { LanguageService } from '../../service/language.service';
   standalone: true,
   templateUrl: './legal-notice.component.html',
   styleUrls: ['./legal-notice.component.scss'],
-  imports: [ HeaderComponent ],
+  imports: [ 
+    HeaderComponent,
+    FooterComponent
+  ],
 })
 export class LegalNoticeComponent {
   constructor(
