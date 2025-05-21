@@ -64,20 +64,18 @@ export class NavbarComponent {
    */
   toggleHamburgerMenu() {
     if (this.isMenuOpen) {
-      this.openHamburgerMenu();
-    } else {
       this.closeHamburgerMenu();
+    } else {
+      this.openHamburgerMenu();
     }
   }
 
+
   /**
-   * Animates the hamburger menu to open by reversing the animation interval.
-   *
-   * The hamburger menu is set to the third frame of the animation, then
-   * decremented until it reaches 0, at which point the interval is cleared
-   * and the menu is set to open.
+   * Animates the hamburger menu to close by starting the animation interval
+   * and updates the component's properties to reflect that the menu is closed.
    */
-  openHamburgerMenu() {
+  closeHamburgerMenu() {
     let frame = 3;
     this.animationInterval = setInterval(() => {
       this.hamburgerFrame = frame;
@@ -90,11 +88,11 @@ export class NavbarComponent {
   }
 
   /**
-   * Animates the hamburger menu to close by starting the animation interval
-   * at frame 0 and incrementing until it reaches 4, at which point the
-   * interval is cleared and the menu is set to closed.
+   * Animates the hamburger menu to open by starting the animation interval
+   * at frame 0 and incrementing until it reaches 3, at which point the
+   * interval is cleared and the menu is set to open.
    */
-  closeHamburgerMenu() {
+  openHamburgerMenu() {
     let frame = 0;
     this.isMenuOpen = true;
     this.animationInterval = setInterval(() => {

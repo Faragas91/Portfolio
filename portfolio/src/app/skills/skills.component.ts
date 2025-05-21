@@ -91,7 +91,7 @@ export class SkillsComponent {
     },
     {
       name: 'Vue JS',
-      image: 'assets/skills/vue js.png'
+      image: 'assets/skills/Vue Js.png'
     },
   ]
 
