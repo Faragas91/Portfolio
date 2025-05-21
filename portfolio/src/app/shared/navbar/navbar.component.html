@@ -1,8 +1,8 @@
 <nav>
     <ul>
-        <li><a href="#about-me">{{ nav.aboutMe }}</a></li>
-        <li><a href="#skills">{{ nav.skills }}</a></li>
-        <li><a href="#my-work">{{ nav.myWork }}</a></li>
+        <li><a [routerLink]="['/']" fragment="about-me" >{{ nav.aboutMe }}</a></li>
+        <li><a [routerLink]="['/']" fragment="skills">{{ nav.skills }}</a></li>
+        <li><a [routerLink]="['/']" fragment="my-work">{{ nav.myWork }}</a></li>
         <div>
             <span (click)="switchToGerman()" [class.language-active]="currentLanguage === 'de'">DE</span> /
             <span (click)="switchToEnglish()" [class.language-active]="currentLanguage === 'en'">EN</span>
@@ -17,7 +17,7 @@
 <div class="side-menu" [class.open]="isMenuOpen">
     <div class="side-menu-header">
         <div>
-            <a href="#header"><img class="logo" src="assets/general/logo.png" alt="Logo"></a>
+            <a [routerLink]="['/']" fragment="header"><img class="logo" src="assets/general/logo.png" alt="Logo"></a>
         </div>
         <div class="hamburger-menu" (click)="toggleHamburgerMenu()">
             <img
@@ -28,10 +28,10 @@
         </div>
     </div>
     <ul>
-        <li><a (click)="toggleHamburgerMenu()" href="#about-me">{{ nav.aboutMe }}</a></li>
-        <li><a (click)="toggleHamburgerMenu()" href="#skills">{{ nav.skills }}</a></li>
-        <li><a (click)="toggleHamburgerMenu()" href="#my-work">{{ nav.myWork }}</a></li>
-        <li><a (click)="toggleHamburgerMenu()" href="#contact-form">{{ nav.contact }}</a></li>
+        <li><a (click)="toggleHamburgerMenu()" [routerLink]="['/']" fragment="about-me">{{ nav.aboutMe }}</a></li>
+        <li><a (click)="toggleHamburgerMenu()" [routerLink]="['/']" fragment="skills">{{ nav.skills }}</a></li>
+        <li><a (click)="toggleHamburgerMenu()" [routerLink]="['/']" fragment="my-work">{{ nav.myWork }}</a></li>
+        <li><a (click)="toggleHamburgerMenu()" [routerLink]="['/']" fragment="contact">{{ nav.contact }}</a></li>
         <div>
             <span (click)="switchToGerman()" [class.language-active]="currentLanguage === 'de'">DE</span> /
             <span (click)="switchToEnglish()" [class.language-active]="currentLanguage === 'en'">EN</span>

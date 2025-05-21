@@ -3,32 +3,32 @@
     <div class="privacy-policy-container">
         <img class="ellipse-0" src="assets/header/Ellipse_0.png" alt="Ellipse 0">
         <div class="privacy-policy-text">
-            <h1> {{ privacyPolicy.title }}</h1>
+            <h1 [innerHTML]="privacyPolicy.title"></h1>
             <p> {{ privacyPolicy.lastUpdated }}</p>
 
-            <h2> {{ privacyPolicy.tableOfContents }}</h2>
+            <h2 [innerHTML]="privacyPolicy.tableOfContents"></h2>
             <ul class="index">
-                <li><a class="index-link" href="#m3"> Controller </a></li>
-                <li><a class="index-link" href="#mOverview"> {{ privacyPolicy.overviewOfProcessingOperations }}</a></li>
-                <li><a class="index-link" href="#m2427"> {{ privacyPolicy.applicableLegalBases }}</a></li>
-                <li><a class="index-link" href="#m27"> {{ privacyPolicy.securityMeasures }}</a></li>
-                <li><a class="index-link" href="#m25"> {{ privacyPolicy.transferOfPersonalData }}</a></li>
-                <li><a class="index-link" href="#m24"> {{ privacyPolicy.internationalDataTransfer }}</a></li>
-                <li><a class="index-link" href="#m12"> {{ privacyPolicy.dataStorage }}</a></li>
-                <li><a class="index-link" href="#m10"> {{ privacyPolicy.rightsOfDataSubjects }} </a></li>
-                <li><a class="index-link" href="#m317"> {{ privacyPolicy.businessServices }} </a></li>
-                <li><a class="index-link" href="#m225"> {{ privacyPolicy.provisionOfOnlineServices }} </a></li>
-                <li><a class="index-link" href="#m134"> {{ privacyPolicy.useOfCookies }} </a></li>
-                <li><a class="index-link" href="#m182"> {{ privacyPolicy.contactAndRequestManagement }} </a></li>
+                <li><a class="index-link" [routerLink]="['/privacy-policy']" fragment="m3"> Controller </a></li>
+                <li><a class="index-link" [routerLink]="['/privacy-policy']" fragment="mOverview"> {{ privacyPolicy.overviewOfProcessingOperations }}</a></li>
+                <li><a class="index-link" [routerLink]="['/privacy-policy']" fragment="m2427"> {{ privacyPolicy.applicableLegalBases }}</a></li>
+                <li><a class="index-link" [routerLink]="['/privacy-policy']" fragment="m27"> {{ privacyPolicy.securityMeasures }}</a></li>
+                <li><a class="index-link" [routerLink]="['/privacy-policy']" fragment="m25"> {{ privacyPolicy.transferOfPersonalData }}</a></li>
+                <li><a class="index-link" [routerLink]="['/privacy-policy']" fragment="m12"> {{ privacyPolicy.dataStorage }}</a></li>
+                <li><a class="index-link" [routerLink]="['/privacy-policy']" fragment="m10"> {{ privacyPolicy.rightsOfDataSubjects }} </a></li>
+                <li><a class="index-link" [routerLink]="['/privacy-policy']" fragment="m317"> {{ privacyPolicy.businessServices }} </a></li>
+                <li><a class="index-link" [routerLink]="['/privacy-policy']" fragment="m225"> {{ privacyPolicy.provisionOfOnlineServices }} </a></li>
+                <li><a class="index-link" [routerLink]="['/privacy-policy']" fragment="m134"> {{ privacyPolicy.useOfCookies }} </a></li>
             </ul>
 
-            <h2 id="m3"> {{ privacyPolicy.personResponsible }} </h2>
+            <h2 id="m3" [innerHTML]="privacyPolicy.personResponsible"></h2>
             <p>Stefan, Redl<br>
             Gaadner Straße 21/f/2<br>
             2371 Hinterbruhl</p>
-            <p>Email Address: <a href="mailto:stefanredl@gmx.at">stefanredl&#64;gmx.at</a></p>
+            <p>Email Address: 
+                <a href="mailto:stefanredl@gmx.at">stefanredl&#64;gmx.at</a>
+            </p>
 
-            <h2 id="mOverview"> {{ privacyPolicy.overviewOfProcessingOperations }} </h2>
+            <h2 id="mOverview" [innerHTML]="privacyPolicy.overviewOfProcessingOperations"></h2>
             <p> {{ privacyPolicy.overviewOfProcessingText1 }} </p>
 
             <h3> {{ privacyPolicy.overviewOfProcessingText2 }}</h3>
@@ -65,7 +65,7 @@
                 <li> {{ privacyPolicy.economic}} </li>
             </ul>
 
-            <h2 id="m2427"> {{ privacyPolicy.applicableLegalBases}} </h2>
+            <h2 id="m2427" [innerHTML]="privacyPolicy.applicableLegalBases"> </h2>
             <p><strong> {{ privacyPolicy.applicableLegalBasesUnderGDPR}} </strong> {{ privacyPolicy.applicableLegalBasesUnderGDPRText }} </p>
 
             <ul>
@@ -79,15 +79,15 @@
 
             <p><strong> {{ privacyPolicy.swissFADP}} </strong> {{ privacyPolicy.swissFADPText }} </p>
 
-            <h2 id="m27"> {{ privacyPolicy.securityMeasures }} </h2>
+            <h2 id="m27" [innerHTML]="privacyPolicy.securityMeasures"></h2>
             <p> {{ privacyPolicy.securityMeasuresText1 }} </p>
 
             <p> {{ privacyPolicy.securityMeasuresText2 }} </p>
 
-            <h2 id="m25"> {{ privacyPolicy.transferOfPersonalData }} </h2>
+            <h2 id="m25" [innerHTML]="privacyPolicy.transferOfPersonalData"></h2>
             <p> {{ privacyPolicy.transferOfPersonalDataText }} </p>
 
-            <h2 id="m12"> {{ privacyPolicy.generalInformation}} </h2>
+            <h2 id="m12" [innerHTML]="privacyPolicy.generalInformation"></h2>
             <p> {{ privacyPolicy.generalInformationText1 }} </p>
             <p> {{ privacyPolicy.generalInformationText2 }} </p>
             <p> {{ privacyPolicy.generalInformationText3 }} </p>

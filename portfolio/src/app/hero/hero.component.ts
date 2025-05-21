@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import { LanguageService } from './../service/language.service';
 import { HeaderComponent } from '../shared/header/header.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [ HeaderComponent ],
+  imports: [ 
+    HeaderComponent,
+    RouterLink,
+  ],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })

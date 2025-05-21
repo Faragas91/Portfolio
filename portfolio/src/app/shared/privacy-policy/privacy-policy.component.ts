@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { LanguageService } from '../../service/language.service';
 
 @Component({
   selector: 'app-privacy-policy',
   standalone: true,
-  imports: [ HeaderComponent ],
+  imports: [ 
+    HeaderComponent, 
+    RouterLink,
+  ],
   templateUrl: './privacy-policy.component.html',
   styleUrl: './privacy-policy.component.scss'
 })

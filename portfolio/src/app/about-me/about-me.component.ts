@@ -3,11 +3,17 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import { LanguageService } from '../service/language.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [MatButtonModule, MatDividerModule, MatIconModule],
+  imports: [ 
+    MatButtonModule, 
+    MatDividerModule, 
+    MatIconModule,
+    RouterLink
+  ],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss'
 })

@@ -30,7 +30,7 @@
             <p data-aos="zoom-in" >{{ aboutMe.fourthSection }}</p><br>
             <p data-aos="zoom-in" >{{ aboutMe.myGoal }}</p><br>
             <div class="style-button" data-aos="slide-up">
-                <a href="#contact-form"><span>{{ aboutMe.sendAMessage }}</span></a>
+                <a [routerLink]="['/']" fragment="contact-form"><span>{{ aboutMe.sendAMessage }}</span></a>
             </div>
         </div>
     </div>
