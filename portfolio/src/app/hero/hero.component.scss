@@ -343,6 +343,12 @@
     }
 }
 
+@media screen and (max-height: 750px) {
+    .scroll-down {
+        bottom: 260px;
+    }
+}
+
 @media screen and (max-height: 700px) {
     .scroll-down {
         bottom: 298px;
