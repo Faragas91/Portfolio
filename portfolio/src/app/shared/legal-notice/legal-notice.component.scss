@@ -1,40 +1,22 @@
 @import './../../../styles.scss';
 
-.legal-notice-container {
+
+.legal-notice-section {
+  background: linear-gradient(179.99deg, #FFFFFF 12.89%, #EAF0FF 91.39%);
+  width: 100%;
+}
+
+.legal-notice-main-container {
   max-width: 1920px;
   margin: 0 auto;
   padding: 0px 48px 64px;
-  background: linear-gradient(180deg, #ffffff 0%, #f2f6ff 100%);
   color: $secondary-color;
+  background-color: transparent;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 32px;
-
-  .back-button {
-    position: absolute;
-    top: 32px;
-    right: 32px;
-    border: 2px solid $secondary-color;
-    background: transparent;
-    color: $secondary-color;
-    padding: 10px 30px;
-    font-size: 24px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: $font-family-1;
-
-    span {
-      font-weight: 600;
-      background-color: transparent;
-    }
-
-    &:hover {
-      background: $secondary-color;
-      color: #fff;
-    }
-  }
+  height: 100vh;
 
   .legal-notice-text {
     display: flex;
@@ -108,14 +90,8 @@
 }
 
 @media (max-width: 768px) {
-  .legal-notice-container {
+  .legal-notice-main-container {
     padding: 80px 24px;
-
-    .back-button {
-      top: 24px;
-      right: 24px;
-      font-size: 16px;
-    }
 
     .legal-notice-text {
       h1 {
@@ -135,16 +111,11 @@
 }
 
 @media (max-width: 480px) {
-  .legal-notice-container {
+  .legal-notice-main-container {
     padding: 72px 16px;
 
     .legal-notice-text h1 {
       font-size: 36px;
-    }
-
-    .back-button {
-      font-size: 14px;
-      padding: 6px 12px;
     }
   }
 }
