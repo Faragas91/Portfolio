@@ -25,6 +25,7 @@
     line-height: 1.6;
     background-color: transparent;
     z-index: 1;
+    padding-right: 32px;
 
     h1 {
       font-size: 96px;
@@ -32,6 +33,7 @@
       color: $secondary-color;
       background-color: transparent;
       text-align: center;
+      line-height: 1;
     }
 
     h2 {
@@ -39,6 +41,7 @@
       font-family: $font-family-1;
       color: $secondary-color;
       background-color: transparent;
+      line-height: 1;
     }
 
     h3 {
@@ -46,6 +49,7 @@
       font-family: $font-family-1;
       color: $secondary-color;
       background-color: transparent;
+      line-height: 1;
     }
 
     p {
