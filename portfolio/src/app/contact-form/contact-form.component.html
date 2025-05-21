@@ -73,14 +73,14 @@
       </form>
       <img class="ellipse-11" src="assets/contact/Ellipse_11.png" alt="Ellipse 11">
     </div>
-    <div 
-      [ngClass]="{ 'message-sent': messageSent, 'message-not-sent': !messageSent }">
-      <span [innerHTML]="contact.messageSentText"></span>
-    </div>
     <img class="ellipse-9" src="assets/contact/Ellipse_9.png" alt="Ellipse 9">
     <button class="scroll-top-button">
       <a [routerLink]="['/']" fragment="header"><img src="assets/contact/scroll-top.png" alt="Scroll to top"></a>
     </button>
+    <div 
+      [ngClass]="{ 'message-sent': messageSent, 'message-not-sent': !messageSent }">
+      <span [innerHTML]="contact.messageSentText"></span>
+    </div>
   </div>
 </div>
 

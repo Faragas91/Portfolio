@@ -402,7 +402,7 @@
   z-index: 9999;
   position: absolute;
   top: 50%;
-  right: 50%;
+  left: 40%;
   background-color: #28a745;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -498,12 +498,46 @@
   }
 
   .message-sent {
-    right: 25%;
+    left: 35%;
   }
 } 
 
 @media screen and (max-width: 768px) {
   .contact-form-main-container {
     padding: 16px;
+  }
+
+  .message-sent {
+    left: 30%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .message-sent {
+    left: 20%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .message-sent {
+    left: 15%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .message-sent {
+    left: 10%;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .message-sent {
+    left: 8%;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .message-sent {
+    left: 1%;
   }
 }
