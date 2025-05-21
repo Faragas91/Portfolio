@@ -3,11 +3,11 @@
     <div class="privacy-policy-container">
         <img class="ellipse-0" src="assets/header/Ellipse_0.png" alt="Ellipse 0">
         <div class="privacy-policy-text">
-            <h1 [innerHTML]="privacyPolicy.title"></h1>
-            <p> {{ privacyPolicy.lastUpdated }}</p>
+            <h1 [innerHTML]="privacyPolicy.title" data-aos="fade-left"></h1>
+            <p data-aos="zoom-in"> {{ privacyPolicy.lastUpdated }}</p>
 
-            <h2 [innerHTML]="privacyPolicy.tableOfContents"></h2>
-            <ul class="index">
+            <h2 [innerHTML]="privacyPolicy.tableOfContents" data-aos="fade-left"></h2>
+            <ul class="index" data-aos="zoom-in">
                 <li><a class="index-link" [routerLink]="['/privacy-policy']" fragment="m3"> Controller </a></li>
                 <li><a class="index-link" [routerLink]="['/privacy-policy']" fragment="mOverview"> {{ privacyPolicy.overviewOfProcessingOperations }}</a></li>
                 <li><a class="index-link" [routerLink]="['/privacy-policy']" fragment="m2427"> {{ privacyPolicy.applicableLegalBases }}</a></li>
@@ -20,19 +20,19 @@
                 <li><a class="index-link" [routerLink]="['/privacy-policy']" fragment="m134"> {{ privacyPolicy.useOfCookies }} </a></li>
             </ul>
 
-            <h2 id="m3" [innerHTML]="privacyPolicy.personResponsible"></h2>
-            <p>Stefan, Redl<br>
+            <h2 id="m3" [innerHTML]="privacyPolicy.personResponsible" data-aos="fade-left"></h2>
+            <p data-aos="zoom-in">Stefan, Redl<br>
             Gaadner Straße 21/f/2<br>
             2371 Hinterbruhl</p>
-            <p>Email Address: 
+            <p data-aos="zoom-in">Email Address: 
                 <a href="mailto:stefanredl@gmx.at">stefanredl&#64;gmx.at</a>
             </p>
 
-            <h2 id="mOverview" [innerHTML]="privacyPolicy.overviewOfProcessingOperations"></h2>
-            <p> {{ privacyPolicy.overviewOfProcessingText1 }} </p>
+            <h2 id="mOverview" [innerHTML]="privacyPolicy.overviewOfProcessingOperations" data-aos="fade-left"></h2>
+            <p data-aos="zoom-in"> {{ privacyPolicy.overviewOfProcessingText1 }} </p>
 
-            <h3> {{ privacyPolicy.overviewOfProcessingText2 }}</h3>
-            <ul>
+            <h3 data-aos="fade-left"> {{ privacyPolicy.overviewOfProcessingText2 }} </h3>
+            <ul data-aos="zoom-in">
                 <li> {{ privacyPolicy.inventoryData }} </li>
                 <li> {{ privacyPolicy.paymentData }} </li>
                 <li> {{ privacyPolicy.contactData }} </li>
@@ -43,8 +43,8 @@
                 <li> {{ privacyPolicy.logData}} </li>
             </ul>
 
-            <h3> {{ privacyPolicy.categoriesOfDataSubjects}} </h3>
-            <ul>
+            <h3 data-aos="fade-left"> {{ privacyPolicy.categoriesOfDataSubjects}} </h3>
+            <ul data-aos="zoom-in">
                 <li> {{ privacyPolicy.recipientsOfServicesAndContractingParties }} </li>
                 <li> {{ privacyPolicy.interestedParties }} </li>
                 <li> {{ privacyPolicy.communicatingPartners}} </li>
@@ -52,8 +52,8 @@
                 <li> {{ privacyPolicy.businessAndContractualPartners}} </li>
             </ul>
 
-            <h3> {{ privacyPolicy.purposesOfProcessing}} </h3>
-            <ul>
+            <h3 data-aos="fade-left"> {{ privacyPolicy.purposesOfProcessing}} </h3>
+            <ul data-aos="zoom-in">
                 <li> {{ privacyPolicy.provisionOfContractualServices}} </li>
                 <li> {{ privacyPolicy.communication}} </li>
                 <li> {{ privacyPolicy.securityMeasures}} </li>
@@ -65,37 +65,37 @@
                 <li> {{ privacyPolicy.economic}} </li>
             </ul>
 
-            <h2 id="m2427" [innerHTML]="privacyPolicy.applicableLegalBases"> </h2>
-            <p><strong> {{ privacyPolicy.applicableLegalBasesUnderGDPR}} </strong> {{ privacyPolicy.applicableLegalBasesUnderGDPRText }} </p>
+            <h2 id="m2427" [innerHTML]="privacyPolicy.applicableLegalBases" data-aos="fade-left"></h2>
+            <p data-aos="zoom-in"><strong> {{ privacyPolicy.applicableLegalBasesUnderGDPR}} </strong> {{ privacyPolicy.applicableLegalBasesUnderGDPRText }} </p>
 
-            <ul>
+            <ul data-aos="zoom-in">
                 <li><strong> {{ privacyPolicy.consent }} </strong> {{ privacyPolicy.consentText }} </li>
                 <li><strong> {{ privacyPolicy.contract }} </strong> {{ privacyPolicy.contractText }} </li>
                 <li><strong> {{ privacyPolicy.legalObligation }} </strong> {{ privacyPolicy.legalObligationText }} </li>
                 <li><strong> {{ privacyPolicy.legalInterest }} </strong> {{ privacyPolicy.legalInterestText }} </li>
             </ul>
 
-            <p><strong> {{ privacyPolicy.nationalDataProtectionRegulations }} </strong> {{ privacyPolicy.nationalDataProtectionRegulationsText }} </p>
+            <p data-aos="zoom-in"><strong> {{ privacyPolicy.nationalDataProtectionRegulations }} </strong> {{ privacyPolicy.nationalDataProtectionRegulationsText }} </p>
 
-            <p><strong> {{ privacyPolicy.swissFADP}} </strong> {{ privacyPolicy.swissFADPText }} </p>
+            <p data-aos="zoom-in"><strong> {{ privacyPolicy.swissFADP}} </strong> {{ privacyPolicy.swissFADPText }} </p>
 
-            <h2 id="m27" [innerHTML]="privacyPolicy.securityMeasures"></h2>
-            <p> {{ privacyPolicy.securityMeasuresText1 }} </p>
+            <h2 id="m27" [innerHTML]="privacyPolicy.securityMeasures" data-aos="fade-left"></h2>
+            <p data-aos="zoom-in"> {{ privacyPolicy.securityMeasuresText1 }} </p>
 
-            <p> {{ privacyPolicy.securityMeasuresText2 }} </p>
+            <p data-aos="zoom-in"> {{ privacyPolicy.securityMeasuresText2 }} </p>
 
-            <h2 id="m25" [innerHTML]="privacyPolicy.transferOfPersonalData"></h2>
-            <p> {{ privacyPolicy.transferOfPersonalDataText }} </p>
+            <h2 id="m25" [innerHTML]="privacyPolicy.transferOfPersonalData" data-aos="fade-left"></h2>
+            <p data-aos="zoom-in"> {{ privacyPolicy.transferOfPersonalDataText }} </p>
 
-            <h2 id="m12" [innerHTML]="privacyPolicy.generalInformation"></h2>
-            <p> {{ privacyPolicy.generalInformationText1 }} </p>
-            <p> {{ privacyPolicy.generalInformationText2 }} </p>
-            <p> {{ privacyPolicy.generalInformationText3 }} </p>
-            <p> {{ privacyPolicy.generalInformationText4 }} </p>
-            <p> {{ privacyPolicy.generalInformationText5 }} </p>
-            <p> {{ privacyPolicy.generalInformationText6 }} </p>
-            <p><strong> {{ privacyPolicy.furtherNotes}} </strong></p>
-            <ul class="m-elements">
+            <h2 id="m12" [innerHTML]="privacyPolicy.generalInformation" data-aos="fade-left"></h2>
+            <p data-aos="zoom-in"> {{ privacyPolicy.generalInformationText1 }} </p>
+            <p data-aos="zoom-in"> {{ privacyPolicy.generalInformationText2 }} </p>
+            <p data-aos="zoom-in"> {{ privacyPolicy.generalInformationText3 }} </p>
+            <p data-aos="zoom-in"> {{ privacyPolicy.generalInformationText4 }} </p>
+            <p data-aos="zoom-in"> {{ privacyPolicy.generalInformationText5 }} </p>
+            <p data-aos="zoom-in"> {{ privacyPolicy.generalInformationText6 }} </p>
+            <p data-aos="zoom-in"><strong> {{ privacyPolicy.furtherNotes}} </strong></p>
+            <ul class="m-elements" data-aos="zoom-in">
                 <li><strong> {{ privacyPolicy.retentionAndDeletion }} </strong>
                     <ul>
                     <li> {{ privacyPolicy.retentionAndDeletion10Years }} </li>
@@ -105,9 +105,9 @@
                 </li>
             </ul>
 
-            <h2 id="m10"> {{ privacyPolicy.rightsOfDataSubjects }} </h2>
-            <p> {{ privacyPolicy.rightsOfDataSubjectsText }} </p>
-            <ul>
+            <h2 id="m10" data-aos="fade-left"> {{ privacyPolicy.rightsOfDataSubjects }} </h2>
+            <p data-aos="zoom-in"> {{ privacyPolicy.rightsOfDataSubjectsText }} </p>
+            <ul data-aos="zoom-in">
                 <li><strong> {{ privacyPolicy.rightToObject }} </strong> {{ privacyPolicy.rightToObjectText}} </li>
                 <li><strong> {{ privacyPolicy.rightToWithdraw }} </strong> {{ privacyPolicy.rightToWithdrawText}} </li>
                 <li><strong> {{ privacyPolicy.rightToAccess }} </strong> {{ privacyPolicy.rightToAccessText }} </li>
@@ -117,53 +117,53 @@
                 <li><strong> {{ privacyPolicy.rightToLodgeComplaint }} </strong> {{ privacyPolicy.rightToLodgeComplaintText}} </li>
             </ul>
 
-            <h2 id="m317"> {{ privacyPolicy.businessServices }} </h2>
-            <p> {{ privacyPolicy.businessServicesText1 }} </p>
-            <p> {{ privacyPolicy.businessServicesText2 }}</p>
-            <p> {{ privacyPolicy.businessServicesText3 }} </p>
-            <p> {{ privacyPolicy.businessServicesText4 }} </p>
-            <ul class="m-elements">
+            <h2 id="m317" data-aos="fade-left"> {{ privacyPolicy.businessServices }} </h2>
+            <p data-aos="zoom-in"> {{ privacyPolicy.businessServicesText1 }} </p>
+            <p data-aos="zoom-in"> {{ privacyPolicy.businessServicesText2 }}</p>
+            <p data-aos="zoom-in"> {{ privacyPolicy.businessServicesText3 }} </p>
+            <p data-aos="zoom-in"> {{ privacyPolicy.businessServicesText4 }} </p>
+            <ul class="m-elements" data-aos="zoom-in">
                 <li><strong> {{ privacyPolicy.processedDataTypes }} </strong> {{ privacyPolicy.businessProcessedDataTypesText }} </li>
                 <li><strong> {{ privacyPolicy.affectedPersons }} </strong> {{ privacyPolicy.businessAffectedPersonsText }} </li>
                 <li><strong> {{ privacyPolicy.businessPurposesOfProcessing }} </strong> {{ privacyPolicy.businessPurposesOfProcessingText }} </li>
                 <li><strong> {{ privacyPolicy.businessRetentionAndDeletion }} </strong> {{ privacyPolicy.businessRetentionAndDeletionText }} </li>
                 <li><strong> {{ privacyPolicy.legalBases }} </strong> {{ privacyPolicy.businessLegalBasesText }} </li>
             </ul>
-            <p><strong> {{ privacyPolicy.furtherNotes}} </strong></p>
-            <ul class="m-elements">
+            <p data-aos="zoom-in"><strong> {{ privacyPolicy.furtherNotes}} </strong></p>
+            <ul class="m-elements" data-aos="zoom-in">
                 <li><strong> {{ privacyPolicy.onlineShop }} </strong> {{ privacyPolicy.onlineShopText }} </li>
                 <li><strong> {{ privacyPolicy.onlineShopLegalBases}} </strong> {{ privacyPolicy.onlineShopLegalBasesText }} </li>
             </ul>
-            <h2 id="m225"> {{ privacyPolicy.provisionOfOnlineServicesAndWebhosting }} </h2>
-            <p> {{ privacyPolicy.provisionOfOnlineServicesAndWebhostingText }} </p>
-            <ul class="m-elements">
+            <h2 id="m225" data-aos="fade-left"> {{ privacyPolicy.provisionOfOnlineServicesAndWebhosting }} </h2>
+            <p data-aos="zoom-in"> {{ privacyPolicy.provisionOfOnlineServicesAndWebhostingText }} </p>
+            <ul class="m-elements" data-aos="zoom-in">
                 <li><strong> {{ privacyPolicy.processedDataTypes }} </strong> {{ privacyPolicy.provisionProcessedDataTypesText }} </li>
                 <li><strong> {{ privacyPolicy.affectedPersons }} </strong> {{ privacyPolicy.provisionAffectedPersonsText }} </li>
                 <li><strong> {{ privacyPolicy.provisionPurposesOfProcessing }} </strong> {{ privacyPolicy.provisionPurposesOfProcessingText }} </li>
                 <li><strong> {{ privacyPolicy.provisionRetentionAndDeletion }} </strong> {{ privacyPolicy.provisionRetentionAndDeletionText }} </li>
                 <li><strong> {{ privacyPolicy.legalBases }} </strong> {{ privacyPolicy.provisionLegalBasesText }} </li>
             </ul>
-            <p><strong> {{ privacyPolicy.furtherNotes }} </strong></p>
-            <ul class="m-elements">
+            <p data-aos="zoom-in"><strong> {{ privacyPolicy.furtherNotes }} </strong></p>
+            <ul class="m-elements" data-aos="zoom-in">
                 <li><strong> {{ privacyPolicy.collectionOfAccessData }} </strong> {{ privacyPolicy.collectionOfAccessDataText }} </li>
                 <li><strong> {{ privacyPolicy.collectionOfAccessDataLegalBasis }} </strong> {{ privacyPolicy.collectionOfAccessDataLegalBasisText }} </li>
                 <li><strong> {{ privacyPolicy.collectionOfAccessDataDataDeletion }} </strong> {{ privacyPolicy.collectionOfAccessDataDataDeletionText }} </li>
             </ul>
-            <h2 id="m134"> {{ privacyPolicy.useOfCookies }} </h2>
-            <p> {{ privacyPolicy.useOfCookiesText }} </p>
-            <p><strong> {{ privacyPolicy.useOfCookiesNotesOnLegalBases }} </strong> {{ privacyPolicy.useOfCookiesNotesOnLegalBasesText }} </p>
-            <p><strong> {{ privacyPolicy.useOfCookiesRetention }} </strong> {{ privacyPolicy.useOfCookiesRetentionText }} </p>
-            <ul>
+            <h2 id="m134" data-aos="fade-left"> {{ privacyPolicy.useOfCookies }} </h2>
+            <p data-aos="zoom-in"> {{ privacyPolicy.useOfCookiesText }} </p>
+            <p data-aos="zoom-in"><strong> {{ privacyPolicy.useOfCookiesNotesOnLegalBases }} </strong> {{ privacyPolicy.useOfCookiesNotesOnLegalBasesText }} </p>
+            <p data-aos="zoom-in"><strong> {{ privacyPolicy.useOfCookiesRetention }} </strong> {{ privacyPolicy.useOfCookiesRetentionText }} </p>
+            <ul data-aos="zoom-in">
                 <li><strong> {{ privacyPolicy.useOfCookiesTemporaryCookies }} </strong> {{ privacyPolicy.useOfCookiesTemporaryCookiesText }} </li>
                 <li><strong> {{ privacyPolicy.useOfCookiesPermanentCookies }} </strong> {{ privacyPolicy.useOfCookiesPermanentCookiesText }} </li>
             </ul>
-            <p><strong> {{ privacyPolicy.useOfCookiesOptOut }} </strong> {{ privacyPolicy.useOfCookiesOptOutText }} </p>
-            <ul class="m-elements">
+            <p data-aos="zoom-in"><strong> {{ privacyPolicy.useOfCookiesOptOut }} </strong> {{ privacyPolicy.useOfCookiesOptOutText }} </p>
+            <ul class="m-elements" data-aos="zoom-in">
                 <li><strong> {{ privacyPolicy.processedDataTypes }} </strong> {{ privacyPolicy.useOfCookiesProcessedDataTypesText }} </li>
                 <li><strong> {{ privacyPolicy.affectedPersons }} </strong> {{ privacyPolicy.useOfCookiesAffectedPersonsText }} </li>
                 <li><strong> {{ privacyPolicy.legalBases }} </strong> {{ privacyPolicy.useOfCookiesLegalBasesText }} </li>
             </ul>
-            <p><strong> {{ privacyPolicy.furtherNotesOnProcessingActivitiesAndProcedures }} </strong></p>
+            <p data-aos="zoom-in"><strong> {{ privacyPolicy.furtherNotesOnProcessingActivitiesAndProcedures }} </strong></p>
         </div>
         <img class="ellipse-3" src="assets/projects/Ellipse_3.png" alt="Ellipse 3">
         <img class="ellipse-4" src="assets/projects/Ellipse_4.png" alt="Ellipse 4">
