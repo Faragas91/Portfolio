@@ -22,6 +22,7 @@ span {
     font-weight: 900;
     color: $primary-color;
     background-color: transparent;
+    padding-top: 64px;
 }
 
 .skills {
@@ -30,7 +31,7 @@ span {
     justify-content: center;
     gap: 96px;
     background: transparent;
-    padding: 120px;
+    padding: 64px 64px 64px 64px;
 }
 
 .skill {
@@ -149,14 +150,12 @@ position: relative;
 @media screen and (max-width: 1350px) {
   .skills {
     gap: 72px;
-    padding: 96px;
   }
 }
 
 @media screen and (max-width: 800px) {
   .skills {
     gap: 64px;
-    padding: 64px;
   }
 }
 
