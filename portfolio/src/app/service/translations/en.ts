@@ -40,7 +40,7 @@ export const en = {
       
     teamPlayer: {
         title: 'Need a team player',
-        saidAboutMe: 'Here what my colleagues said about me',
+        saidAboutMe: "Here's what my colleagues said about me",
         firstCollegue: 'Stefan was always helpful, reliable and committed during our collaboration on the ‘Join’ project. He contributed to the further development of the application with well thought-out ideas and clean code. The collaboration with him was pleasant and productive.',
         secondCollegue: 'Working with Stefan was a lot of fun, his quick solution finding and calm manner made it easy for us to complete this project.',
         thirdCollegue: 'Stefan was the rock in our project work, when someone got stuck, Stefan helped us with innovative ideas and was able to demonstrate his talent for teamwork.',

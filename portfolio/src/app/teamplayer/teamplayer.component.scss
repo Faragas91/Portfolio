@@ -24,11 +24,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 16px;
     background-color: transparent;
+    gap: 32px;
 
     h2 {
-        font-size: 45px;
+        font-size: 96px;
         font-weight: bold;
         color: $primary-color;
         background-color: transparent;
@@ -110,6 +110,26 @@
     }
 }
 
+@media screen and (max-width: 1024px) {
+    .teamplayer-container {
+        padding: 32px;
+        gap: 16px;
+    }
+
+    .teamplayer-container {
+        h2 {
+            font-size: 64px;
+            text-align: center;
+            line-height: 1;
+        }
+        span {
+            font-size: 24px;
+            text-align: center;
+            line-height: 1;
+        }
+    }    
+}
+
 @media screen and (max-width: 600px) {
     .teamplayer-main-container {
         padding: 16px;
@@ -118,10 +138,10 @@
 
     .teamplayer-container {
         h2 {
-            font-size: 36px;
+            font-size: 48px;
         }
         span {
-            font-size: 16px;
+            font-size: 18px;
         }
     }
 
@@ -133,7 +153,7 @@
 @media screen and (max-width: 400px) {
     .teamplayer-container {
         h2 {
-            font-size: 28px;
+            font-size: 36px;
         }
         span {
             font-size: 14px;
