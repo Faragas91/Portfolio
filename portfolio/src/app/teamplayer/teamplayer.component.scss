@@ -25,7 +25,6 @@
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    gap: 32px;
 
     h2 {
         font-size: 96px;
@@ -103,7 +102,7 @@
 @media (max-width: 1350px) {
     .teamplayer-main-container {
         padding: 32px;
-        gap: 16px;
+        padding-bottom: 0;
     }
     .colleagues {
         gap: 4px;
@@ -113,7 +112,7 @@
 @media screen and (max-width: 1024px) {
     .teamplayer-container {
         padding: 32px;
-        gap: 16px;
+        gap: 32px;
     }
 
     .teamplayer-container {
