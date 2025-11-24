@@ -39,12 +39,12 @@ export class MyWorkComponent {
       liveLink: 'https://stefanredl.at/EL_POLLO_LOCO/',
     },
     {
-      imageUrl: '/assets/projects/ring_of_fire_photo.png',
-      title: 'Ring of Fire',
+      imageUrl: '/assets/projects/dabubble_photo.png',
+      title: 'DaBubble',
       techStack: ['Angular','TypeScript', 'HTML', 'SCSS', 'Firebase'],
-      descriptionKey: 'myWork.ringOfFireDescription',
-      githubLink: 'https://github.com/Faragas91/Ring-of-Fire.git',
-      liveLink: 'https://stefanredl.at/Ring_of_fire/',
+      descriptionKey: 'myWork.dabubbleDescription',
+      githubLink: 'https://github.com/Hummner/DABubble.git',
+      liveLink: 'https://stefanredl.at/DABubble/',
     },
   ];
 

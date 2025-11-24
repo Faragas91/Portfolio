@@ -35,7 +35,7 @@ export const en = {
         description: 'Explore a selection of my work here - Interact with the projects to see my skills in aciton',
         joinDescription: 'Join is a project management tool inspired by the Kanban system. Tasks can be created and moved to the relevant category using the drag-and-drop function.',
         elPolloLocoDescription: "El Pollo Loco is a classic jump & run game in which the player takes control of Pepe, who bravely fights back against the evil chickens. To defeat these hostile creatures, Pepe can either attack with Tabasco salsa bottles or jump on them. Finally, Pepe faces the final boss, who is anything but pleased with Pepe's courageous actions.",
-        ringOfFireDescription: 'Ring of fire is a social card game in which players draw their cards and must follow the rules of each card. Cards are drawn until there are no cards left in the pile.',
+        dabubbleDescription: 'DABubble is a chat messenger where users can create channels and send direct messages to colleagues.',
     },
       
     teamPlayer: {
