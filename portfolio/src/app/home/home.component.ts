@@ -37,8 +37,9 @@ export class HomeComponent {
 
   private baseColleagueData = [
     { name: 'David Gerliz', projects: 'Project Join', translationKey: 'teamPlayer.firstCollegue'},
-    { name: 'Jane Smith', projects: 'Project EL Pollo Loco', translationKey: 'teamPlayer.secondCollegue' },
-    { name: 'Alice Johnson', projects: 'Project Ring of Fire', translationKey: 'teamPlayer.thirdCollegue' },
+    { name: 'Martin Sinner', projects: 'Project Join', translationKey: 'teamPlayer.secondCollegue' },
+    { name: 'Dora Telekesi', projects: 'Project DABubble', translationKey: 'teamPlayer.thirdCollegue' },
+    { name: 'Bence Cservenyak', projects: 'Project DABubble', translationKey: 'teamPlayer.fourthCollegue' },
   ];
 
   /**

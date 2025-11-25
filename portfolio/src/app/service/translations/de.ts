@@ -43,7 +43,8 @@ export const de = {
         saidAboutMe: 'Hier ist, was meine Kollegen über mich sagten',
         firstCollegue: 'Stefan war in unserer Zusammenarbeit am ‚Join‘-Projekt stets hilfsbereit, zuverlässig und engagiert. Er hat mit durchdachten Ideen und sauberem Code zur Weiterentwicklung der Anwendung beigetragen. Die Zusammenarbeit mit ihm war angenehm und produktiv.',
         secondCollegue: 'Die Zusammenarbeit mit Stefan hat sehr viel Spaß gemacht, durch die schnelle Lösungsfindung und ruhige Art war uns ein leichtes dieses Projekt fertigzustellen.',
-        thirdCollegue: 'Stefan war bei uns Projektarbeit der Fels in der Brandung, wenn jemand nicht weiter kam, half uns Stefan mit innovative Ideen und konnte sein Talent für die Teamarbeit darbieten.',
+        thirdCollegue: 'Stefan brachte nicht nur fachliches Können, sondern auch eine ruhige, lösungsorientierte Art ins Team. Seine durchdachten Ideen und sein sauber strukturierter Code haben maßgeblich zum Erfolg unseres gemeinsamen Projekts beigetragen.',
+        fourthCollegue: 'Die Zusammenarbeit mit Stefan war durchweg positiv und hat immer Spaß gemacht. Er arbeitet sehr strukturiert, bringt eigene Ideen ein und behält dabei stets den Überblick. Seine ruhige, professionelle Art und seine hohe Zuverlässigkeit machen ihn zu einem Partner, auf den man sich jederzeit verlassen kann. Mit ihm gemeinsam Projekte umzusetzen war sowohl produktiv als auch menschlich sehr angenehm.',
     },
      
     contact: {

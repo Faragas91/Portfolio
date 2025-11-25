@@ -43,7 +43,7 @@ export class MyWorkComponent {
       title: 'DaBubble',
       techStack: ['Angular','TypeScript', 'HTML', 'SCSS', 'Firebase'],
       descriptionKey: 'myWork.dabubbleDescription',
-      githubLink: 'https://github.com/Hummner/DABubble.git',
+      githubLink: 'https://github.com/Faragas91/DABubble.git',
       liveLink: 'https://stefanredl.at/DABubble/',
     },
   ];
